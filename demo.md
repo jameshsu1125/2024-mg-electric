@@ -4,7 +4,7 @@
 
 ```html
 <iframe
-  src="https://mg4electric.netlify.app/m/"
+  src="https://mg4electric.netlify.app/m"
   height="{{xxx}}" // 這裏
   width="100%"
   style="border: none; width: 100%; height: {{xxx}}px" // 這裏
