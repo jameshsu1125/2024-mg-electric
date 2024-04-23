@@ -8,7 +8,7 @@ const Home = memo(() => {
   return (
     <div className='Home'>
       <HomeContext.Provider value={[state, setState]}>
-        <h1 className='text-2xl'>mg4electric</h1>
+        <h1 className='text-2xl'>Desktop</h1>
       </HomeContext.Provider>
     </div>
   );
