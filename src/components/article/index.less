@@ -1,0 +1,19 @@
+.Article {
+  @apply w-full;
+}
+
+.Desktop {
+  .Article {
+    @apply px-20;
+
+    @media only screen and (max-width: 1024px) {
+      @apply px-10;
+    }
+  }
+}
+
+.Mobile {
+  .Article {
+    @apply px-5;
+  }
+}

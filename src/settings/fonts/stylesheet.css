@@ -45,7 +45,7 @@
 @font-face {
   font-weight: 300;
   font-style: normal;
-  font-family: 'Mx Light';
+  font-family: 'MX Light';
   src:
     url('MXiangHeHeiTC-Light.woff2') format('woff2'),
     url('MXiangHeHeiTC-Light.woff') format('woff');
@@ -104,6 +104,105 @@
   src:
     url('MXiangHeHeiTC-Regular.woff2') format('woff2'),
     url('MXiangHeHeiTC-Regular.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Gill Bold Italic';
+  src:
+    url('GillSans-BoldItalic.woff2') format('woff2'),
+    url('GillSans-BoldItalic.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Gill Regular';
+  src:
+    url('GillSans.woff2') format('woff2'),
+    url('GillSans.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Gill Bold';
+  src:
+    url('GillSans-Bold.woff2') format('woff2'),
+    url('GillSans-Bold.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-style: normal;
+  font-family: 'Gill SemiBold';
+  src:
+    url('GillSans-SemiBold.woff2') format('woff2'),
+    url('GillSans-SemiBold.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-style: italic;
+  font-family: 'Gill SemiBoldItalic';
+  src:
+    url('GillSans-SemiBoldItalic.woff2') format('woff2'),
+    url('GillSans-SemiBoldItalic.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Gill UltraBold';
+  src:
+    url('GillSans-UltraBold.woff2') format('woff2'),
+    url('GillSans-UltraBold.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: italic;
+  font-family: 'Gill Italic';
+  src:
+    url('GillSans-Italic.woff2') format('woff2'),
+    url('GillSans-Italic.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 100;
+  font-style: normal;
+  font-family: 'Gill Light';
+  src:
+    url('GillSans-Light.woff2') format('woff2'),
+    url('GillSans-Light.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Gill LightItalic';
+  src:
+    url('GillSans-LightItalic.woff2') format('woff2'),
+    url('GillSans-LightItalic.woff') format('woff');
 
   font-display: swap;
 }

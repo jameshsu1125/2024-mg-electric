@@ -3,6 +3,7 @@ import { Dispatch, ReactNode } from 'react';
 export enum ActionType {
   Page = 'page',
   LoadingProcess = 'loadingProcess',
+  Device = 'device',
 }
 
 export enum LoadingProcessType {
@@ -32,13 +33,16 @@ export type TLoadingProcessState = {
   body?: '';
 };
 
+export type DeviceType = 'desktop' | 'mobile';
+
 export interface IState {
   page?: string;
   loadingProcess?: TLoadingProcessState;
+  device?: DeviceType;
 }
 
 export interface IAction {
-  state: IState | TLoadingProcessState;
+  state: IState | TLoadingProcessState | DeviceType;
   type: ActionType;
 }
 

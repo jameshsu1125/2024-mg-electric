@@ -1,20 +1,41 @@
+.Landing {
+  background-image: url('./img/cover.jpg');
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @apply relative w-full;
+
+  .headline {
+    @apply absolute w-full text-center;
+  }
+}
+
 .Desktop {
   .Landing {
-    background-image: url('./img/cover.jpg');
-    background-position: center bottom;
-    background-size: 100%;
+    @apply h-dh;
 
-    @apply h-screen w-full;
+    .headline {
+      bottom: 550px;
+      @apply text-4xl;
+
+      h1 {
+        @apply space-x-5;
+      }
+    }
   }
 }
 
 .Mobile {
   .Landing {
-    padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-    width: 100%;
-    background-image: url(@img);
-    background-size: cover;
+    @apply h-mh;
 
-    @img: './img/cover.jpg';
+    .headline {
+      bottom: 200px;
+      @apply text-xl;
+
+      h1 {
+        @apply space-x-2;
+      }
+    }
   }
 }
