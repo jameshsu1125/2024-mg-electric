@@ -1,5 +1,25 @@
 # Extracted characters
 
+## black
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
+
+## bold
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
+
+## book
+
 ```txt
 0123456789
 abcdefghijklmnopqrstuvwxyz

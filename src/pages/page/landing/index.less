@@ -1,0 +1,20 @@
+.Desktop {
+  .Landing {
+    background-image: url('./img/cover.jpg');
+    background-position: center bottom;
+    background-size: 100%;
+
+    @apply h-screen w-full;
+  }
+}
+
+.Mobile {
+  .Landing {
+    padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+    width: 100%;
+    background-image: url(@img);
+    background-size: cover;
+
+    @img: './img/cover.jpg';
+  }
+}

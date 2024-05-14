@@ -1,15 +1,11 @@
-import { memo, useState } from 'react';
-import { HomeContext, HomeState, THomeState } from './config';
+import { memo } from 'react';
 import './index.less';
+import Page from '../page';
 
 const Home = memo(() => {
-  const [state, setState] = useState<THomeState>(HomeState);
-
   return (
-    <div className='Home'>
-      <HomeContext.Provider value={[state, setState]}>
-        <h1 className='text-2xl'>Desktop</h1>
-      </HomeContext.Provider>
+    <div className='Desktop'>
+      <Page />
     </div>
   );
 });

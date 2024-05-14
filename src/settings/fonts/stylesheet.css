@@ -1,0 +1,43 @@
+@font-face {
+  font-weight: 900;
+  font-style: normal;
+  font-family: 'MX Black';
+  src:
+    url('MXiangHeHeiTC-Black.woff2') format('woff2'),
+    url('MXiangHeHeiTC-Black.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'MX Bold';
+  src:
+    url('MXiangHeHeiTC-Bold.woff2') format('woff2'),
+    url('MXiangHeHeiTC-Bold.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'MX Book';
+  src:
+    url('MXiangHeHeiTC-Book.woff2') format('woff2'),
+    url('MXiangHeHeiTC-Book.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 900;
+  font-style: normal;
+  font-family: 'MX Heavy';
+  src:
+    url('MXiangHeHeiTC-Heavy.woff2') format('woff2'),
+    url('MXiangHeHeiTC-Heavy.woff') format('woff');
+
+  font-display: swap;
+}

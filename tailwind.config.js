@@ -14,14 +14,20 @@ export default {
     fontSize: {
       ...fontSize,
     },
+    fontFamily: {
+      mxBlack: ['MX Black', 'sans-serif'],
+      mxBold: ['MX Bold', 'sans-serif'],
+      mxBook: ['MX Book', 'sans-serif'],
+      mxHeavy: ['MX Heavy', 'sans-serif'],
+    },
     colors: {
       ...color,
       primary: '#870000',
       secondary: '#ff6600',
       tertiary: '#ff0066',
       quaternary: '#00ff00',
-      backgroundColor: '#111',
-      textColor: '#eee',
+      backgroundColor: '#fff',
+      textColor: '#111',
     },
     extend: {},
   },
