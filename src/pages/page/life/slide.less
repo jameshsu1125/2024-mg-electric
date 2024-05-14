@@ -1,0 +1,145 @@
+.Slide {
+  .carousel-headline {
+    @apply flex flex-col justify-center space-y-2;
+
+    h1 {
+      @apply text-2xl;
+    }
+  }
+
+  .carousel-content {
+    @apply flex flex-col items-start justify-center font-mxLight;
+
+    .postscript {
+      @apply w-full font-mxLight font-light;
+    }
+  }
+
+  .video {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .v0 {
+    background-image: url('./img/v0.jpg');
+  }
+
+  .v1 {
+    background-image: url('./img/v1.jpg');
+  }
+
+  .v2 {
+    background-image: url('./img/v2.jpg');
+  }
+
+  .v3 {
+    background-image: url('./img/v3.jpg');
+  }
+}
+
+.flap {
+  transform: scale(-1, 1);
+}
+
+.Arrow {
+  background-image: url('./img/arrow.svg');
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  @apply absolute top-1/2 bg-secondary;
+
+  &:hover {
+    @apply bg-primary;
+  }
+}
+
+.Desktop {
+  .Slide {
+    @apply flex-row;
+
+    .image {
+      width: 600px;
+      height: 337px;
+      @apply p-5;
+    }
+
+    .content {
+      @apply px-20;
+    }
+
+    .carousel-headline {
+      @apply flex-col items-start text-base;
+
+      h1 {
+        @apply text-4xl;
+      }
+
+      h2 {
+        @apply text-lg;
+      }
+    }
+
+    .carousel-content {
+      @apply text-sm;
+
+      .postscript {
+        @apply pt-5 text-xs;
+      }
+    }
+  }
+
+  .Arrow {
+    @apply h-10 w-10;
+  }
+}
+
+.Mobile {
+  .Slide {
+    @apply flex-col;
+
+    .image {
+      width: 100%;
+      height: 236px;
+
+      @apply p-5;
+    }
+
+    .content {
+      @apply px-7;
+    }
+
+    .carousel-headline {
+      @apply flex-row items-baseline space-x-1 text-sm;
+
+      h1 {
+        @apply text-2xl;
+        @media only screen and (max-width: 430px) {
+          & {
+            font-size: 5.6vw;
+          }
+        }
+      }
+
+      h2 {
+        @apply text-base;
+        @media only screen and (max-width: 430px) {
+          & {
+            font-size: 3.7vw;
+          }
+        }
+      }
+    }
+
+    .carousel-content {
+      @apply text-xs;
+
+      .postscript {
+        font-size: 0.6rem;
+        @apply pt-4;
+      }
+    }
+  }
+  .Arrow {
+    @apply h-6 w-6;
+  }
+}

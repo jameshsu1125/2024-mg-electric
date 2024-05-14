@@ -1,22 +1,59 @@
-import { memo, useEffect } from 'react';
+import Article from '@/components/article';
+import { Context } from '@/settings/constant';
+import { ActionType } from '@/settings/type';
+import { memo, useContext, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
+import { LifeCarousel } from './config';
+import './slide.less';
 
-const Slide = memo(() => {
-  useEffect(() => {}, []);
+const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel)[number] }) => {
+  const [context] = useContext(Context);
+  const device = context[ActionType.Device];
+
+  const body = useMemo(() => {
+    if (device === 'mobile') {
+      return <p>{data.body.join('')}</p>;
+    }
+    return (
+      <>
+        {data.body.map((text) => (
+          <p key={text}>{text}</p>
+        ))}
+      </>
+    );
+  }, [data.body, device]);
+
   return (
-    <div className='flex w-full flex-row'>
-      <div className='h-[337px] w-[600px] p-5'>
-        <div className='v0 h-full w-full'></div>
-      </div>
-      <div className='flex h-[337px] flex-1 flex-col items-start justify-center space-y-10 px-20'>
-        <div className='carousel-headline'>
-          <h1 className='font-mxThin text-4xl font-thin tracking-widest'>純電移動生活</h1>
-          <h2 className='font-mxBook text-lg'>在寧靜中 創造美好體驗</h2>
+    <div className='flex w-full'>
+      <Article>
+        <div className='Slide flex w-full'>
+          {device === 'mobile' && (
+            <div className='w-full'>
+              <div className='carousel-headline'>
+                <h1 className='font-mxThin font-thin tracking-widest'>{data.headline}</h1>
+                <h2 className='font-mxBook'>{data.subline}</h2>
+              </div>
+            </div>
+          )}
+          <div className='image'>
+            <div className={twMerge('video h-full w-full', `v${index}`)}></div>
+          </div>
+          <div className='content flex h-[337px] flex-1 flex-col items-start justify-center space-y-10'>
+            {device === 'desktop' && (
+              <div className='w-full'>
+                <div className='carousel-headline'>
+                  <h1 className='font-mxThin font-thin tracking-widest'>{data.headline}</h1>
+                  <h2 className='font-mxBook'>{data.subline}</h2>
+                </div>
+              </div>
+            )}
+            <div className='carousel-content'>
+              {body}
+              {data.postscript !== '' && <p className='postscript'>{data.postscript}</p>}
+            </div>
+          </div>
         </div>
-        <div className='carousel-content'>
-          <p>全然靜謐的駕馭體驗，穿梭於自然卻不自造喧囂，</p>
-          <p>沉浸與世界和諧共生的純電境界。</p>
-        </div>
-      </div>
+      </Article>
     </div>
   );
 });
