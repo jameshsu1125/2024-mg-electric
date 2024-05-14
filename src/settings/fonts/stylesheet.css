@@ -96,3 +96,14 @@
 
   font-display: swap;
 }
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'MX Regular';
+  src:
+    url('MXiangHeHeiTC-Regular.woff2') format('woff2'),
+    url('MXiangHeHeiTC-Regular.woff') format('woff');
+
+  font-display: swap;
+}

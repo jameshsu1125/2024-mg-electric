@@ -71,3 +71,21 @@ abcdefghijklmnopqrstuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 +-~!@#$%^&*|}{}\][]';":?><>/.,
 ```
+
+## Xblack
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
+
+## Regular
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```

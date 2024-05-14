@@ -24,6 +24,7 @@ export default {
       mxThin: ['MX Thin', 'sans-serif'],
       mxUltra: ['MX Ultra', 'sans-serif'],
       mxXBlack: ['MX XBlack', 'sans-serif'],
+      mxRegular: ['MX Regular', 'sans-serif'],
     },
     colors: {
       ...color,
