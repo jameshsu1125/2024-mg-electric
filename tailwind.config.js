@@ -20,6 +20,7 @@ export default {
       mxBook: ['MX Book', 'sans-serif'],
       mxHeavy: ['MX Heavy', 'sans-serif'],
       mxLight: ['MX Light', 'sans-serif'],
+      mxMedium: ['MX Medium', 'sans-serif'],
     },
     colors: {
       ...color,

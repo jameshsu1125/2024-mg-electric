@@ -26,3 +26,21 @@ abcdefghijklmnopqrstuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 +-~!@#$%^&*|}{}\][]';":?><>/.,
 ```
+
+## Heavy
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
+
+## Light
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
