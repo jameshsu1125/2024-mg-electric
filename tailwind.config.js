@@ -21,6 +21,7 @@ export default {
       mxHeavy: ['MX Heavy', 'sans-serif'],
       mxLight: ['MX Light', 'sans-serif'],
       mxMedium: ['MX Medium', 'sans-serif'],
+      mxThin: ['MX Thin', 'sans-serif'],
     },
     colors: {
       ...color,

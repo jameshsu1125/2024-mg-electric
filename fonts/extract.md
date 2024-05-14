@@ -44,3 +44,12 @@ abcdefghijklmnopqrstuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 +-~!@#$%^&*|}{}\][]';":?><>/.,
 ```
+
+## Medium
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
