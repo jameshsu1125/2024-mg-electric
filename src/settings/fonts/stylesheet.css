@@ -74,3 +74,25 @@
 
   font-display: swap;
 }
+
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: 'MX Ultra';
+  src:
+    url('MXiangHeHeiTC-UltLt.woff2') format('woff2'),
+    url('MXiangHeHeiTC-UltLt.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 900;
+  font-style: normal;
+  font-family: 'MX XBlack';
+  src:
+    url('MXiangHeHeiTC-XBlack.woff2') format('woff2'),
+    url('MXiangHeHeiTC-XBlack.woff') format('woff');
+
+  font-display: swap;
+}

@@ -53,3 +53,21 @@ abcdefghijklmnopqrstuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 +-~!@#$%^&*|}{}\][]';":?><>/.,
 ```
+
+## Thin
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
+
+## Ultra
+
+```txt
+0123456789
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
++-~!@#$%^&*|}{}\][]';":?><>/.,
+```
