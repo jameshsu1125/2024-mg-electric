@@ -19,6 +19,7 @@ export default {
       mxBold: ['MX Bold', 'sans-serif'],
       mxBook: ['MX Book', 'sans-serif'],
       mxHeavy: ['MX Heavy', 'sans-serif'],
+      mxLight: ['MX Light', 'sans-serif'],
     },
     colors: {
       ...color,

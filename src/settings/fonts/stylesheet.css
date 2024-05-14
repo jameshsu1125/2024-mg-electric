@@ -41,3 +41,14 @@
 
   font-display: swap;
 }
+
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: 'Mx Light';
+  src:
+    url('MXiangHeHeiTC-Light.woff2') format('woff2'),
+    url('MXiangHeHeiTC-Light.woff') format('woff');
+
+  font-display: swap;
+}
