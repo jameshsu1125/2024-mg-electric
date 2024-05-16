@@ -1,36 +1,39 @@
-import { memo, useEffect } from 'react';
+import { memo, useRef } from 'react';
 import 'swiper/css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import './index.less';
-import Slide from './slide';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { twMerge } from 'tailwind-merge';
 import { LifeCarousel } from './config';
+import './index.less';
+import Slide from './slide';
 
-const Arrow = memo(({ direct }: { direct: 'next' | 'prev' }) => {
+type TArrowProps = {
+  direct: 'next' | 'prev';
+  onClick: () => void;
+};
+
+const Arrow = memo(({ direct, onClick }: TArrowProps) => {
   return (
-    <button className={twMerge('Arrow', direct === 'next' ? 'flap right-0' : 'left-0')}></button>
+    <button
+      onClick={onClick}
+      className={twMerge('Arrow', direct === 'next' ? 'flap right-0' : 'left-0')}
+    ></button>
   );
 });
 
 const Life = memo(() => {
-  useEffect(() => {}, []);
+  const ref = useRef<SwiperRef>(null);
+
   return (
     <div className='Life'>
-      <Arrow direct='prev' />
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        loop={true}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
+      <Swiper ref={ref} spaceBetween={0} speed={800} loop={true}>
         {LifeCarousel.map((data, index) => (
           <SwiperSlide key={`${data.body}${index}`}>
             <Slide index={index} data={data} />
           </SwiperSlide>
         ))}
       </Swiper>
-      <Arrow direct='next' />
+      <Arrow direct='prev' onClick={() => ref.current?.swiper.slidePrev()} />
+      <Arrow direct='next' onClick={() => ref.current?.swiper.slideNext()} />
     </div>
   );
 });

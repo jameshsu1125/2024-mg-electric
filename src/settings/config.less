@@ -1,3 +1,105 @@
 @SM: 768px;
 @MD: 1024px;
 @LG: 1280px;
+
+@Mobile: 430px;
+@Ratio: 3.7vw;
+
+.t-7xl {
+  @apply text-7xl;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 4.5 * @Ratio;
+    }
+  }
+}
+
+.t-6xl {
+  @apply text-6xl;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 3.75 * @Ratio;
+    }
+  }
+}
+
+.t-5xl {
+  @apply text-5xl;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 3 * @Ratio;
+    }
+  }
+}
+
+.t-4xl {
+  @apply text-4xl;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 2.25 * @Ratio;
+    }
+  }
+}
+
+.t-3xl {
+  @apply text-3xl;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 1.875 * @Ratio;
+    }
+  }
+}
+
+.t-2xl {
+  @apply text-2xl;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 1.5 * @Ratio;
+    }
+  }
+}
+
+.t-xl {
+  @apply text-xl;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 1.25 * @Ratio;
+    }
+  }
+}
+
+.t-lg {
+  @apply text-lg;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 1.125 * @Ratio;
+    }
+  }
+}
+
+.t-base {
+  @apply text-base;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 1 * @Ratio;
+    }
+  }
+}
+
+.t-sm {
+  @apply text-sm;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 0.875 * @Ratio;
+    }
+  }
+}
+
+.t-xs {
+  @apply text-xs;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      font-size: 0.75 * @Ratio;
+    }
+  }
+}

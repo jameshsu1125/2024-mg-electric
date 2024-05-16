@@ -3,6 +3,8 @@ import './index.less';
 import Landing from './landing';
 import Years from './year';
 import Life from './life';
+import Movement from './movement';
+import Safety from './safety';
 
 const Page = memo(() => {
   useEffect(() => {}, []);
@@ -11,6 +13,8 @@ const Page = memo(() => {
       <Landing />
       <Years />
       <Life />
+      <Movement />
+      <Safety />
     </div>
   );
 });
