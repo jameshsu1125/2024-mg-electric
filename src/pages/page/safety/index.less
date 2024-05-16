@@ -1,23 +1,20 @@
 .Safety {
-  @apply relative w-full;
+  height: 1200px;
+  @apply relative w-full overflow-hidden;
 
   .bg {
     background-image: url('./img/car.jpg');
-    background-position: center bottom;
-    background-size: 800%;
+    background-position: center center;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    @apply relative h-full w-full;
+    @apply absolute;
   }
-}
 
-.Desktop {
-  .Safety {
-    height: 1223px;
-  }
-}
-
-.Mobile {
-  .Safety {
-    height: 321px;
+  .btn {
+    &:hover {
+      .bgColor {
+        @apply bg-primary;
+      }
+    }
   }
 }
