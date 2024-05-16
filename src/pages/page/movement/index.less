@@ -1,39 +1,36 @@
+@import url('../../../settings/config.less');
+
 .Movement {
+  height: 1000px;
   background-image: url('./img/bg.jpg');
-  background-repeat: no-repeat;
+  background-position: center calc(~'100% - 220px');
 
-  @apply relative flex w-full flex-col items-center justify-start overflow-hidden;
+  @apply relative flex w-full flex-col items-center justify-start overflow-hidden bg-no-repeat;
 
-  &::before {
-    width: 100%;
-    background-image: url('./img/bg.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    content: '';
-    @apply absolute bottom-0;
-  }
-}
-
-.Desktop {
-  .Movement {
-    height: 1000px;
-    background-position: center calc(~'100% - 220px');
-
-    &::before {
-      height: 100%;
-      background-position: center calc(~'100% + 380px');
+  @media only screen and (max-width: @LG) {
+    & {
+      background-position: center calc(~'100% - 273px');
     }
   }
-}
 
-.Mobile {
-  .Movement {
-    height: 1000px;
-    background-position: center calc(~'100% - 500px');
+  @media only screen and (max-width: @Mobile) {
+    & {
+      height: 1000px;
+      background-position: center calc(~'100% - 500px');
+    }
+  }
 
-    &::before {
-      height: 100%;
-      background-position: center calc(~'100% + 100px');
+  &::before {
+    background-image: url('./img/bg.png');
+    background-position: center calc(~'100% + 380px');
+    background-size: 100% 100%;
+    content: '';
+    @apply absolute bottom-0 h-full w-full bg-no-repeat;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        background-position: center calc(~'100% + 100px');
+      }
     }
   }
 }

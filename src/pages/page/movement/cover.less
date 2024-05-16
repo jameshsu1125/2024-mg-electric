@@ -1,89 +1,62 @@
 @import url('../../../settings/config.less');
 
 .Cover {
-  @apply relative flex w-full flex-1 items-center justify-center overflow-hidden;
+  @apply relative flex w-full flex-1 flex-row items-center justify-center overflow-hidden;
 
-  h1 {
-    @apply text-center font-mxThin font-thin;
-  }
-
-  p {
-    @apply text-center font-mxLight font-light;
-  }
-
-  .img {
-    padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-    width: 100%;
-    background-image: url(@img);
-    background-size: cover;
-
-    @img: './img/car.png';
-
-    @apply w-full;
-  }
-
-  .label {
-    border-color: #1a1a1a;
-    @apply w-80 border-b;
-
-    input {
-      @apply h-full w-full bg-transparent text-center font-mxThin font-thin outline-none;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      @apply flex-col-reverse;
     }
   }
 
-  .calc {
-    @apply flex w-full items-center justify-center;
+  .left {
+    @apply flex h-full w-2/6 flex-col items-center justify-center space-y-5;
 
-    .btn-calc {
-      background-color: #1a1a1a;
-      color: #fff;
-
-      @apply flex flex-row items-center justify-center space-x-1 px-8 py-3 text-lg;
-
-      &:hover {
-        @apply bg-primary;
-      }
-
-      .ico-light {
-        background-image: url('./img/ico.svg');
-
-        @apply h-7 w-7 bg-contain bg-center bg-no-repeat pb-2;
+    @media only screen and (max-width: @Mobile) {
+      & {
+        @apply w-full;
       }
     }
-  }
-}
 
-.Desktop {
-  .Cover {
-    @apply flex-row;
+    h1 {
+      @apply whitespace-nowrap text-center font-mxThin text-5xl font-thin leading-normal tracking-wider;
+      @media only screen and (max-width: 1280px) {
+        & {
+          @apply text-4xl;
+        }
+      }
 
-    .coverLeft {
-      @apply w-2/6;
-    }
-
-    .coverRight {
-      @apply h-full w-3/6;
-    }
-
-    .img {
-      @apply mb-16;
-    }
-
-    .label {
-      @apply h-9 w-80;
-
-      input {
-        @apply text-base;
-
-        &::placeholder {
-          color: #999;
-          opacity: 1;
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-2xl;
         }
       }
     }
 
-    .calc {
-      @apply flex-col space-y-5;
+    p {
+      @apply whitespace-nowrap text-center font-mxLight text-lg font-light leading-relaxed;
+
+      @media only screen and (max-width: 1280px) {
+        & {
+          @apply text-sm;
+        }
+      }
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-xs;
+        }
+      }
+    }
+
+    .group {
+      @apply flex w-full flex-col items-center justify-center space-y-5;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply flex-row space-x-2 space-y-0 pb-5;
+        }
+      }
 
       .ico {
         width: image-width(@img) * @scale;
@@ -93,104 +66,114 @@
 
         @scale: 0.8;
         @img: './img/calc.svg';
+
+        @apply bg-contain bg-center bg-no-repeat;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            width: image-width(@img) * @scale;
+            height: image-height(@img) * @scale;
+            background-image: url(@img);
+
+            @scale: 0.5;
+            @img: './img/calc.svg';
+          }
+        }
+      }
+
+      .label {
+        border-color: #1a1a1a;
+        @apply h-9 w-72 border-b;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply h-6 w-32;
+          }
+        }
+
+        input {
+          @apply h-full w-full bg-transparent text-center font-mxThin text-base font-thin outline-none;
+
+          &::placeholder {
+            color: #999;
+            opacity: 1;
+          }
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply text-xs;
+
+              &::placeholder {
+                color: #666;
+                opacity: 1;
+              }
+            }
+          }
+        }
       }
 
       .btn-calc {
-        @apply px-8 py-3 text-lg;
+        background-color: #1a1a1a;
+        color: #fff;
+
+        @apply flex flex-row items-center justify-center space-x-1 whitespace-nowrap px-8 py-3 text-lg;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply px-3 py-2 text-xs hover:bg-black active:bg-primary;
+          }
+        }
+
+        &:hover {
+          @apply bg-primary;
+        }
 
         .ico-light {
-          @apply h-7 w-7 pb-2;
-        }
-      }
-    }
+          background-image: url('./img/ico.svg');
 
-    h1 {
-      @apply text-5xl leading-normal tracking-wider;
+          @apply h-7 w-7 bg-contain bg-center bg-no-repeat pb-2;
 
-      @media only screen and (max-width: 1280px) {
-        & {
-          @apply text-4xl;
-        }
-      }
-    }
-
-    p {
-      @apply text-lg leading-relaxed;
-    }
-  }
-}
-
-.Mobile {
-  .Cover {
-    @apply flex-col-reverse;
-
-    .coverLeft {
-      @apply w-full;
-    }
-
-    .coverRight {
-      margin-left: -2.15rem;
-      @apply w-10/12;
-    }
-
-    .img {
-      @apply mt-6;
-    }
-
-    .label {
-      @apply h-6 w-32;
-
-      input {
-        @apply text-xs;
-
-        &::placeholder {
-          color: #666;
-          opacity: 1;
-        }
-      }
-    }
-
-    .calc {
-      @apply flex-row space-x-5 pb-5;
-
-      .ico {
-        width: image-width(@img) * @scale;
-        height: image-height(@img) * @scale;
-        background-image: url(@img);
-        background-size: 100%;
-
-        @scale: 0.5;
-        @img: './img/calc.svg';
-      }
-
-      .btn-calc {
-        @apply whitespace-nowrap px-3 py-2 text-xs hover:bg-black active:bg-primary;
-
-        .ico-light {
-          @apply h-4 w-4 pb-2;
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply h-4 w-4 pb-2;
+            }
+          }
         }
       }
 
       .btn-reCalc {
-        @apply ml-3 whitespace-nowrap border border-black px-5 py-2 font-mxBold text-xs active:bg-primary;
-      }
-    }
+        @apply ml-3 hidden whitespace-nowrap border border-black px-5 py-2 font-mxBold text-xs active:bg-primary;
 
-    h1 {
-      @apply text-3xl leading-normal tracking-wider;
-      @media only screen and (max-width: @Mobile) {
-        & {
-          font-size: 1.875 * @Ratio;
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply block;
+          }
         }
       }
     }
+  }
 
-    p {
-      @apply text-sm leading-relaxed;
+  .right {
+    @apply flex h-full w-3/6 flex-col items-center justify-center;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        margin-left: -2.15rem;
+        @apply w-10/12;
+      }
+    }
+
+    .img {
+      padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+      background-image: url(@img);
+
+      @img: './img/car.png';
+
+      @apply mt-32 w-full bg-cover;
 
       @media only screen and (max-width: @Mobile) {
         & {
-          font-size: 0.875 * @Ratio;
+          @apply mt-0;
         }
       }
     }

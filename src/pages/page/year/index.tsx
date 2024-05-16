@@ -16,7 +16,7 @@ const Year = memo(() => {
           <div className='box'></div>
         </div>
         <div className='content'>
-          <h1 className='font-mxThin font-thin'>
+          <h1>
             <span className='font-gillLight'>MG 100</span>年 純電元年
           </h1>
           <p>

@@ -1,0 +1,39 @@
+.Movement {
+  background-image: url('./img/bg.jpg');
+  background-repeat: no-repeat;
+
+  @apply relative flex w-full flex-col items-center justify-start overflow-hidden;
+
+  &::before {
+    width: 100%;
+    background-image: url('./img/bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    content: '';
+    @apply absolute bottom-0;
+  }
+}
+
+.Desktop {
+  .Movement {
+    height: 1000px;
+    background-position: center calc(~'100% - 220px');
+
+    &::before {
+      height: 100%;
+      background-position: center calc(~'100% + 380px');
+    }
+  }
+}
+
+.Mobile {
+  .Movement {
+    height: 1000px;
+    background-position: center calc(~'100% - 500px');
+
+    &::before {
+      height: 100%;
+      background-position: center calc(~'100% + 100px');
+    }
+  }
+}

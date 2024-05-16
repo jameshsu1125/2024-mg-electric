@@ -1,19 +1,44 @@
+@import url('../../../settings/config.less');
+
 .Life {
-  @apply relative py-10;
+  height: 430px;
+  @apply relative flex items-center py-10;
 
   .headline {
     @apply flex w-full justify-center;
   }
-}
 
-.Desktop {
-  .Life {
-    height: 430px;
+  @media only screen and (max-width: @Mobile) {
+    & {
+      height: 430px;
+    }
   }
-}
 
-.Mobile {
-  .Life {
-    height: 430px;
+  .flap {
+    transform: scale(-1, 1);
+  }
+
+  .Arrow {
+    background-image: url('./img/arrow.svg');
+    background-size: 40%;
+    @apply absolute top-1/2 z-10 h-10 w-10 bg-secondary bg-center bg-no-repeat;
+
+    &:hover {
+      @apply bg-primary;
+    }
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        @apply h-6 w-6;
+
+        &:hover {
+          @apply bg-secondary;
+        }
+
+        &:active {
+          @apply bg-primary;
+        }
+      }
+    }
   }
 }

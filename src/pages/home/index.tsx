@@ -1,14 +1,22 @@
-import { memo, useContext, useEffect } from 'react';
-import './index.less';
-import Page from '../page';
 import { Context } from '@/settings/constant';
 import { ActionType } from '@/settings/type';
+import { memo, useContext, useEffect } from 'react';
+import Page from '../page';
+import './index.less';
 
 const Home = memo(() => {
   const [, setContext] = useContext(Context);
 
   useEffect(() => {
-    setContext({ type: ActionType.Device, state: 'desktop' });
+    const resize = () => {
+      setContext({
+        type: ActionType.Device,
+        state: window.innerWidth <= 430 ? 'mobile' : 'desktop',
+      });
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
   }, []);
 
   return (

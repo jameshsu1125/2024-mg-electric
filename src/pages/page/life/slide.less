@@ -1,146 +1,125 @@
+@import url('../../../settings/config.less');
+
 .Slide {
+  height: 430px;
+  @apply flex w-full flex-row items-center justify-center space-x-5;
+
+  @media only screen and (max-width: @Mobile) {
+    & {
+      @apply flex-col space-x-0 py-5;
+    }
+  }
+
+  .image {
+    width: 600px;
+    height: 337px;
+
+    @media only screen and (max-width: @LG) {
+      & {
+        width: 500px;
+      }
+    }
+
+    @media only screen and (max-width: @MD) {
+      & {
+        width: 400px;
+      }
+    }
+
+    @media only screen and (max-width: @SM) {
+      & {
+        width: 200px;
+      }
+    }
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        height: 236px;
+        @apply w-full p-5;
+      }
+    }
+
+    .video {
+      @apply h-full w-full bg-cover bg-center;
+    }
+
+    .v0 {
+      background-image: url('./img/v0.jpg');
+    }
+
+    .v1 {
+      background-image: url('./img/v1.jpg');
+    }
+
+    .v2 {
+      background-image: url('./img/v2.jpg');
+    }
+
+    .v3 {
+      background-image: url('./img/v3.jpg');
+    }
+  }
+
   .carousel-headline {
-    @apply flex flex-col justify-center space-y-2;
+    @apply flex flex-col items-start justify-center space-y-2;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        @apply flex-row;
+      }
+    }
 
     h1 {
-      @apply text-2xl;
-    }
-  }
+      @apply font-mxThin text-4xl font-thin tracking-widest;
 
-  .carousel-content {
-    @apply flex flex-col items-start justify-center font-mxLight;
-
-    .postscript {
-      @apply w-full font-mxLight font-light;
-    }
-  }
-
-  .video {
-    background-position: center;
-    background-size: cover;
-  }
-
-  .v0 {
-    background-image: url('./img/v0.jpg');
-  }
-
-  .v1 {
-    background-image: url('./img/v1.jpg');
-  }
-
-  .v2 {
-    background-image: url('./img/v2.jpg');
-  }
-
-  .v3 {
-    background-image: url('./img/v3.jpg');
-  }
-}
-
-.flap {
-  transform: scale(-1, 1);
-}
-
-.Arrow {
-  z-index: 1;
-  background-image: url('./img/arrow.svg');
-  background-position: center;
-  background-size: 40%;
-  background-repeat: no-repeat;
-  @apply absolute top-1/2 bg-secondary;
-
-  &:hover {
-    @apply bg-primary;
-  }
-}
-
-.Desktop {
-  .Slide {
-    @apply flex-row;
-
-    .image {
-      width: 600px;
-      height: 337px;
-      @apply p-5;
-    }
-
-    .content {
-      @apply px-20;
-    }
-
-    .carousel-headline {
-      @apply flex-col items-start text-base;
-
-      h1 {
-        @apply text-4xl;
-      }
-
-      h2 {
-        @apply text-lg;
-      }
-    }
-
-    .carousel-content {
-      @apply text-sm;
-
-      .postscript {
-        @apply pt-5 text-xs;
-      }
-    }
-  }
-
-  .Arrow {
-    @apply h-10 w-10;
-  }
-}
-
-.Mobile {
-  .Slide {
-    @apply flex-col;
-
-    .image {
-      width: 100%;
-      height: 236px;
-
-      @apply p-5;
-    }
-
-    .content {
-      @apply px-7;
-    }
-
-    .carousel-headline {
-      @apply flex-row items-baseline space-x-1 text-sm;
-
-      h1 {
-        @apply text-2xl;
-        @media only screen and (max-width: 430px) {
-          & {
-            font-size: 5.6vw;
-          }
-        }
-      }
-
-      h2 {
-        @apply text-base;
-        @media only screen and (max-width: 430px) {
-          & {
-            font-size: 3.7vw;
-          }
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-2xl text-center;
         }
       }
     }
 
-    .carousel-content {
-      @apply text-xs;
+    h2 {
+      @apply font-mxBook text-lg;
 
-      .postscript {
-        font-size: 0.6rem;
-        @apply pt-4;
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-base text-center;
+        }
       }
     }
   }
-  .Arrow {
-    @apply h-6 w-6;
+
+  .content {
+    height: 337px;
+    @apply flex flex-1 flex-col items-start justify-center space-y-10 px-10;
+
+    @media only screen and (max-width: @Mobile) {
+      @apply justify-start px-8;
+    }
+
+    .carousel-content {
+      @apply flex flex-col items-start justify-center font-mxLight text-sm;
+
+      p {
+        @apply flex w-full flex-col pt-5 font-mxLight text-sm font-light;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply t-xs pt-4;
+          }
+        }
+      }
+
+      .postscript {
+        @apply w-full pt-5 font-mxLight text-xs font-light;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply t-xxs;
+          }
+        }
+      }
+    }
   }
 }

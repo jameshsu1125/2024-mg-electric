@@ -22,7 +22,6 @@ const Arrow = memo(({ direct, onClick }: TArrowProps) => {
 
 const Life = memo(() => {
   const ref = useRef<SwiperRef>(null);
-
   return (
     <div className='Life'>
       <Swiper ref={ref} spaceBetween={0} speed={800} loop={true}>
