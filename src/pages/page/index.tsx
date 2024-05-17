@@ -1,10 +1,11 @@
 import { memo, useEffect } from 'react';
+import Battery from './battery';
 import './index.less';
 import Landing from './landing';
-import Year from './year';
 import Life from './life';
 import Movement from './movement';
 import Safety from './safety';
+import Year from './year';
 
 const Page = memo(() => {
   useEffect(() => {}, []);
@@ -15,6 +16,7 @@ const Page = memo(() => {
       <Life />
       <Movement />
       <Safety />
+      <Battery />
     </div>
   );
 });

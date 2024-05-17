@@ -1,6 +1,20 @@
+@import url('../../../settings/config.less');
+
 .Safety {
   height: 1200px;
   @apply relative w-full overflow-hidden;
+
+  @media only screen and (max-width: @MD) {
+    height: 900px;
+  }
+
+  @media only screen and (max-width: @SM) {
+    height: 800px;
+  }
+
+  @media only screen and (max-width: @Mobile) {
+    height: 320px;
+  }
 
   .bg {
     background-image: url('./img/car.jpg');
@@ -8,12 +22,128 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     @apply absolute;
+
+    .content {
+      @apply pointer-events-none absolute left-1/2 top-1/2 h-full w-full;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply -translate-x-12;
+        }
+      }
+    }
   }
 
   .btn {
+    @apply pointer-events-auto relative left-full z-10 -mt-4 flex h-8 w-fit items-center justify-center overflow-hidden rounded-l-full rounded-r-full border border-white px-5;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        margin-top: -1.25rem * 0.5;
+        @apply h-5 px-2;
+      }
+    }
+
+    & > div:nth-child(1) {
+      @apply absolute h-full w-full bg-[#6f7989] opacity-80 bg-blend-multiply;
+    }
+
+    & > div:nth-child(2) {
+      @apply relative w-full whitespace-nowrap text-sm text-white;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-xxs;
+        }
+      }
+    }
+
     &:hover {
-      .bgColor {
+      & > div:nth-child(1) {
         @apply bg-primary;
+      }
+    }
+  }
+
+  .dot {
+    @apply absolute z-10 h-8 w-8 rounded-full border border-white p-1;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        @apply h-5 w-5;
+      }
+    }
+
+    & > div {
+      & > div {
+        @apply w-5;
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply w-3;
+          }
+        }
+      }
+    }
+  }
+
+  .dialogContext {
+    @apply absolute left-full -mt-10 flex w-80 -translate-x-40 flex-col items-start justify-start border p-2 md:-translate-x-20 lg:-translate-x-3;
+
+    @media only screen and (max-width: @Mobile) {
+      @apply w-72;
+    }
+
+    & > div {
+      @apply relative flex h-full w-full flex-col space-y-3 bg-white p-5;
+
+      @media only screen and (max-width: @Mobile) {
+        @apply space-y-1 p-3;
+      }
+
+      h1 {
+        @apply border-l-2 border-primary pl-3 font-mxMedium text-2xl leading-6 text-primary;
+
+        @media only screen and (max-width: @Mobile) {
+          @apply t-base;
+        }
+      }
+
+      h2 {
+        @apply font-mxThin text-base;
+
+        @media only screen and (max-width: @Mobile) {
+          @apply t-xs;
+        }
+      }
+
+      button {
+        @apply pointer-events-auto absolute -top-2 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-white hover:bg-primary;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply top-0;
+          }
+        }
+      }
+    }
+  }
+
+  .headline {
+    @apply absolute left-0 top-0 mt-20 w-full font-mxThin tracking-widest;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        @apply mt-2;
+      }
+    }
+
+    & > div {
+      @apply w-full text-center text-4xl font-thin lg:text-5xl;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-xl;
+        }
       }
     }
   }
