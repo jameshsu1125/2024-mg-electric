@@ -1,4 +1,106 @@
 .Battery {
-  height: 1000px;
-  @apply bg-red-500;
+  .section-1 {
+    @apply relative w-full bg-white py-20;
+
+    &::after {
+      bottom: -26px;
+      height: 26px;
+      background-image: url('img/battery/arrow.svg');
+      background-position: center bottom;
+      content: '';
+      @apply absolute w-full;
+    }
+
+    .headline {
+      @apply flex w-full flex-col pb-8;
+
+      h1 {
+        @apply font-mxThin text-5xl;
+
+        span {
+          @apply font-gillLight;
+        }
+      }
+    }
+
+    .content {
+      @apply flex w-full flex-col;
+
+      .dialog {
+        @apply flex w-full flex-row items-start justify-center space-x-10;
+
+        & > div {
+          @apply flex w-2/6 flex-col space-y-3;
+
+          h2 {
+            line-height: 1;
+            @apply relative border-l-2 border-primary pl-3 font-mxBook text-2xl leading-6 text-primary;
+
+            span {
+              @apply font-gillLight;
+            }
+          }
+
+          p {
+            @apply font-mxThin text-base;
+          }
+        }
+      }
+
+      .product {
+        @apply flex w-full items-center justify-center p-5;
+
+        .img {
+          width: 993 * @scale;
+          height: 876 * @scale;
+          background-image: url(img/battery/battery-open.png);
+          background-size: 100%;
+
+          @scale: 0.8;
+        }
+      }
+    }
+  }
+
+  .section-2 {
+    padding-top: 80px;
+    padding-bottom: 80px + 24px;
+    background-image: url('img/battery/bg.jpg');
+    background-size: 100% 100%;
+
+    @apply w-full bg-white;
+
+    .headline {
+      @apply flex w-full flex-col pb-8 text-center;
+
+      h1 {
+        @apply font-mxThin text-5xl;
+
+        span {
+          @apply font-gillLight text-6xl;
+        }
+      }
+    }
+
+    .content {
+      @apply grid w-full grid-cols-3 px-20;
+
+      .ctx {
+        @apply flex justify-center py-8;
+
+        .item {
+          max-width: 350px;
+          @apply flex w-9/12 flex-col space-y-2;
+
+          h2 {
+            @apply w-full bg-black p-1 text-center font-mxBook text-lg text-white;
+          }
+
+          p {
+            @apply w-full font-mxThin text-base;
+          }
+        }
+      }
+    }
+  }
 }

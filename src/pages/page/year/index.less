@@ -1,24 +1,17 @@
 @import url('../../../settings/config.less');
 
 .Year {
-  height: 750px;
-  @apply relative flex w-full flex-col overflow-hidden pt-5;
-
-  @media only screen and (max-width: @Mobile) {
-    & {
-      height: 390px;
-    }
-  }
+  @apply relative flex w-full flex-col overflow-hidden py-10;
 
   .bg {
-    background-image: url('./img/bg-g.png');
+    background-image: url('img/year/bg-g.png');
     content: '';
 
     @apply absolute bottom-0 h-full w-full bg-cover bg-center bg-no-repeat;
   }
 
   &::before {
-    background-image: url('./img/bg.jpg');
+    background-image: url('img/year/bg.jpg');
     content: '';
     @apply absolute top-0 h-dh w-full bg-cover bg-top bg-no-repeat;
 
@@ -33,15 +26,10 @@
     @apply relative w-full;
 
     .box {
-      height: 560px;
-      background-image: url('./img/image.jpg');
+      padding-bottom: (728 / 1736) * 100%;
+      background-image: url('img/year/image.jpg');
 
       @apply w-full bg-gray-400 bg-cover bg-center;
-      @media only screen and (max-width: @Mobile) {
-        & {
-          height: 180px;
-        }
-      }
     }
   }
 
@@ -77,40 +65,3 @@
     }
   }
 }
-
-// .Mobile {
-//   .Year {
-//     height: 390px;
-
-//     &::before {
-//       @apply h-mh;
-//     }
-
-//     .image {
-//       .box {
-//         height: 180px;
-//       }
-//     }
-
-//     .content {
-//       h1 {
-//         @apply my-3 text-3xl;
-
-//         @media only screen and (max-width: 430px) {
-//           & {
-//             font-size: 7vw;
-//           }
-//         }
-//       }
-//       p {
-//         @apply text-sm;
-
-//         @media only screen and (max-width: 430px) {
-//           & {
-//             font-size: 3.3vw;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

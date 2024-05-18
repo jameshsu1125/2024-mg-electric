@@ -59,24 +59,22 @@
       }
 
       .ico {
-        width: image-width(@img) * @scale;
-        height: image-height(@img) * @scale;
-        background-image: url(@img);
+        width: 63.3 * @scale;
+        height: 46 * @scale;
+        background-image: url('img/movement/ico.svg');
         background-size: 100%;
 
         @scale: 0.8;
-        @img: './img/calc.svg';
 
         @apply bg-contain bg-center bg-no-repeat;
 
         @media only screen and (max-width: @Mobile) {
           & {
-            width: image-width(@img) * @scale;
-            height: image-height(@img) * @scale;
-            background-image: url(@img);
+            width: 63.3 * @scale;
+            height: 46 * @scale;
+            background-image: url('img/movement/ico.svg');
 
             @scale: 0.5;
-            @img: './img/calc.svg';
           }
         }
       }
@@ -129,7 +127,7 @@
         }
 
         .ico-light {
-          background-image: url('./img/ico.svg');
+          background-image: url('img/movement/ico.svg');
 
           @apply h-7 w-7 bg-contain bg-center bg-no-repeat pb-2;
 
@@ -164,10 +162,8 @@
     }
 
     .img {
-      padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-      background-image: url(@img);
-
-      @img: './img/car.png';
+      padding-bottom: (410 / 883) * 100%;
+      background-image: url('img/movement/car.png');
 
       @apply mt-32 w-full bg-cover;
 
