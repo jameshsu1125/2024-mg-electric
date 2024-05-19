@@ -1,10 +1,13 @@
-import { memo } from 'react';
+import { memo, useContext, useRef } from 'react';
 import './cover.less';
 import Article from '@/components/article';
 import useMedia, { MediaType } from '@/hooks/useMedia';
+import { MovementContext } from './config';
 
 const Cover = memo(() => {
+  const ref = useRef<HTMLInputElement>(null);
   const [device] = useMedia();
+  const [, setState] = useContext(MovementContext);
   return (
     <div className='Cover'>
       <Article>
@@ -29,6 +32,7 @@ const Cover = memo(() => {
                 <div className='ico' />
                 <div className='input'>
                   <input
+                    ref={ref}
                     type='number'
                     maxLength={3}
                     max={999}
@@ -38,8 +42,27 @@ const Cover = memo(() => {
                 </div>
               </div>
               <div className='row'>
-                <button className='btn-calc'>馬上試算</button>
-                <button className='btn-reCalc'>重新計算</button>
+                <button
+                  className='btn-calc'
+                  onClick={() => {
+                    if (ref.current) {
+                      setState((S) => ({ ...S, mile: parseInt(ref.current?.value || '0') }));
+                    }
+                  }}
+                >
+                  馬上試算
+                </button>
+                <button
+                  className='btn-reCalc'
+                  onClick={() => {
+                    setState((S) => ({ ...S, mile: 0 }));
+                    if (ref.current) {
+                      ref.current.value = '';
+                    }
+                  }}
+                >
+                  重新計算
+                </button>
               </div>
             </div>
           </div>

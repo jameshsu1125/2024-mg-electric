@@ -1,16 +1,37 @@
 @import url('../../../settings/config.less');
 
 .Form {
-  background-image: url('img/movement/form.svg');
-  background-size: auto 70%;
+  // background-image: url('img/movement/form.svg');
+  // background-size: auto 70%;
 
-  @apply relative h-52 w-full bg-center bg-no-repeat;
+  @apply relative w-full p-10;
 
   @media only screen and (max-width: @Mobile) {
     & {
-      height: 260px;
-      background-image: url('img/movement/form-m.svg');
-      background-size: auto 60%;
+      @apply px-5;
     }
   }
+
+  .image {
+    padding-bottom: 182.8 / 1034.9 * 100%;
+    width: 100%;
+    background-image: url('img/movement/form.svg');
+    background-size: 100%;
+    @apply bg-center bg-no-repeat;
+
+    @media only screen and (max-width: @SM) {
+      & {
+        padding-bottom: 460.5 / 915 * 100%;
+        background-image: url('img/movement/form-m.svg');
+      }
+    }
+  }
+
+  // @media only screen and (max-width: @Mobile) {
+  //   & {
+  //     height: 260px;
+  //     background-image: url('img/movement/form-m.svg');
+  //     background-size: auto 60%;
+  //   }
+  // }
 }
