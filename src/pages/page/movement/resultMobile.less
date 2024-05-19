@@ -1,7 +1,7 @@
 @import url('../../../settings/config.less');
 
 .ResultMobile {
-  @apply flex w-full flex-col bg-red-500 py-5;
+  @apply flex w-full flex-col;
 
   h1 {
     @apply t-xl flex flex-row justify-center text-center font-mxBold tracking-widest;
@@ -21,14 +21,104 @@
   }
 
   .row {
-    @apply flex w-full flex-row items-center justify-center bg-red-500 px-5;
+    @apply flex w-full flex-row items-center justify-center px-5;
+
+    @media only screen and (max-width: @SM) {
+      & {
+        @apply px-0;
+      }
+    }
 
     .col {
-      @apply flex w-full flex-col border-l border-black bg-green-500 px-5 py-1;
+      @apply flex flex-col border-l border-black px-5 py-1;
+
+      @media only screen and (max-width: @SM) {
+        & {
+          @apply px-2;
+        }
+      }
+
+      .table {
+        @apply flex flex-row items-center justify-around;
+
+        h1 {
+          @apply font-mxMedium text-sm;
+
+          @media only screen and (max-width: @Mobile) {
+            @apply text-xs;
+          }
+        }
+
+        span {
+          @apply flex-1 px-2 font-gillSemiBold text-xl text-primary;
+        }
+      }
+
+      &:nth-child(1) {
+        @apply w-5/12;
+
+        .table {
+          span {
+            @apply text-center;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        @apply flex-1;
+        .table {
+          span {
+            @apply text-right;
+          }
+        }
+      }
     }
 
     & > div:last-child {
       @apply border-r;
+    }
+  }
+
+  .total {
+    @apply mt-5 w-full px-20;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        @apply px-0;
+      }
+    }
+
+    .h {
+      @apply flex w-full flex-row items-center justify-between;
+
+      & > h1 {
+        @apply font-mxBold text-3xl;
+      }
+
+      & > span {
+        @apply flex-1 px-2 text-right font-gillBold text-3xl text-primary;
+      }
+    }
+
+    .f {
+      letter-spacing: 0.5rem;
+      @apply w-full bg-black py-1 text-center font-mxRegular text-xl text-white;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-base;
+        }
+      }
+    }
+
+    & > h6 {
+      @apply mt-1 text-left text-xs;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-xs;
+        }
+      }
     }
   }
 }

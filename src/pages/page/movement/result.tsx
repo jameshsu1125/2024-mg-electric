@@ -9,7 +9,7 @@ const Result = memo(() => {
   const [device] = useMedia();
   return (
     <div className='Result'>
-      <Article>{device < MediaType.MD ? <ResultMobile /> : <ResultDesktop />}</Article>
+      <Article expend>{device < MediaType.MD ? <ResultMobile /> : <ResultDesktop />}</Article>
     </div>
   );
 });

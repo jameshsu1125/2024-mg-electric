@@ -1,3 +1,12 @@
+@import url('../../settings/config.less');
 .Article {
   @apply w-full px-5 md:px-10 xl:px-20;
+}
+
+.expend {
+  @media only screen and (max-width: @Mobile) {
+    & {
+      @apply px-0;
+    }
+  }
 }
