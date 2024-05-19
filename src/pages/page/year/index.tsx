@@ -1,12 +1,18 @@
-import { memo, useContext } from 'react';
-import './index.less';
-import { Context } from '@/settings/constant';
-import { ActionType } from '@/settings/type';
 import Article from '@/components/article';
+import { memo, useEffect, useState } from 'react';
+import './index.less';
 
 const Year = memo(() => {
-  const [context] = useContext(Context);
-  const device = context[ActionType.Device];
+  const [device, setDevice] = useState<'d' | 'm' | 'unset'>('unset');
+
+  useEffect(() => {
+    const resize = () => {
+      setDevice(window.innerWidth > 768 ? 'd' : 'm');
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, []);
 
   return (
     <div className='Year'>
@@ -21,12 +27,12 @@ const Year = memo(() => {
           </h1>
           <p>
             百年來 MG 以不斷突破框架的先鋒者精神
-            {device && device === 'desktop' ? '，' : <br />}
+            {device && device === 'd' ? '，' : <br />}
             致力於移動未來的創新，在車壇締造無數佳績
           </p>
           <p>
             隨時代推進，MG 在前瞻科技及綠能永續仍不遺餘力
-            {device && device === 'desktop' ? '，' : <br />}
+            {device && device === 'd' ? '，' : <br />}
             以完善技術、普及化理念，推出世人期待的電動車款
           </p>
           <p>在全新時代，實現世界對純電生活的嚮往</p>

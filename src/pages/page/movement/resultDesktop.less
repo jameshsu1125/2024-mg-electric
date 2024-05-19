@@ -1,0 +1,69 @@
+.ResultDesktop {
+  @apply flex w-full items-center justify-center md:flex-row;
+
+  .row {
+    @apply flex flex-col items-center justify-center px-3;
+
+    .col {
+      @apply flex w-full flex-row items-baseline justify-around whitespace-nowrap px-0 lg:px-5;
+
+      .ico {
+        background-image: url('img/movement/glass.svg');
+        @apply -my-2 ml-2 h-9 w-9 bg-contain bg-center bg-no-repeat;
+      }
+
+      .h,
+      .f {
+        @apply font-mxMedium text-base;
+      }
+
+      span {
+        @apply flex-1 px-2 font-gillSemiBold text-3xl text-primary;
+      }
+
+      h1 {
+        @apply font-gillSemiBold text-4xl;
+      }
+
+      .btn-reCalc {
+        @apply border border-black px-5 py-2 font-mxBold text-base;
+
+        &:hover {
+          @apply bg-primary;
+        }
+      }
+    }
+  }
+
+  & > div:not(:last-child) {
+    @apply border-r border-black;
+  }
+
+  & > div:nth-child(1) {
+    @apply font-mxBold text-lg;
+    .col {
+      @apply items-center justify-center;
+    }
+  }
+
+  & > div:nth-child(2) {
+    .col {
+      span {
+        @apply text-center;
+      }
+    }
+  }
+
+  & > div:nth-child(3) {
+    @apply justify-between;
+    .col {
+      span {
+        @apply text-right;
+      }
+    }
+  }
+
+  & > div:nth-child(4) {
+    @apply px-0;
+  }
+}

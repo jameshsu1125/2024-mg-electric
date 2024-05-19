@@ -15,8 +15,8 @@ const Page = memo(() => {
       <Year />
       <Life />
       <Movement />
-      <Safety />
-      <Battery />
+      {/* <Safety />
+      <Battery /> */}
     </div>
   );
 });

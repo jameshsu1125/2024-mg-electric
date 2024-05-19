@@ -1,122 +1,119 @@
 @import url('../../../settings/config.less');
 
 .Slide {
-  height: 430px;
-  @apply flex w-full flex-row items-center justify-center space-x-5;
+  @apply w-full lg:px-5;
 
-  @media only screen and (max-width: @Mobile) {
-    & {
-      @apply flex-col space-x-0 py-5;
-    }
-  }
+  .slick {
+    @apply flex w-full flex-col items-center justify-items-center p-5 md:flex-row;
 
-  .image {
-    width: 600px;
-    height: 337px;
+    .m-headline {
+      @apply my-3 flex w-full flex-row items-baseline justify-center space-x-2 md:hidden;
 
-    @media only screen and (max-width: @LG) {
-      & {
-        width: 500px;
+      h1 {
+        font-size: 1.5 * @Ratio;
+        @apply font-mxThin font-thin tracking-widest;
+      }
+
+      h2 {
+        font-size: 0.85 * @Ratio;
+        @apply font-mxBook;
       }
     }
 
-    @media only screen and (max-width: @MD) {
-      & {
-        width: 400px;
-      }
-    }
+    .image {
+      width: min(600px, 50vw);
 
-    @media only screen and (max-width: @SM) {
-      & {
-        width: 200px;
-      }
-    }
-
-    @media only screen and (max-width: @Mobile) {
-      & {
-        height: 236px;
-        @apply w-full p-5;
-      }
-    }
-
-    .video {
-      @apply h-full w-full bg-cover bg-center;
-    }
-
-    .v0 {
-      background-image: url('img/life/v0.jpg');
-    }
-
-    .v1 {
-      background-image: url('img/life/v1.jpg');
-    }
-
-    .v2 {
-      background-image: url('img/life/v2.jpg');
-    }
-
-    .v3 {
-      background-image: url('img/life/v3.jpg');
-    }
-  }
-
-  .carousel-headline {
-    @apply flex flex-col items-start justify-center space-y-2;
-
-    @media only screen and (max-width: @Mobile) {
-      & {
-        @apply flex-row;
-      }
-    }
-
-    h1 {
-      @apply font-mxThin text-4xl font-thin tracking-widest;
-
-      @media only screen and (max-width: @Mobile) {
+      @media only screen and (max-width: @SM) {
         & {
-          @apply t-2xl text-center;
+          width: 100%;
+        }
+      }
+
+      .ctx {
+        @apply w-full;
+
+        .video {
+          padding-bottom: 9/16 * 100%;
+          @apply w-full bg-gray-500 bg-cover;
+        }
+
+        .v0 {
+          background-image: url('img/life/v0.jpg');
+        }
+
+        .v1 {
+          background-image: url('img/life/v1.jpg');
+        }
+
+        .v2 {
+          background-image: url('img/life/v2.jpg');
+        }
+
+        .v3 {
+          background-image: url('img/life/v3.jpg');
         }
       }
     }
 
-    h2 {
-      @apply font-mxBook text-lg;
+    .content {
+      @apply flex flex-1 flex-col space-y-5 px-5;
 
-      @media only screen and (max-width: @Mobile) {
+      @media only screen and (max-width: @SM) {
         & {
-          @apply t-base text-center;
+          @apply px-2;
         }
       }
-    }
-  }
 
-  .content {
-    height: 337px;
-    @apply flex flex-1 flex-col items-start justify-center space-y-10 px-10;
+      .headline {
+        @apply hidden w-full flex-col md:flex;
 
-    @media only screen and (max-width: @Mobile) {
-      @apply justify-start px-8;
-    }
+        h1 {
+          @apply font-mxThin text-4xl font-thin tracking-widest;
 
-    .carousel-content {
-      @apply flex flex-col items-start justify-center font-mxLight text-sm;
+          @media only screen and (max-width: @MD) {
+            & {
+              @apply text-3xl;
+            }
+          }
+        }
 
-      p {
-        @apply flex w-full flex-col pt-5 font-mxLight text-sm font-light;
+        h2 {
+          @apply font-mxBook text-lg;
 
-        @media only screen and (max-width: @Mobile) {
-          & {
-            @apply t-xs pt-4;
+          @media only screen and (max-width: @MD) {
+            & {
+              @apply text-base;
+            }
           }
         }
       }
 
-      .postscript {
-        @apply w-full pt-5 font-mxLight text-xs font-light;
+      .body {
+        @apply flex w-full flex-col;
 
-        @media only screen and (max-width: @Mobile) {
-          & {
-            @apply t-xxs;
+        p {
+          @apply flex w-full flex-col font-mxLight text-sm font-light;
+
+          @media only screen and (max-width: @MD) {
+            & {
+              @apply text-base;
+            }
+          }
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply t-base;
+            }
+          }
+        }
+
+        .ps {
+          @apply w-full pt-5 font-mxLight text-xs font-light;
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply t-xxs;
+            }
           }
         }
       }

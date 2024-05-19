@@ -1,0 +1,34 @@
+@import url('../../../settings/config.less');
+
+.ResultMobile {
+  @apply flex w-full flex-col bg-red-500 py-5;
+
+  h1 {
+    @apply t-xl flex flex-row justify-center text-center font-mxBold tracking-widest;
+
+    .ico {
+      background-image: url('img/movement/glass.svg');
+      @apply ml-1 inline-block h-8 w-8 bg-contain bg-center bg-no-repeat;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          margin-top: 0.4vw;
+          width: 7vw;
+          height: 7vw;
+        }
+      }
+    }
+  }
+
+  .row {
+    @apply flex w-full flex-row items-center justify-center bg-red-500 px-5;
+
+    .col {
+      @apply flex w-full flex-col border-l border-black bg-green-500 px-5 py-1;
+    }
+
+    & > div:last-child {
+      @apply border-r;
+    }
+  }
+}

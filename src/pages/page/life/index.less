@@ -1,17 +1,10 @@
 @import url('../../../settings/config.less');
 
 .Life {
-  height: 430px;
-  @apply relative flex items-center py-10;
+  @apply relative flex items-center sm:py-5;
 
   .headline {
     @apply flex w-full justify-center;
-  }
-
-  @media only screen and (max-width: @Mobile) {
-    & {
-      height: 430px;
-    }
   }
 
   .flap {
@@ -27,7 +20,7 @@
       @apply bg-primary;
     }
 
-    @media only screen and (max-width: @Mobile) {
+    @media only screen and (max-width: @SM) {
       & {
         @apply h-6 w-6;
 

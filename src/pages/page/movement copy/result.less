@@ -1,0 +1,38 @@
+@import url('../../../settings/config.less');
+
+.Result {
+  @apply relative h-44 w-full bg-white;
+
+  @media only screen and (max-width: @Mobile) {
+    & {
+      height: 300px;
+    }
+  }
+
+  .glass {
+    width: 51.6 * @scale;
+    height: 29.4 * @scale;
+    background-image: url('img/movement/glass.svg');
+    background-size: 100%;
+
+    @scale: 0.7;
+  }
+
+  .box {
+    &::after {
+      width: 1px;
+      content: '';
+      @apply absolute right-0 h-16 bg-black;
+    }
+  }
+
+  .mPostscript {
+    font-size: 0.48rem;
+    line-height: 1.5;
+    @media only screen and (max-width: @Mobile) {
+      & {
+        font-size: 0.48 * @Ratio;
+      }
+    }
+  }
+}

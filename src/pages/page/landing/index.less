@@ -8,6 +8,24 @@
   background-repeat: no-repeat;
   @apply relative w-full;
 
+  @media only screen and (max-width: @MD) {
+    & {
+      height: 500px;
+    }
+  }
+
+  @media only screen and (max-width: @SM) {
+    & {
+      height: 350px;
+    }
+  }
+
+  @media only screen and (max-width: @Mobile) {
+    & {
+      height: 280px;
+    }
+  }
+
   .headline {
     bottom: 78%;
     @apply absolute w-full text-center text-4xl;
@@ -25,12 +43,6 @@
       span {
         @apply font-gillSemiBold;
       }
-    }
-  }
-
-  @media only screen and (max-width: @Mobile) {
-    & {
-      height: 280px;
     }
   }
 }
