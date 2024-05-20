@@ -1,0 +1,54 @@
+@import url('../../../settings/config.less');
+
+.Flow {
+  @apply w-full py-10;
+
+  h1 {
+    @apply text-center font-mxThin text-4xl lg:text-left;
+
+    @media only screen and (max-width: @Mobile) {
+      @apply t-4xl;
+    }
+  }
+
+  .content {
+    @apply flex w-full flex-row;
+
+    .image {
+      @apply w-5/12;
+
+      .img {
+        padding-bottom: 216/387 * 100%;
+        background-image: url('img/flow/img.jpg');
+        @apply w-full bg-cover bg-center bg-no-repeat;
+      }
+    }
+
+    .ctx {
+      @apply flex flex-1 flex-col items-start justify-between space-y-1 pl-5 lg:space-y-3;
+
+      & > p {
+        @apply text-base leading-relaxed;
+
+        @media only screen and (max-width: @SM) {
+          @apply text-xs leading-normal;
+        }
+
+        @media only screen and (max-width: @Mobile) {
+          @apply t-sm;
+        }
+      }
+    }
+  }
+
+  .flow {
+    max-width: 800px;
+    @apply w-full font-mxLight;
+
+    .img {
+      padding-bottom: 88.4/989 * 100%;
+      background-image: url('img/flow/flow.svg');
+      @apply w-full bg-cover bg-center bg-no-repeat;
+    }
+  }
+}

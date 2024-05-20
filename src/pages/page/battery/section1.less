@@ -1,0 +1,85 @@
+@import url('../../../settings/config.less');
+
+.Section-1 {
+  @apply relative w-full bg-white py-20;
+
+  &::after {
+    bottom: -26px;
+    height: 26px;
+    background-image: url('img/battery/arrow.svg');
+    background-position: center bottom;
+    content: '';
+    @apply absolute w-full;
+  }
+
+  .headline {
+    @apply flex w-full flex-col pb-8;
+
+    h1 {
+      @apply text-center font-mxThin text-5xl md:text-left;
+
+      span {
+        @apply font-gillLight;
+      }
+
+      @media only screen and (max-width: @Mobile) {
+        @apply t-5xl;
+      }
+    }
+  }
+
+  .content {
+    @apply flex w-full flex-col-reverse md:flex-col;
+
+    .dialog {
+      @apply mt-5 flex w-full flex-col items-start justify-center space-y-5 px-5 sm:px-20 md:mt-0 md:flex-row md:space-x-10 md:space-y-0 md:px-0;
+
+      & > div {
+        @apply flex w-full flex-col space-y-3 md:w-2/6;
+
+        h2 {
+          line-height: 1;
+          @apply relative border-l-2 border-primary pl-3 font-mxBook text-2xl leading-6 text-primary;
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply t-2xl;
+            }
+          }
+
+          span {
+            @apply font-gillLight;
+          }
+        }
+
+        p {
+          @apply font-mxThin text-base;
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply t-base;
+            }
+          }
+        }
+      }
+    }
+
+    .product {
+      @apply flex w-full items-center justify-center;
+
+      & > div {
+        max-width: 993px;
+        width: 100%;
+
+        .img {
+          padding-bottom: 876 / 993 * 100%;
+          background-image: url(img/battery/battery-open.png);
+
+          @apply w-full bg-contain bg-center bg-no-repeat;
+
+          // @scale: 0.8;
+        }
+      }
+    }
+  }
+}

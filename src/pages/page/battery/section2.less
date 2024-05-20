@@ -1,0 +1,74 @@
+@import url('../../../settings/config.less');
+
+.Section-2 {
+  padding-top: 40px+ 24px;
+  padding-bottom: 40px;
+  background-image: url('img/battery/bg.jpg');
+  background-size: 100% 100%;
+
+  @apply w-full bg-white;
+
+  .headline {
+    @apply flex w-full flex-col pb-8 text-center;
+
+    h1 {
+      @apply font-mxThin text-4xl sm:text-5xl;
+
+      @media only screen and (max-width: @Mobile) {
+        @apply t-4xl;
+      }
+
+      span {
+        @apply font-gillLight text-5xl sm:text-6xl;
+
+        @media only screen and (max-width: @Mobile) {
+          @apply t-5xl;
+        }
+      }
+    }
+  }
+
+  .content {
+    @apply grid w-full grid-cols-2 px-10 lg:grid-cols-3;
+
+    @media only screen and (max-width: @SM) {
+      & {
+        @apply px-0;
+      }
+    }
+
+    .ctx {
+      @apply flex justify-center py-8;
+
+      .item {
+        max-width: 350px;
+        @apply flex w-10/12 flex-col space-y-2;
+
+        h2 {
+          @apply w-full bg-black p-1 text-center font-mxBook text-lg text-white;
+
+          @media only screen and (max-width: @SM) {
+            font-size: 0.8 * @Ratio;
+          }
+        }
+
+        p {
+          @apply w-full font-mxThin text-base;
+
+          @media only screen and (max-width: @SM) {
+            font-size: 0.75 * @Ratio;
+            line-height: 1 * @Ratio;
+          }
+        }
+      }
+    }
+
+    & > div:last-child {
+      .item {
+        h2 {
+          @apply bg-tertiary text-black;
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,9 @@ import Life from './life';
 import Movement from './movement';
 import Safety from './safety';
 import Year from './year';
+import Charge from './charge';
+import Flow from './flow';
+import Modus from './modus';
 
 const Page = memo(() => {
   useEffect(() => {}, []);
@@ -16,7 +19,12 @@ const Page = memo(() => {
       <Life />
       <Movement />
       <Safety />
-      {/* <Battery /> */}
+      <Battery />
+      <Charge />
+      <div className='common-bg'>
+        <Flow />
+        <Modus />
+      </div>
     </div>
   );
 });

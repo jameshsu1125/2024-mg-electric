@@ -140,6 +140,12 @@
     & > div {
       @apply w-full text-center text-4xl font-thin lg:text-5xl;
 
+      @media only screen and (max-width: @SM) {
+        & {
+          font-size: 1.3 * @Ratio;
+        }
+      }
+
       @media only screen and (max-width: @Mobile) {
         & {
           @apply t-xl;

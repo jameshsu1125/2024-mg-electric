@@ -1,0 +1,121 @@
+@import url('../../../settings/config.less');
+
+.Charge {
+  @apply w-full border-b border-t py-5;
+
+  .image {
+    padding-bottom: 767 / 1735 * 100%;
+    background-image: url('img/charge/image.jpg');
+    @apply w-full bg-cover bg-center bg-no-repeat;
+  }
+
+  .content {
+    @apply flex w-full flex-col items-center justify-center py-5;
+
+    h1 {
+      @apply text-center font-mxThin text-4xl tracking-widest;
+
+      @media only screen and (max-width: @Mobile) {
+        @apply t-4xl;
+      }
+    }
+
+    .ctx {
+      max-width: 1050px;
+
+      @apply flex w-full flex-row items-start justify-center space-x-5 px-5 pt-10 md:space-x-10 md:px-10 lg:space-x-20 lg:px-20;
+
+      .item {
+        @apply w-1/3;
+
+        .ico {
+          padding-bottom: 299.2 / 333.3 * 100%;
+          @apply relative w-full bg-cover bg-center bg-no-repeat;
+
+          & > div {
+            @apply absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-start;
+
+            h2 {
+              margin-top: 60%;
+              font-size: 0.35 * @Ratio;
+              @apply w-full text-center font-mxBook text-primary;
+            }
+
+            p {
+              margin-top: 5%;
+              font-size: 0.25 * @Ratio;
+              @apply flex w-full flex-col items-center justify-start text-justify;
+            }
+          }
+        }
+
+        & > div > button {
+          @apply mt-3 flex w-full flex-row items-center justify-center bg-black py-1 font-gillRegular text-xs text-white hover:bg-primary md:py-2 md:text-sm;
+
+          @media only screen and (max-width: @SM) {
+            & {
+              font-size: 0.4 * @Ratio;
+            }
+          }
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              padding: 0 1vw;
+            }
+          }
+        }
+
+        .i0 {
+          background-image: url('img/charge/ico-0.svg');
+        }
+
+        .i1 {
+          background-image: url('img/charge/ico-1.svg');
+        }
+
+        .i2 {
+          background-image: url('img/charge/ico-2.svg');
+        }
+      }
+
+      .dialog {
+        @apply absolute bottom-full left-0 h-fit bg-quaternary md:top-full;
+
+        & > h3 {
+          @apply w-full whitespace-nowrap border-b border-white py-2 text-center font-mxBook text-xs lg:text-sm;
+
+          @media only screen and (max-width: @SM) {
+            & {
+              font-size: 0.45 * @Ratio;
+            }
+          }
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              font-size: 0.4 * @Ratio;
+              line-height: 0.1 * @Ratio;
+            }
+          }
+        }
+
+        & > p {
+          @apply w-full p-3 font-mxThin text-xs lg:text-sm;
+
+          @media only screen and (max-width: @SM) {
+            & {
+              font-size: 0.45 * @Ratio;
+              line-height: 0.6 * @Ratio;
+            }
+          }
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              font-size: 0.4 * @Ratio;
+              line-height: 0.6 * @Ratio;
+            }
+          }
+        }
+      }
+    }
+  }
+}
