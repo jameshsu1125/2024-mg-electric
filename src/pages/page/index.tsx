@@ -11,6 +11,7 @@ import Flow from './flow';
 import Modus from './modus';
 import Application from './application';
 import Service from './service';
+import QA from './qa';
 
 const Page = memo(() => {
   useEffect(() => {}, []);
@@ -28,6 +29,7 @@ const Page = memo(() => {
         <Modus />
         <Application />
         <Service />
+        <QA />
       </div>
     </div>
   );

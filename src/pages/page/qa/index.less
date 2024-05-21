@@ -1,0 +1,73 @@
+@import url('../../../settings/config.less');
+
+.QA {
+  @apply w-full py-5;
+
+  .table {
+    max-width: 900px;
+
+    @apply w-full;
+
+    .row {
+      @apply w-full;
+      .tag {
+        @apply ml-5 w-fit rounded-t-xl bg-black px-5 py-2 font-mxBook text-base text-white;
+      }
+    }
+
+    .table-body {
+      @apply w-full overflow-hidden rounded-t-xl border border-secondary;
+
+      & > div {
+        @apply relative select-none px-16 py-5 text-justify text-sm tracking-wider;
+
+        & > div {
+          @apply pl-9;
+
+          & > div:not(:last-child) {
+            @apply w-full pb-2;
+          }
+        }
+
+        &::before {
+          content: '';
+          vertical-align: text-bottom;
+          @apply absolute -mt-1 h-7 w-7 bg-contain bg-center bg-no-repeat;
+        }
+      }
+
+      .q {
+        @apply z-10 cursor-pointer bg-white font-mxBook text-primary duration-150 hover:bg-primary hover:text-white;
+
+        &::before {
+          background-image: url('img/qa/q.svg');
+          @apply pointer-events-none;
+        }
+      }
+
+      .a {
+        background-color: #f0f0f0;
+
+        @apply font-mxLight;
+
+        &::before {
+          background-image: url('img/qa/a.svg');
+        }
+      }
+    }
+  }
+
+  .headline {
+    @apply w-full text-center;
+
+    & > h1 {
+      @apply whitespace-nowrap font-mxThin text-2xl tracking-widest sm:text-3xl md:text-4xl;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply t-2xl;
+        }
+      }
+    }
+  }
+}
