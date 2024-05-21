@@ -2,6 +2,9 @@ import { createContext, Dispatch, SetStateAction } from 'react';
 
 export enum PageStepType {
   unset,
+  loaded,
+  fontLoaded,
+  allLoaded,
 }
 
 export type TPageState = { step: PageStepType };

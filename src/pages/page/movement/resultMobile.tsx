@@ -19,7 +19,7 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
           <h1>次</h1>
         </div>
         <div className='table'>
-          <h1>當日充電</h1>
+          <h1>當週充電</h1>
           <span>
             <Counter init={0} to={data.chargeMeekly} max={999} />
           </span>

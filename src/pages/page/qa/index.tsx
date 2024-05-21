@@ -38,7 +38,7 @@ const QA = memo(() => {
     <div className='QA'>
       <Article>
         <QAContext.Provider value={value}>
-          <div className='flex w-full flex-col items-center justify-center space-y-10'>
+          <div className='flex w-full flex-col items-center justify-center space-y-3 sm:space-y-10'>
             <div className='headline'>
               <h1>常見問題</h1>
             </div>

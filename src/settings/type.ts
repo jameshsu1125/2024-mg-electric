@@ -30,7 +30,7 @@ export enum TransitionType {
 export type TLoadingProcessState = {
   enabled?: boolean;
   type?: LoadingProcessType;
-  body?: '';
+  body?: string;
 };
 
 export type DeviceType = 'desktop' | 'mobile';
