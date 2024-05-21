@@ -13,6 +13,7 @@ export default {
   theme: {
     fontSize: {
       ...fontSize,
+      xxs: '0.625rem',
     },
     fontFamily: {
       mxBlack: ['MX Black', 'sans-serif'],

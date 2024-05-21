@@ -9,6 +9,8 @@ import Year from './year';
 import Charge from './charge';
 import Flow from './flow';
 import Modus from './modus';
+import Application from './application';
+import Service from './service';
 
 const Page = memo(() => {
   useEffect(() => {}, []);
@@ -24,6 +26,8 @@ const Page = memo(() => {
       <div className='common-bg'>
         <Flow />
         <Modus />
+        <Application />
+        <Service />
       </div>
     </div>
   );

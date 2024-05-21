@@ -1,0 +1,76 @@
+@import url('../../../settings/config.less');
+
+.Application {
+  @apply w-full py-5;
+
+  .content {
+    @apply flex w-full flex-row items-center justify-center space-x-5 sm:space-x-10;
+
+    .image {
+      background-image: url('img/application/image.jpg');
+      @apply h-52 w-52 bg-cover bg-center bg-no-repeat sm:h-64 sm:w-64 lg:w-96;
+
+      @media only screen and (max-width: @Mobile) {
+        & {
+          @apply h-36 w-24;
+        }
+      }
+    }
+
+    .text {
+      @apply flex flex-1 flex-col items-start justify-center space-y-2 sm:space-y-4;
+
+      h1 {
+        @apply font-gillLight text-3xl sm:text-4xl;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply t-3xl;
+          }
+        }
+      }
+
+      p {
+        max-width: 550px;
+        @apply font-mxLight text-xs sm:text-sm;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply t-xs;
+          }
+        }
+      }
+
+      span {
+        @apply text-xxs font-mxLight sm:text-xs;
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply t-xxs;
+          }
+        }
+      }
+
+      .steps {
+        max-width: 600px;
+        @apply hidden w-full lg:block;
+
+        .img {
+          padding-bottom: 45.9 / 1000.3 * 100%;
+          background-image: url('img/application/steps.svg');
+          @apply w-full bg-cover bg-center bg-no-repeat;
+        }
+      }
+    }
+  }
+
+  .steps-sm {
+    @apply mt-5 block w-full lg:hidden;
+
+    .img {
+      padding-bottom: 45.9 / 1000.3 * 100%;
+      background-image: url('img/application/steps.svg');
+      @apply w-full bg-cover bg-center bg-no-repeat;
+    }
+  }
+}

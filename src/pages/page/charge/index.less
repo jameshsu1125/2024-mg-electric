@@ -23,14 +23,21 @@
     .ctx {
       max-width: 1050px;
 
-      @apply flex w-full flex-row items-start justify-center space-x-5 px-5 pt-10 md:space-x-10 md:px-10 lg:space-x-20 lg:px-20;
+      @apply flex w-full flex-row items-start justify-center space-x-2 px-1 pt-10 md:space-x-10 md:px-10 lg:space-x-20 lg:px-20;
 
       .item {
         @apply w-1/3;
 
         .ico {
           padding-bottom: 299.2 / 333.3 * 100%;
-          @apply relative w-full bg-cover bg-center bg-no-repeat;
+          background-size: 100% 100%;
+          @apply relative w-full bg-center bg-no-repeat;
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              padding-bottom: 316 / 321.4 * 100%;
+            }
+          }
 
           & > div {
             @apply absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-start;
@@ -67,14 +74,26 @@
 
         .i0 {
           background-image: url('img/charge/ico-0.svg');
+
+          @media only screen and (max-width: @Mobile) {
+            background-image: url('img/charge/ico-0-m.svg');
+          }
         }
 
         .i1 {
           background-image: url('img/charge/ico-1.svg');
+
+          @media only screen and (max-width: @Mobile) {
+            background-image: url('img/charge/ico-1-m.svg');
+          }
         }
 
         .i2 {
           background-image: url('img/charge/ico-2.svg');
+
+          @media only screen and (max-width: @Mobile) {
+            background-image: url('img/charge/ico-2-m.svg');
+          }
         }
       }
 
@@ -92,7 +111,7 @@
 
           @media only screen and (max-width: @Mobile) {
             & {
-              font-size: 0.4 * @Ratio;
+              font-size: 0.5 * @Ratio;
               line-height: 0.1 * @Ratio;
             }
           }
@@ -110,8 +129,8 @@
 
           @media only screen and (max-width: @Mobile) {
             & {
-              font-size: 0.4 * @Ratio;
-              line-height: 0.6 * @Ratio;
+              font-size: 0.5 * @Ratio;
+              line-height: 0.7 * @Ratio;
             }
           }
         }

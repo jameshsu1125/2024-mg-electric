@@ -1,4 +1,4 @@
-import { memo, useContext, useRef } from 'react';
+import { memo, useContext, useEffect, useRef, useState } from 'react';
 import './cover.less';
 import Article from '@/components/article';
 import useMedia, { MediaType } from '@/hooks/useMedia';
@@ -7,7 +7,19 @@ import { MovementContext } from './config';
 const Cover = memo(() => {
   const ref = useRef<HTMLInputElement>(null);
   const [device] = useMedia();
-  const [, setState] = useContext(MovementContext);
+  const [state, setState] = useContext(MovementContext);
+  const [once, setOnce] = useState(false);
+
+  useEffect(() => {
+    if (ref.current && state.mile === 0) {
+      if (!once) {
+        setOnce(true);
+        return;
+      }
+      ref.current.value = '';
+    }
+  }, [state.mile, once]);
+
   return (
     <div className='Cover'>
       <Article>
@@ -38,6 +50,12 @@ const Cover = memo(() => {
                     max={999}
                     min={1}
                     placeholder='輸入每日行駛里程(km)'
+                    onChange={(e) => {
+                      e.target.value = Math.min(
+                        Number(e.target.value.replace(/\D/g, '')),
+                        999,
+                      ).toString();
+                    }}
                   />
                 </div>
               </div>
