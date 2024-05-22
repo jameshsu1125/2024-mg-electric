@@ -3,17 +3,20 @@ import useTween from 'lesca-use-tween';
 import { memo, useEffect, useState } from 'react';
 import { QAContext, QAData, QAState } from './config';
 import './index.less';
+import { twMerge } from 'tailwind-merge';
 
 const Answer = memo(({ a }: { a: string[] }) => {
   const [style, setStyle] = useTween({ opacity: 0, y: -100 });
+
   useEffect(() => {
     setStyle({ opacity: 1, y: 0 }, 400);
   }, []);
+
   return (
     <div className='a' style={style}>
       <div>
         {a.map((txt) => (
-          <div>{txt}</div>
+          <div key={txt}>{txt}</div>
         ))}
       </div>
     </div>
@@ -34,6 +37,7 @@ const Item = memo(({ q, a }: { q: string; a: string[] }) => {
 
 const QA = memo(() => {
   const value = useState(QAState);
+  const [state, setState] = value;
   return (
     <div className='QA'>
       <Article>
@@ -44,11 +48,21 @@ const QA = memo(() => {
             </div>
             <div className='table'>
               <div className='row'>
-                <div className='tag'>電車維修</div>
+                {QAData.map((item, index) => {
+                  return (
+                    <button
+                      key={`${item.tab}-${index}`}
+                      className={twMerge('tag', state.index === index ? 'on' : '')}
+                      onClick={() => setState((S) => ({ ...S, index }))}
+                    >
+                      {item.tab}
+                    </button>
+                  );
+                })}
               </div>
               <div className='table-body'>
-                {QAData.map((item) => (
-                  <Item key={`${item.q}${item.a}`} q={item.q} a={item.a} />
+                {QAData[state.index].data.map((item, index) => (
+                  <Item key={`${item.q}${item.a}${index}`} q={item.q} a={item.a} />
                 ))}
               </div>
             </div>

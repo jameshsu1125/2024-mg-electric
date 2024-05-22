@@ -59,3 +59,9 @@ export const Reducer = (state: IState, action: IAction): IState => {
   if (action.type) return { ...state, [action.type]: action.state };
   return state;
 };
+
+const error = console.error;
+console.error = (...args: any) => {
+  if (/defaultProps/.test(args[0])) return;
+  error(...args);
+};

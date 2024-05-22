@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.42",
+    "bezier-easing": "^2.1.0",
     "lesca-click": "^4.3.5",
     "lesca-fetcher": "^1.1.7",
     "lesca-number": "^1.5.9",
+    "lesca-react-char-transition": "^1.0.7",
     "lesca-react-onload": "^1.0.17",
     "lesca-use-tween": "^3.0.8",
     "react": "^18.3.1",
@@ -31,8 +33,8 @@
   "devDependencies": {
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.9.0",
-    "@typescript-eslint/parser": "^7.9.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
     "devcert": "^1.2.2",

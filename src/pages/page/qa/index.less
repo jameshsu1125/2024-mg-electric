@@ -9,9 +9,26 @@
     @apply w-full;
 
     .row {
-      @apply w-full;
+      @apply flex w-full flex-row pl-5;
+
       .tag {
-        @apply ml-5 w-fit rounded-t-xl bg-black px-5 py-2 font-mxBook text-base text-white;
+        @apply w-fit whitespace-nowrap rounded-t-xl bg-black px-5 py-2 font-mxBook text-base text-tertiary hover:bg-primary;
+
+        @media only screen and (max-width: @SM) {
+          & {
+            padding: 0.3 * @Ratio 0.75 * @Ratio;
+            font-size: 0.56 * @Ratio;
+          }
+        }
+        @media only screen and (max-width: @Mobile) {
+          & {
+            padding: 0.05 * @Ratio 0.5 * @Ratio;
+            font-size: 0.58 * @Ratio;
+          }
+        }
+      }
+      .on {
+        @apply font-mxBold text-white;
       }
     }
 

@@ -23,18 +23,18 @@
   }
 
   .image {
-    @apply relative w-full;
+    @apply relative w-full overflow-hidden;
 
     .box {
       padding-bottom: (728 / 1736) * 100%;
       background-image: url('img/year/image.jpg');
 
-      @apply w-full bg-gray-400 bg-cover bg-center;
+      @apply w-full  bg-gray-400 bg-cover bg-center;
     }
   }
 
   .content {
-    @apply relative w-full text-center;
+    @apply relative flex w-full flex-col items-center justify-center text-center;
 
     @media only screen and (max-width: @Mobile) {
       & {
@@ -45,7 +45,7 @@
     h1 {
       letter-spacing: 0.2rem;
 
-      @apply my-3 text-center font-mxThin text-4xl font-thin;
+      @apply my-3 whitespace-nowrap text-center font-mxThin text-4xl font-thin;
 
       @media only screen and (max-width: @Mobile) {
         & {
@@ -55,7 +55,7 @@
     }
 
     p {
-      @apply font-mxThin text-sm leading-relaxed;
+      @apply whitespace-nowrap font-mxThin text-sm leading-relaxed;
 
       @media only screen and (max-width: @Mobile) {
         & {
