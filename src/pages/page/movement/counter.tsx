@@ -1,8 +1,19 @@
+import { Dollar } from 'lesca-number';
 import useTween from 'lesca-use-tween';
 import { memo, useEffect, useMemo } from 'react';
 
 const Counter = memo(
-  ({ init = 0, to, max = 999 }: { init?: number; to?: number; max?: number }) => {
+  ({
+    init = 0,
+    to,
+    max = 999,
+    dollar = false,
+  }: {
+    init?: number;
+    to?: number;
+    max?: number;
+    dollar?: boolean;
+  }) => {
     const [style, setStyle] = useTween({ opacity: init });
 
     useEffect(() => {
@@ -15,7 +26,12 @@ const Counter = memo(
       return Math.floor(Number(style.opacity));
     }, [style.opacity]);
 
-    return <>{result}</>;
+    const dollarStyle = useMemo(() => {
+      if (dollar) return Dollar(result);
+      return result;
+    }, [result, dollar]);
+
+    return <>{dollarStyle}</>;
   },
 );
 export default Counter;

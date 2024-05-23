@@ -47,7 +47,7 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
       <div className='h'>
         <h1>=</h1>
         <span>
-          <Counter init={0} to={data.savedCostYearly} max={999999} />
+          <Counter init={0} to={data.savedCostYearly} max={999999} dollar />
         </span>
         <div>元</div>
       </div>

@@ -5,6 +5,8 @@ import { memo, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './index.less';
 
+let delay = 0;
+
 const Image = ({ inView }: { inView: boolean }) => {
   const [style, setStyle] = useTween({ scale: 1.1, borderWidth: 20 });
 
@@ -28,8 +30,10 @@ const H1 = ({ inView }: { inView: boolean }) => {
   const [style, setStyle] = useTween({ letterSpacing: '2rem' });
 
   useEffect(() => {
-    if (inView) setStyle({ letterSpacing: '0.2rem' }, { duration: 5000 });
-    else setStyle({ letterSpacing: '2rem' }, 100);
+    if (inView) {
+      delay = 0;
+      setStyle({ letterSpacing: '0.2rem' }, { duration: 3000 });
+    } else setStyle({ letterSpacing: '2rem' }, 100);
   }, [inView]);
 
   return (
@@ -64,34 +68,44 @@ const Year = memo(() => {
           <H1 inView={inView} />
           <p>
             {device && device === 'd' ? (
-              <Char inView={inView}>
+              <Char inView={inView} delay={delay}>
                 百年來 MG 以不斷突破框架的先鋒者精神，致力於移動未來的創新，在車壇締造無數佳績
               </Char>
             ) : (
               <>
-                <Char inView={inView}>百年來 MG 以不斷突破框架的先鋒者精神</Char>
+                <Char delay={(delay += 100)} inView={inView}>
+                  百年來 MG 以不斷突破框架的先鋒者精神
+                </Char>
                 <br />
-                <Char inView={inView}>致力於移動未來的創新，在車壇締造無數佳績</Char>
+                <Char delay={(delay += 100)} inView={inView}>
+                  致力於移動未來的創新，在車壇締造無數佳績
+                </Char>
               </>
             )}
           </p>
 
           <p>
             {device && device === 'd' ? (
-              <Char inView={inView}>
+              <Char delay={(delay += 100)} inView={inView}>
                 隨時代推進，MG
                 在前瞻科技及綠能永續仍不遺餘力，以完善技術、普及化理念，推出世人期待的電動車款
               </Char>
             ) : (
               <>
-                <Char inView={inView}>隨時代推進，MG 在前瞻科技及綠能永續仍不遺餘力</Char>
+                <Char delay={(delay += 100)} inView={inView}>
+                  隨時代推進，MG 在前瞻科技及綠能永續仍不遺餘力
+                </Char>
                 <br />
-                <Char inView={inView}>以完善技術、普及化理念，推出世人期待的電動車款</Char>
+                <Char delay={(delay += 100)} inView={inView}>
+                  以完善技術、普及化理念，推出世人期待的電動車款
+                </Char>
               </>
             )}
           </p>
           <p>
-            <Char inView={inView}>在全新時代，實現世界對純電生活的嚮往</Char>
+            <Char delay={(delay += 100)} inView={inView}>
+              在全新時代，實現世界對純電生活的嚮往
+            </Char>
           </p>
         </div>
       </Article>

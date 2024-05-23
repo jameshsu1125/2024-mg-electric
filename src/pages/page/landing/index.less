@@ -1,41 +1,22 @@
 @import url('../../../settings/config.less');
 
 .Landing {
-  height: 800px;
-  background-image: url('img/landing/cover.jpg');
-  background-position: center bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
+  // height: 800px;
+  // background-image: url('img/landing/cover.jpg');
+  // background-position: center bottom;
+  // background-size: cover;
+  // background-repeat: no-repeat;
   @apply relative w-full;
 
-  @media only screen and (max-width: @MD) {
-    & {
-      height: 500px;
-    }
-  }
-
-  @media only screen and (max-width: @SM) {
-    & {
-      height: 350px;
-    }
-  }
-
-  @media only screen and (max-width: @Mobile) {
-    & {
-      height: 280px;
-    }
+  .bg {
+    padding-bottom: 1021 / 1843 * 100%;
+    background-image: url('img/landing/cover.jpg');
+    @apply w-full bg-cover bg-center bg-no-repeat;
   }
 
   .headline {
-    bottom: 78%;
+    bottom: 69%;
     @apply absolute w-full text-center text-4xl;
-
-    @media only screen and (max-width: @Mobile) {
-      & {
-        bottom: 200px;
-        @apply t-xl;
-      }
-    }
 
     h1 {
       @apply flex flex-row items-baseline justify-center space-x-5 font-mxMedium text-primary;

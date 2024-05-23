@@ -20,7 +20,7 @@
       @apply w-full md:w-1/2;
 
       & > h1 {
-        @apply text-center font-mxThin text-4xl leading-normal;
+        @apply whitespace-nowrap text-center font-mxThin text-4xl leading-normal;
 
         @media only screen and (max-width: @SM) {
           font-size: 1.5 * @Ratio;
@@ -149,6 +149,7 @@
       .image {
         padding-bottom: 410 / 883 * 100%;
         background-image: url('img/movement/car.png');
+        transform-origin: 20% 90%;
         @apply w-full bg-cover;
       }
     }

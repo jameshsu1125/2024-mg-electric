@@ -27,7 +27,6 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
           <div className='col'>
             <div className='h'>當週充電</div>
             <span>
-              {' '}
               <Counter init={0} to={data.chargeMeekly} max={999} />
             </span>
             <div className='f'>次</div>
@@ -57,7 +56,7 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
                 <div className='flex flex-col text-center font-mxBold'>
                   <div>
                     <span>
-                      <Counter init={0} to={data.savedCostYearly} max={999999} />
+                      <Counter init={0} to={data.savedCostYearly} max={999999} dollar />
                     </span>
                     元
                   </div>

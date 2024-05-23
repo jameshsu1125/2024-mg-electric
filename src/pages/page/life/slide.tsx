@@ -1,10 +1,14 @@
 import Article from '@/components/article';
-import { memo, useEffect, useMemo, useState } from 'react';
-import { LifeCarousel } from './config';
+import { memo, useContext, useEffect, useMemo, useState } from 'react';
+import { LifeCarousel, LifeContext } from './config';
 import './slide.less';
+
+const base = process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
 
 const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel)[number] }) => {
   const [device, setDevice] = useState<'m' | 'd' | 'unset'>('unset');
+
+  const [state] = useContext(LifeContext);
 
   useEffect(() => {
     const resize = () => {
@@ -14,6 +18,12 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
     window.addEventListener('resize', resize);
     return () => window.removeEventListener('resize', resize);
   }, []);
+
+  useEffect(() => {
+    if (state.index === index) {
+      // console.log('current slide:', index);
+    }
+  }, [state, index]);
 
   const body = useMemo(() => {
     switch (device) {
@@ -43,7 +53,13 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
             </div>
             <div className='image'>
               <div className='ctx'>
-                <div className={`video v${index}`}></div>
+                <div className={`video v${index}`}>
+                  <div className='absolute bottom-0 left-0 right-0 top-0'>
+                    <video autoPlay loop muted playsInline>
+                      <source src={`${base}video/${index}.mp4`} type='video/mp4' />
+                    </video>
+                  </div>
+                </div>
               </div>
             </div>
             <div className='content'>

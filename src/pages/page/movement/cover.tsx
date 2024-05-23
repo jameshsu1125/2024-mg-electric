@@ -1,50 +1,102 @@
-import { memo, useContext, useEffect, useRef, useState } from 'react';
-import './cover.less';
 import Article from '@/components/article';
 import useMedia, { MediaType } from '@/hooks/useMedia';
+import useTween from 'lesca-use-tween';
+import { memo, useContext, useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { MovementContext } from './config';
+import './cover.less';
+import Char from '@/components/char';
+
+let delay = 0;
+
+const Image = ({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ scale: 0.3, x: -700 });
+
+  useEffect(() => {
+    if (inView) setStyle({ scale: 1, x: 0 }, { duration: 1500 });
+    else setStyle({ scale: 0.3, x: -700 }, 100);
+  }, [inView]);
+  return <div style={style} className='image' />;
+};
+
+const H1 = ({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ letterSpacing: '2rem' });
+
+  useEffect(() => {
+    if (inView) setStyle({ letterSpacing: '0.2rem' }, { duration: 5000 });
+    else setStyle({ letterSpacing: '2rem' }, 100);
+  }, [inView]);
+
+  return (
+    <h1 style={style}>
+      試算純電生活
+      <br />
+      規劃更多精彩可能
+    </h1>
+  );
+};
 
 const Cover = memo(() => {
-  const ref = useRef<HTMLInputElement>(null);
+  const refInput = useRef<HTMLInputElement>(null);
   const [device] = useMedia();
   const [state, setState] = useContext(MovementContext);
   const [once, setOnce] = useState(false);
 
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
   useEffect(() => {
-    if (ref.current && state.mile === 0) {
+    if (inView) delay = 0;
+  }, [inView]);
+
+  useEffect(() => {
+    if (refInput.current && state.mile === 0) {
       if (!once) {
         setOnce(true);
         return;
       }
-      ref.current.value = '';
+      refInput.current.value = '';
     }
   }, [state.mile, once]);
 
   return (
-    <div className='Cover'>
+    <div ref={ref} className='Cover'>
       <Article>
         <div className='content'>
           <div className='left'>
-            <h1>
-              試算純電生活
-              <br />
-              規劃更多精彩可能
-            </h1>
+            <H1 inView={inView} />
             <p>
-              不只改變能源驅動，更重新定義移動成本
+              <Char inView={inView} delay={(delay += 100)}>
+                不只改變能源驅動，更重新定義移動成本
+              </Char>
               <br />
-              立即試算，當您擁有 MG4
+              <Char inView={inView} delay={(delay += 100)}>
+                立即試算，當您擁有 MG4
+              </Char>
               <br />
-              一樣的行駛距離，能夠為您省下多少
-              {device < MediaType.SM ? '，' : <br />}
-              創造更精采多元的生活
+              {device < MediaType.SM ? (
+                <Char inView={inView} delay={(delay += 100)}>
+                  一樣的行駛距離，能夠為您省下多少，創造更精采多元的生活
+                </Char>
+              ) : (
+                <>
+                  <Char inView={inView} delay={(delay += 100)}>
+                    一樣的行駛距離，能夠為您省下多少
+                  </Char>
+                  <br />
+                  <Char inView={inView} delay={(delay += 100)}>
+                    創造更精采多元的生活
+                  </Char>
+                </>
+              )}
             </p>
             <div className='group'>
               <div className='row'>
                 <div className='ico' />
                 <div className='input'>
                   <input
-                    ref={ref}
+                    ref={refInput}
                     type='number'
                     maxLength={3}
                     max={999}
@@ -63,8 +115,8 @@ const Cover = memo(() => {
                 <button
                   className='btn-calc'
                   onClick={() => {
-                    if (ref.current) {
-                      setState((S) => ({ ...S, mile: parseInt(ref.current?.value || '0') }));
+                    if (refInput.current) {
+                      setState((S) => ({ ...S, mile: parseInt(refInput.current?.value || '0') }));
                     }
                   }}
                 >
@@ -74,8 +126,8 @@ const Cover = memo(() => {
                   className='btn-reCalc'
                   onClick={() => {
                     setState((S) => ({ ...S, mile: 0 }));
-                    if (ref.current) {
-                      ref.current.value = '';
+                    if (refInput.current) {
+                      refInput.current.value = '';
                     }
                   }}
                 >
@@ -85,7 +137,7 @@ const Cover = memo(() => {
             </div>
           </div>
           <div className='right'>
-            <div className='image' />
+            <Image inView={inView} />
           </div>
         </div>
       </Article>

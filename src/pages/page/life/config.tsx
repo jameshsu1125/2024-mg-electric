@@ -1,3 +1,11 @@
+import { createContext, Dispatch, SetStateAction } from 'react';
+
+export type TLifeState = { index: number };
+export type TLifeContext = [TLifeState, Dispatch<SetStateAction<TLifeState>>];
+
+export const LifeState: TLifeState = { index: 0 };
+export const LifeContext = createContext<TLifeContext>([LifeState, () => {}]);
+
 export const LifeCarousel = [
   {
     headline: '純電移動生活',

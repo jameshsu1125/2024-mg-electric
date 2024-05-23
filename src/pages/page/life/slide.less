@@ -34,7 +34,11 @@
 
         .video {
           padding-bottom: 9/16 * 100%;
-          @apply w-full bg-gray-500 bg-cover;
+          @apply relative w-full bg-gray-500 bg-cover;
+
+          video {
+            @apply h-full w-full;
+          }
         }
 
         .v0 {

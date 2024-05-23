@@ -38,11 +38,12 @@ const Headline = memo(({ inView }: { inView: boolean }) => {
 
 const Landing = memo(() => {
   const { ref, inView } = useInView({
-    threshold: 0,
+    threshold: 0.7,
   });
 
   return (
     <div ref={ref} className='Landing'>
+      <div className='bg' />
       <div className='headline'>
         <Headline inView={inView} />
       </div>

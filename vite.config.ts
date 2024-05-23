@@ -10,9 +10,9 @@ export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, './src/pages');
   const { key, cert } = await certificateFor('localhost');
 
-  const base = 'https://mg4electric.netlify.app/';
+  const base = process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
 
-  const config = {
+  return {
     base: './',
     root: resolve(__dirname, 'src/pages'),
     publicDir: resolve(__dirname, 'public'),
@@ -32,7 +32,7 @@ export default defineConfig(async ({ mode }) => {
     css: {
       preprocessorOptions: {
         less: {
-          rootPath: base,
+          rootpath: base,
           math: 'always',
           globalVars: {
             mainColor: 'red',
@@ -69,10 +69,4 @@ export default defineConfig(async ({ mode }) => {
       },
     },
   };
-
-  if (process.env.NODE_ENV !== 'production') {
-    delete config.css.preprocessorOptions.less.rootPath;
-  }
-
-  return config;
 });

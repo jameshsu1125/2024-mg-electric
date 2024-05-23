@@ -7,7 +7,7 @@ const Char = ({
   inView,
   children,
   delay,
-  duration = 3000,
+  duration = 1500,
 }: {
   children: string;
   inView: boolean;
