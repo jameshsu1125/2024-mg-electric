@@ -1,3 +1,11 @@
+import { createContext, Dispatch, SetStateAction } from 'react';
+
+export type TChargeState = { index: number | undefined };
+export type TChargeContext = [TChargeState, Dispatch<SetStateAction<TChargeState>>];
+
+export const ChargeState: TChargeState = { index: undefined };
+export const ChargeContext = createContext<TChargeContext>([ChargeState, () => {}]);
+
 export const ChargeConfig = [
   {
     title: '居家充電',

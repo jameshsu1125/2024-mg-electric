@@ -1,6 +1,6 @@
 import Article from '@/components/article';
 import useTween from 'lesca-use-tween';
-import { memo, useEffect, useState } from 'react';
+import { memo, useContext, useEffect, useState } from 'react';
 import { QAContext, QAData, QAState } from './config';
 import './index.less';
 import { twMerge } from 'tailwind-merge';
@@ -23,25 +23,25 @@ const Answer = memo(({ a }: { a: string[] }) => {
   );
 });
 
-const Item = memo(({ q, a }: { q: string; a: string[] }) => {
-  const [state, setState] = useState(false);
+const Item = memo(({ q, a, index }: { q: string; a: string[]; index: number }) => {
+  const [state, setState] = useContext(QAContext);
+
   return (
     <>
-      <div className='q' onClick={() => setState((S) => !S)}>
+      <div className='q' onClick={() => setState((S) => ({ ...S, index }))}>
         <div>{q}</div>
       </div>
-      {state ? <Answer a={a} /> : <div className='h-[1px] w-full bg-[#ccc] !p-0' />}
+      {state.index === index ? <Answer a={a} /> : <div className='h-[1px] w-full bg-[#ccc] !p-0' />}
     </>
   );
 });
 
 const QA = memo(() => {
-  const value = useState(QAState);
-  const [state, setState] = value;
+  const [state, setState] = useState(QAState);
   return (
     <div className='QA'>
       <Article>
-        <QAContext.Provider value={value}>
+        <QAContext.Provider value={[state, setState]}>
           <div className='flex w-full flex-col items-center justify-center space-y-3 sm:space-y-10'>
             <div className='headline'>
               <h1>常見問題</h1>
@@ -52,8 +52,8 @@ const QA = memo(() => {
                   return (
                     <button
                       key={`${item.tab}-${index}`}
-                      className={twMerge('tag', state.index === index ? 'on' : '')}
-                      onClick={() => setState((S) => ({ ...S, index }))}
+                      className={twMerge('tag', state.tab === index ? 'on' : '')}
+                      onClick={() => setState((S) => ({ ...S, tab: index, index: undefined }))}
                     >
                       {item.tab}
                     </button>
@@ -61,8 +61,8 @@ const QA = memo(() => {
                 })}
               </div>
               <div className='table-body'>
-                {QAData[state.index].data.map((item, index) => (
-                  <Item key={`${item.q}${item.a}${index}`} q={item.q} a={item.a} />
+                {QAData[state.tab].data.map((item, index) => (
+                  <Item key={`${item.q}${item.a}${index}`} q={item.q} a={item.a} index={index} />
                 ))}
               </div>
             </div>

@@ -19,7 +19,7 @@ export const LifeCarousel = [
     body: [
       '以純電驅動，享受駕馭就此不同，',
       '不僅有專屬單踏板模式，不浪費一點動能，',
-      '更能享受零百加速僅需 3.8 秒*的貼背快感。',
+      '更能享受零百加速僅需 3.8 秒的貼背快感。',
     ],
     postscript: '*0-100km 加速時間 3.8 秒僅限 MG4 XPOWER',
   },
@@ -28,7 +28,7 @@ export const LifeCarousel = [
     subline: '自在掌握 你的充電時光',
     body: [
       '因地制宜的充電選擇，無痛解鎖純電新生活，',
-      '不論快充與慢充，皆可搭配 MY MG APP 遠端管理，',
+      '不論快充與慢充，皆可搭配My MG App遠端管理，',
       '輕鬆掌握車輛充電狀態。',
     ],
     postscript: '*智慧車聯網系統與手機介面以MG Taiwan提供之MY MG App服務為準，並僅供MG4使用',

@@ -1,9 +1,9 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-export type TQAState = { index: number };
+export type TQAState = { index: number | undefined; tab: number };
 export type TQAContext = [TQAState, Dispatch<SetStateAction<TQAState>>];
 
-export const QAState: TQAState = { index: 0 };
+export const QAState: TQAState = { index: undefined, tab: 0 };
 export const QAContext = createContext<TQAContext>([QAState, () => {}]);
 
 export const QAData = [

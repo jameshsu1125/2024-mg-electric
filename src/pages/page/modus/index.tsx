@@ -56,8 +56,8 @@ const Modus = memo(() => {
                 <div className='text'>
                   <h1>充電規格</h1>
                   <p>
-                    使用<span>CCS1 Combo 1</span>之<span>DC</span>直流電與<span>SAE</span>
-                    <span>J1772</span>規格之<span>AC</span>交流電等兩種市面涵蓋率最高充電規格
+                    使用<span>CCS Combo 1 DC</span>直流電與與<span>SAE J1772 AC</span>
+                    交流電，兩種市面涵蓋率最高充電規格
                   </p>
                 </div>
               </div>

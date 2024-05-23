@@ -1,10 +1,10 @@
 import Article from '@/components/article';
 import useMedia, { MediaType } from '@/hooks/useMedia';
-import { memo, useEffect, useState } from 'react';
+import { memo, useContext, useEffect, useState } from 'react';
 import { IoIosArrowDropdown } from 'react-icons/io';
 import { IoCloseCircle } from 'react-icons/io5';
 import { twMerge } from 'tailwind-merge';
-import { ChargeConfig } from './config';
+import { ChargeConfig, ChargeContext, ChargeState, TChargeState } from './config';
 import './index.less';
 import useTween from 'lesca-use-tween';
 
@@ -16,7 +16,7 @@ const Dialog = memo(
   }: {
     device: MediaType;
     item: (typeof ChargeConfig)[number];
-    setState: React.Dispatch<React.SetStateAction<boolean>>;
+    setState: React.Dispatch<React.SetStateAction<TChargeState>>;
   }) => {
     const [style, setStyle] = useTween({ opacity: 0, y: device < MediaType.SM ? -50 : 50 });
 
@@ -28,7 +28,10 @@ const Dialog = memo(
       <div className='dialog' style={style}>
         {device < MediaType.SM && (
           <div className={twMerge('flex w-full justify-center pt-1')}>
-            <button className='text-[#cacaca] hover:text-primary' onClick={() => setState(false)}>
+            <button
+              className='text-[#cacaca] hover:text-primary'
+              onClick={() => setState((S) => ({ ...S, index: undefined }))}
+            >
               <IoCloseCircle className='h-3 w-3 sm:h-6 sm:w-6' />
             </button>
           </div>
@@ -39,7 +42,10 @@ const Dialog = memo(
         </div>
         {device >= MediaType.SM && (
           <div className={twMerge('flex w-full justify-center pb-3')}>
-            <button className='text-[#cacaca] hover:text-primary' onClick={() => setState(false)}>
+            <button
+              className='text-[#cacaca] hover:text-primary'
+              onClick={() => setState((S) => ({ ...S, index: undefined }))}
+            >
               <IoCloseCircle />
             </button>
           </div>
@@ -51,36 +57,43 @@ const Dialog = memo(
 
 const Item = memo(({ item, index }: { item: (typeof ChargeConfig)[number]; index: number }) => {
   const [device] = useMedia();
-  const [state, setState] = useState(false);
+  const [state, setState] = useContext(ChargeContext);
+
   return (
     <div className='item'>
       <div className={`ico i${index}`} />
       <div className='relative w-full'>
-        <button onClick={() => setState((S) => !S)}>
+        <button onClick={() => setState((S) => ({ ...S, index }))}>
           READ MORE
           <IoIosArrowDropdown className='ml-1' />
         </button>
-        {state && <Dialog device={device} item={item} setState={setState} />}
+        {state.index === index && <Dialog device={device} item={item} setState={setState} />}
       </div>
     </div>
   );
 });
 
-const Charge = memo(() => (
-  <div className='Charge'>
-    <Article>
-      <div className='w-full'>
-        <div className='image' />
-      </div>
-      <div className='content'>
-        <h1>多元充電 全面佈局</h1>
-        <div className='ctx'>
-          {ChargeConfig.map((item, index) => (
-            <Item key={item.title} item={item} index={index} />
-          ))}
-        </div>
-      </div>
-    </Article>
-  </div>
-));
+const Charge = memo(() => {
+  const value = useState(ChargeState);
+
+  return (
+    <div className='Charge'>
+      <ChargeContext.Provider value={value}>
+        <Article>
+          <div className='w-full'>
+            <div className='image' />
+          </div>
+          <div className='content'>
+            <h1>多元充電 全面佈局</h1>
+            <div className='ctx'>
+              {ChargeConfig.map((item, index) => (
+                <Item key={item.title} item={item} index={index} />
+              ))}
+            </div>
+          </div>
+        </Article>
+      </ChargeContext.Provider>
+    </div>
+  );
+});
 export default Charge;
