@@ -11,7 +11,12 @@
 
   .headline {
     bottom: 69%;
-    @apply absolute w-full text-center text-2xl sm:text-4xl;
+    font-size: 1 * @Ratio;
+    @apply absolute w-full text-center;
+
+    @media only screen and (max-width: @SM) {
+      font-size: 0.9 * @Ratio;
+    }
 
     h1 {
       @apply flex flex-row items-baseline justify-center space-x-3 font-mxMedium text-primary sm:space-x-5;

@@ -114,7 +114,9 @@ const Charge = memo(() => {
         <Article>
           <Image inView={inView} />
           <div className='content'>
-            <H1 inView={inView} />
+            <div className='flex w-full justify-center overflow-hidden'>
+              <H1 inView={inView} />
+            </div>
             <div className='ctx'>
               {ChargeConfig.map((item, index) => (
                 <Item key={item.title} item={item} index={index} />

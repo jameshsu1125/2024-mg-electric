@@ -2,6 +2,11 @@
 import color from 'tailwindcss/colors';
 import { fontSize } from 'tailwindcss/defaultTheme';
 
+import {
+  scopedPreflightStyles,
+  isolateInsideOfContainer, // there are also isolateOutsideOfContainer and isolateForComponents
+} from 'tailwindcss-scoped-preflight';
+
 delete color.lightBlue;
 delete color.warmGray;
 delete color.trueGray;
@@ -52,5 +57,10 @@ export default {
       },
     },
   },
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: [
+    'prettier-plugin-tailwindcss',
+    scopedPreflightStyles({
+      isolationStrategy: isolateInsideOfContainer('#not_aem_app'),
+    }),
+  ],
 };
