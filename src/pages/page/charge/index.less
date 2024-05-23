@@ -10,10 +10,10 @@
   }
 
   .content {
-    @apply flex w-full flex-col items-center justify-center py-5;
+    @apply flex w-full flex-col items-center justify-center overflow-hidden py-5;
 
     h1 {
-      @apply text-center font-mxThin text-4xl tracking-widest;
+      @apply whitespace-nowrap text-center font-mxThin text-4xl tracking-widest;
 
       @media only screen and (max-width: @Mobile) {
         @apply t-4xl;

@@ -1,6 +1,7 @@
-import { memo, useEffect } from 'react';
+import { Fragment, memo, useEffect } from 'react';
 import './index.less';
 import Article from '@/components/article';
+import { ApplicationConfig } from './config';
 
 const Application = memo(() => {
   useEffect(() => {}, []);
@@ -18,12 +19,16 @@ const Application = memo(() => {
             </p>
             <span>*限特約合作充電營運商</span>
             <div className='steps'>
-              <div className='img' />
+              {ApplicationConfig.map((node, index) => (
+                <Fragment key={JSON.stringify(node) + 'd' + index}>{node}</Fragment>
+              ))}
             </div>
           </div>
         </div>
         <div className='steps-sm'>
-          <div className='img' />
+          {ApplicationConfig.map((node, index) => (
+            <Fragment key={JSON.stringify(node) + 'm' + index}>{node}</Fragment>
+          ))}
         </div>
       </Article>
     </div>

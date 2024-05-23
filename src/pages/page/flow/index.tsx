@@ -3,6 +3,21 @@ import useMedia, { MediaType } from '@/hooks/useMedia';
 import { memo } from 'react';
 import './index.less';
 
+const Steps = () => {
+  return (
+    <div className='img'>
+      <div>
+        {[14.7, 4.9, 15, 4.9, 21, 4.9, 15, 4.9, 'auto'].map((width, index) => (
+          <div
+            key={`div${width}${index}`}
+            style={width === 'auto' ? { flex: '1 1 0%' } : { width: `${width}%` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Flow = memo(() => {
   const [device] = useMedia();
   return (
@@ -25,12 +40,12 @@ const Flow = memo(() => {
                 {device > MediaType.SM && <br />}體驗安心便捷的純電生活。
               </p>
               <div className='flow hidden lg:block'>
-                <div className='img' />
+                <Steps />
               </div>
             </div>
           </div>
           <div className='flow block w-full lg:hidden'>
-            <div className='img' />
+            <Steps />
           </div>
         </div>
       </Article>

@@ -7,6 +7,7 @@ import { twMerge } from 'tailwind-merge';
 import { ChargeConfig, ChargeContext, ChargeState, TChargeState } from './config';
 import './index.less';
 import useTween from 'lesca-use-tween';
+import { useInView } from 'react-intersection-observer';
 
 const Dialog = memo(
   ({
@@ -73,18 +74,47 @@ const Item = memo(({ item, index }: { item: (typeof ChargeConfig)[number]; index
   );
 });
 
-const Charge = memo(() => {
-  const value = useState(ChargeState);
+const Image = ({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ scale: 1.5, borderWidth: 50 });
+
+  useEffect(() => {
+    if (inView) setStyle({ scale: 1, borderWidth: 0 }, { duration: 5000 });
+    else setStyle({ scale: 1.5, borderWidth: 50 }, 100);
+  }, [inView]);
 
   return (
-    <div className='Charge'>
+    <div className='relative w-full overflow-hidden'>
+      <div style={{ transform: style.transform }} className='image' />
+      <div
+        style={{ borderWidth: `${style.borderWidth}px` }}
+        className='absolute left-0 top-0 h-full w-full border-4 border-white'
+      />
+    </div>
+  );
+};
+
+const H1 = ({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ letterSpacing: '2rem' });
+
+  useEffect(() => {
+    if (inView) setStyle({ letterSpacing: '0.2rem' }, { duration: 5000 });
+    else setStyle({ letterSpacing: '2rem' }, 100);
+  }, [inView]);
+
+  return <h1 style={style}>多元充電 全面佈局</h1>;
+};
+
+const Charge = memo(() => {
+  const value = useState(ChargeState);
+  const { inView, ref } = useInView({ threshold: 0 });
+
+  return (
+    <div ref={ref} className='Charge'>
       <ChargeContext.Provider value={value}>
         <Article>
-          <div className='w-full'>
-            <div className='image' />
-          </div>
+          <Image inView={inView} />
           <div className='content'>
-            <h1>多元充電 全面佈局</h1>
+            <H1 inView={inView} />
             <div className='ctx'>
               {ChargeConfig.map((item, index) => (
                 <Item key={item.title} item={item} index={index} />

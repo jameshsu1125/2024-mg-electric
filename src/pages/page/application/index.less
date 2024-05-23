@@ -1,6 +1,8 @@
 @import url('../../../settings/config.less');
 
 .Application {
+  @time: 7s;
+  @delay: @time / 5;
   @apply w-full overflow-hidden py-5;
 
   .content {
@@ -53,24 +55,120 @@
 
       .steps {
         max-width: 600px;
-        @apply hidden w-full lg:block;
+        @apply hidden w-full flex-row flex-nowrap items-center justify-start space-x-2 font-mxBook lg:flex;
 
-        .img {
-          padding-bottom: 45.9 / 1000.3 * 100%;
-          background-image: url('img/application/steps.svg');
-          @apply w-full bg-cover bg-center bg-no-repeat;
+        span {
+          @apply font-gillRegular;
+        }
+
+        & > div:nth-child(odd) {
+          @apply whitespace-nowrap bg-black px-3 py-1 font-mxBook text-sm text-white;
+        }
+
+        & > div:nth-child(even) {
+          background-image: url('img/application/arrow.svg');
+          @apply h-5 w-2 bg-contain bg-center bg-no-repeat;
+        }
+
+        & > div:nth-child(1) {
+          animation: fade2 @time infinite ease-in-out;
+        }
+
+        & > div:nth-child(3) {
+          animation: fade2 @time infinite ease-in-out;
+          animation-delay: 0s - @delay * 4;
+        }
+
+        & > div:nth-child(5) {
+          animation: fade2 @time infinite ease-in-out;
+          animation-delay: 0s - @delay * 3;
+        }
+
+        & > div:nth-child(7) {
+          animation: fade2 @time infinite ease-in-out;
+          animation-delay: 0s - @delay * 2;
+        }
+
+        & > div:nth-child(9) {
+          animation: fade2 @time infinite ease-in-out;
+          animation-delay: 0s - @delay * 1;
         }
       }
     }
   }
 
-  .steps-sm {
-    @apply mt-5 block w-full lg:hidden;
+  @keyframes fade2 {
+    0% {
+      @apply bg-black;
+    }
+    70% {
+      @apply bg-black;
+    }
+    85% {
+      @apply bg-primary;
+    }
+    100% {
+      @apply bg-black;
+    }
+  }
 
-    .img {
-      padding-bottom: 45.9 / 1000.3 * 100%;
-      background-image: url('img/application/steps.svg');
-      @apply w-full bg-cover bg-center bg-no-repeat;
+  .steps-sm {
+    @apply mt-5 flex w-full flex-row items-center justify-between space-x-3 sm:justify-start lg:hidden;
+
+    span {
+      @apply font-gillRegular;
+    }
+
+    @media only screen and (max-width: 590px) {
+      & {
+        @apply space-x-1;
+      }
+    }
+
+    & > div:nth-child(odd) {
+      @apply whitespace-nowrap bg-black px-3 py-1 font-mxBook text-sm text-white sm:text-base;
+
+      @media only screen and (max-width: 590px) {
+        & {
+          padding: 0.1 * @Ratio 0.4 * @Ratio;
+          font-size: 0.7 * @Ratio;
+        }
+      }
+    }
+
+    & > div:nth-child(even) {
+      background-image: url('img/application/arrow.svg');
+      @apply h-5 w-2 bg-contain bg-center bg-no-repeat;
+
+      @media only screen and (max-width: 590px) {
+        & {
+          width: 0.4 * @Ratio;
+        }
+      }
+    }
+
+    & > div:nth-child(1) {
+      animation: fade2 @time infinite ease-in-out;
+    }
+
+    & > div:nth-child(3) {
+      animation: fade2 @time infinite ease-in-out;
+      animation-delay: 0s - @delay * 4;
+    }
+
+    & > div:nth-child(5) {
+      animation: fade2 @time infinite ease-in-out;
+      animation-delay: 0s - @delay * 3;
+    }
+
+    & > div:nth-child(7) {
+      animation: fade2 @time infinite ease-in-out;
+      animation-delay: 0s - @delay * 2;
+    }
+
+    & > div:nth-child(9) {
+      animation: fade2 @time infinite ease-in-out;
+      animation-delay: 0s - @delay * 1;
     }
   }
 }

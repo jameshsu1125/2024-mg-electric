@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { MovementContext } from './config';
 import './cover.less';
 import Char from '@/components/char';
+import { twMerge } from 'tailwind-merge';
 
 let delay = 0;
 
@@ -123,7 +124,8 @@ const Cover = memo(() => {
                   馬上試算
                 </button>
                 <button
-                  className='btn-reCalc'
+                  disabled={state.mile === 0}
+                  className={twMerge('btn-reCalc', state.mile === 0 ? 'opacity-30' : '')}
                   onClick={() => {
                     setState((S) => ({ ...S, mile: 0 }));
                     if (refInput.current) {

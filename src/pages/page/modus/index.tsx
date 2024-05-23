@@ -1,12 +1,38 @@
 import { memo, useEffect, useRef, useState } from 'react';
 import './index.less';
 import Article from '@/components/article';
+import useTween from 'lesca-use-tween';
+import { useInView } from 'react-intersection-observer';
+
+const Image = ({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ scale: 1.5, borderWidth: 50 });
+
+  useEffect(() => {
+    if (inView) setStyle({ scale: 1, borderWidth: 0 }, { duration: 5000 });
+    else setStyle({ scale: 1.5, borderWidth: 50 }, 100);
+  }, [inView]);
+
+  return (
+    <div className='ctx'>
+      <div style={{ transform: style.transform }} className='image' />
+      <div
+        style={{ borderWidth: `${style.borderWidth}px` }}
+        className='absolute left-0 top-0 h-full w-full border-4 border-white'
+      />
+    </div>
+  );
+};
 
 const Modus = memo(() => {
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
   const ref3 = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
   useEffect(() => {
     const resize = () => {
       if (ref1.current && ref2.current && ref3.current)
@@ -22,11 +48,9 @@ const Modus = memo(() => {
   }, []);
 
   return (
-    <div className='Modus'>
+    <div ref={ref} className='Modus'>
       <Article>
-        <div className='ctx'>
-          <div className='image' />
-        </div>
+        <Image inView={inView} />
         <div className='content'>
           <div ref={ref3} className='box'>
             <div className='innerBox'>

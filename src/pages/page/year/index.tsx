@@ -8,11 +8,11 @@ import './index.less';
 let delay = 0;
 
 const Image = ({ inView }: { inView: boolean }) => {
-  const [style, setStyle] = useTween({ scale: 1.1, borderWidth: 20 });
+  const [style, setStyle] = useTween({ scale: 2, borderWidth: 50 });
 
   useEffect(() => {
     if (inView) setStyle({ scale: 1, borderWidth: 0 }, { duration: 5000 });
-    else setStyle({ scale: 1.1, borderWidth: 20 }, 100);
+    else setStyle({ scale: 2, borderWidth: 50 }, 100);
   }, [inView]);
 
   return (

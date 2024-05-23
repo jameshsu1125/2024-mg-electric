@@ -31,6 +31,12 @@
         &:hover {
           @apply bg-primary;
         }
+
+        &:disabled {
+          &:hover {
+            @apply bg-transparent;
+          }
+        }
       }
     }
   }

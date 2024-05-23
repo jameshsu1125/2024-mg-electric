@@ -3,9 +3,10 @@ import './resultDesktop.less';
 import { Data } from './result';
 import Counter from './counter';
 import { MovementContext } from './config';
+import { twMerge } from 'tailwind-merge';
 
 const ResultDesktop = memo(({ data }: { data: Data }) => {
-  const [, setState] = useContext(MovementContext);
+  const [state, setState] = useContext(MovementContext);
   return (
     <>
       <div className='ResultDesktop'>
@@ -65,7 +66,12 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
                   </div>
                 </div>
               </div>
-              <button className='btn-reCalc' onClick={() => setState((S) => ({ ...S, mile: 0 }))}>
+
+              <button
+                disabled={state.mile === 0}
+                className={twMerge('btn-reCalc', state.mile === 0 ? 'opacity-30' : '')}
+                onClick={() => setState((S) => ({ ...S, mile: 0 }))}
+              >
                 重新計算
               </button>
             </div>
