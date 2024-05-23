@@ -1,7 +1,7 @@
 @import url('../../../settings/config.less');
 
 .Charge {
-  @apply w-full border-b border-t py-5;
+  @apply w-full py-5;
 
   .image {
     padding-bottom: 767 / 1735 * 100%;
@@ -23,21 +23,16 @@
     .ctx {
       max-width: 1050px;
 
-      @apply flex w-full flex-row items-start justify-center space-x-2 px-1 pt-10 md:space-x-10 md:px-10 lg:space-x-20 lg:px-20;
+      @apply flex w-full flex-col items-center justify-center px-1 pt-10 md:flex-row md:items-start md:px-10  lg:px-20;
+      @apply space-x-0 space-y-20 md:space-x-10 md:space-y-0 lg:space-x-20;
 
       .item {
-        @apply w-1/3;
+        @apply w-10/12 sm:w-7/12 md:w-1/3;
 
         .ico {
-          padding-bottom: 299.2 / 333.3 * 100%;
+          padding-bottom: 362.4 / 333.3 * 100%;
           background-size: 100% 100%;
           @apply relative w-full bg-center bg-no-repeat;
-
-          @media only screen and (max-width: @Mobile) {
-            & {
-              padding-bottom: 316 / 321.4 * 100%;
-            }
-          }
 
           & > div {
             @apply absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-start;
@@ -61,76 +56,97 @@
 
           @media only screen and (max-width: @SM) {
             & {
-              font-size: 0.4 * @Ratio;
+              font-size: 1.1 * @Ratio;
+              @apply py-3;
             }
           }
 
           @media only screen and (max-width: @Mobile) {
             & {
-              padding: 0 1vw;
+              @apply py-2;
             }
           }
         }
 
         .i0 {
           background-image: url('img/charge/ico-0.svg');
-
-          @media only screen and (max-width: @Mobile) {
-            background-image: url('img/charge/ico-0-m.svg');
-          }
         }
 
         .i1 {
           background-image: url('img/charge/ico-1.svg');
-
-          @media only screen and (max-width: @Mobile) {
-            background-image: url('img/charge/ico-1-m.svg');
-          }
         }
 
         .i2 {
           background-image: url('img/charge/ico-2.svg');
-
-          @media only screen and (max-width: @Mobile) {
-            background-image: url('img/charge/ico-2-m.svg');
-          }
         }
       }
 
       .dialog {
-        @apply absolute bottom-full left-0 h-fit bg-quaternary md:top-full;
+        min-height: 220px;
+        @apply absolute bottom-full left-0 flex h-fit flex-col items-center justify-between bg-quaternary md:top-full;
 
-        & > h3 {
-          @apply w-full whitespace-nowrap border-b border-white py-2 text-center font-mxBook text-xs lg:text-sm;
-
-          @media only screen and (max-width: @SM) {
-            & {
-              font-size: 0.45 * @Ratio;
-            }
-          }
-
-          @media only screen and (max-width: @Mobile) {
-            & {
-              font-size: 0.5 * @Ratio;
-              line-height: 0.1 * @Ratio;
-            }
+        @media only screen and (max-width: @MD) {
+          & {
+            min-height: 200px;
           }
         }
 
-        & > p {
-          @apply w-full p-3 font-mxThin text-xs lg:text-sm;
+        @media only screen and (max-width: @SM) {
+          & {
+            min-height: initial;
+          }
+        }
 
-          @media only screen and (max-width: @SM) {
-            & {
-              font-size: 0.45 * @Ratio;
-              line-height: 0.6 * @Ratio;
+        & > div {
+          & > button {
+            @apply py-3 md:py-0;
+
+            & > svg {
+              @apply h-8 w-8 md:h-6 md:w-6;
             }
           }
 
-          @media only screen and (max-width: @Mobile) {
-            & {
-              font-size: 0.5 * @Ratio;
-              line-height: 0.7 * @Ratio;
+          & > h3 {
+            @apply w-full whitespace-nowrap border-b border-white py-2 text-center font-mxBook text-xs lg:text-sm;
+
+            @media only screen and (max-width: @SM) {
+              & {
+                font-size: 0.95 * @Ratio;
+                line-height: 1.3 * @Ratio;
+              }
+            }
+
+            @media only screen and (max-width: @XS) {
+              & {
+                font-size: 1.3 * @Ratio;
+                line-height: 1.4 * @Ratio;
+              }
+            }
+
+            @media only screen and (max-width: @Mobile) {
+              & {
+                font-size: 1.2 * @Ratio;
+                line-height: 1.4 * @Ratio;
+              }
+            }
+          }
+
+          & > p {
+            @apply w-full p-3 text-justify font-mxThin text-xs lg:text-sm;
+
+            @media only screen and (max-width: @SM) {
+              & {
+                font-size: 0.95 * @Ratio;
+                line-height: 1.2 * @Ratio;
+                @apply p-5;
+              }
+            }
+
+            @media only screen and (max-width: @Mobile) {
+              & {
+                font-size: 1.1 * @Ratio;
+                line-height: 1.4 * @Ratio;
+              }
             }
           }
         }

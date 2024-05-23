@@ -33,12 +33,14 @@ const Dialog = memo(
             </button>
           </div>
         )}
-        <h3>{item.dialog.headline}</h3>
-        <p>{item.dialog.body}</p>
+        <div className='w-full'>
+          <h3>{item.dialog.headline}</h3>
+          <p>{item.dialog.body}</p>
+        </div>
         {device >= MediaType.SM && (
           <div className={twMerge('flex w-full justify-center pb-3')}>
             <button className='text-[#cacaca] hover:text-primary' onClick={() => setState(false)}>
-              <IoCloseCircle className='h-4 w-4 sm:h-6 sm:w-6' />
+              <IoCloseCircle />
             </button>
           </div>
         )}

@@ -1,13 +1,19 @@
 @import url('../../../settings/config.less');
 
 .Safety {
-  @apply w-full overflow-hidden;
+  @apply relative w-full overflow-hidden;
 
   .bg {
     padding-bottom: 1423 / 1920 * 100%;
     background-image: url('img/safety/car.jpg');
 
     @apply relative w-full bg-cover bg-center bg-no-repeat;
+
+    @media only screen and (max-width: @SM) {
+      & {
+        @apply mt-8;
+      }
+    }
 
     & > div {
       @apply absolute bottom-0 left-0 right-0 top-0;
@@ -114,6 +120,22 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .headline {
+    @apply absolute top-5 flex w-full flex-col justify-center pb-8 lg:top-12;
+
+    h1 {
+      @apply text-center font-mxThin text-4xl;
+
+      span {
+        @apply font-gillLight;
+      }
+
+      @media only screen and (max-width: @Mobile) {
+        @apply t-4xl;
       }
     }
   }

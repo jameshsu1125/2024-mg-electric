@@ -3,12 +3,19 @@ import Button from './button';
 import { SafetyConfig } from './config';
 import Dialog from './dialog';
 import './index.less';
+import { useInView } from 'react-intersection-observer';
+import useMedia, { MediaType } from '@/hooks/useMedia';
 
 const Safety = memo(() => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
   const [clickIndex, setClickIndex] = useState<number | undefined>();
+  const [device] = useMedia();
 
   return (
-    <div className='Safety'>
+    <div ref={ref} className='Safety'>
       <div className='bg'>
         <div>
           <div className='h-full w-full'>
@@ -19,6 +26,7 @@ const Safety = memo(() => {
                 onClick={(i) => setClickIndex(i)}
                 index={index}
                 clickIndex={clickIndex}
+                inView={inView}
               />
             ))}
           </div>
@@ -34,6 +42,9 @@ const Safety = memo(() => {
             ))}
           </div>
         </div>
+      </div>
+      <div className='headline'>
+        <h1>MSP純電模組平台{device < MediaType.SM ? <br /> : ' '}兼具空間與安全</h1>
       </div>
     </div>
   );
