@@ -57,7 +57,7 @@
             @apply text-center font-mxLight text-base tracking-widest md:text-left;
 
             span {
-              @apply font-gillLight;
+              @apply font-gillRegular;
             }
 
             @media only screen and (max-width: @Mobile) {
@@ -81,10 +81,11 @@
       }
 
       .album {
-        @apply flex w-auto flex-col items-center justify-center space-y-5 lg:flex-row lg:space-x-10 lg:space-y-0;
+        @apply flex w-auto flex-col items-center justify-center space-y-10 lg:flex-row lg:space-x-10 lg:space-y-0;
 
         .item {
-          @apply flex w-full flex-row items-center justify-start px-5 sm:px-20 lg:w-1/2 lg:px-0;
+          @apply flex w-full items-start justify-start px-5 sm:px-20 lg:w-1/2 lg:px-0;
+          @apply flex-col space-y-5 md:flex-row md:space-y-0;
 
           @media only screen and (max-width: @Mobile) {
             & {
@@ -93,7 +94,7 @@
           }
 
           .image {
-            @apply w-1/2 bg-red-500;
+            @apply w-full bg-red-500 md:w-1/2;
 
             .img {
               padding-bottom: 226 / 347 * 100%;
@@ -111,25 +112,29 @@
           }
 
           .text {
-            @apply flex flex-1 flex-col items-start justify-center space-y-2 pl-5 sm:pl-10;
+            @apply flex flex-1 flex-col items-start justify-center space-y-2 pl-0 md:pl-10;
 
             h1 {
-              @apply font-mxBook text-xl tracking-widest text-primary;
+              @apply font-mxBook text-2xl tracking-widest text-primary md:text-xl;
 
               @media only screen and (max-width: @Mobile) {
                 & {
-                  @apply t-xl;
+                  @apply t-2xl;
                 }
               }
             }
 
             p {
-              @apply text-justify font-mxLight text-xs sm:text-sm;
+              @apply text-justify font-mxLight text-sm md:text-sm;
 
               @media only screen and (max-width: @Mobile) {
                 & {
-                  @apply t-xs;
+                  @apply t-sm;
                 }
+              }
+
+              span {
+                @apply font-gillRegular;
               }
             }
           }

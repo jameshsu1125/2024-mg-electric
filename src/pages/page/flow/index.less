@@ -1,7 +1,7 @@
 @import url('../../../settings/config.less');
 
 .Flow {
-  @apply w-full py-10;
+  @apply w-full overflow-hidden py-10;
 
   h1 {
     @apply text-center font-mxThin text-4xl lg:text-left;
@@ -12,10 +12,10 @@
   }
 
   .content {
-    @apply flex w-full flex-row;
+    @apply flex w-full flex-col space-y-5 md:flex-row md:space-y-0;
 
     .image {
-      @apply w-5/12;
+      @apply w-full md:w-5/12;
 
       .img {
         padding-bottom: 216/387 * 100%;
@@ -25,17 +25,13 @@
     }
 
     .ctx {
-      @apply flex flex-1 flex-col items-start justify-between space-y-1 pl-5 lg:space-y-3;
+      @apply flex flex-1 flex-col items-start justify-between space-y-1 md:pl-5 lg:space-y-3;
 
       & > p {
-        @apply text-base leading-relaxed;
-
-        @media only screen and (max-width: @SM) {
-          @apply text-xs leading-normal;
-        }
+        @apply text-justify text-lg leading-relaxed md:text-base;
 
         @media only screen and (max-width: @Mobile) {
-          @apply t-sm;
+          @apply t-lg;
         }
       }
     }
