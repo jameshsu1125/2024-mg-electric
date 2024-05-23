@@ -10,11 +10,11 @@ import Char from '@/components/char';
 let delay = 0;
 
 const Image = ({ inView }: { inView: boolean }) => {
-  const [style, setStyle] = useTween({ scale: 0.3, x: -700 });
+  const [style, setStyle] = useTween({ scale: 0.6, x: -200 });
 
   useEffect(() => {
     if (inView) setStyle({ scale: 1, x: 0 }, { duration: 1500 });
-    else setStyle({ scale: 0.3, x: -700 }, 100);
+    else setStyle({ scale: 0.6, x: -200 }, 100);
   }, [inView]);
   return <div style={style} className='image' />;
 };
