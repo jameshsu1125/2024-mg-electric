@@ -1,7 +1,7 @@
 import { memo, useEffect } from 'react';
 import './index.less';
 import { useInView } from 'react-intersection-observer';
-import useTween from 'lesca-use-tween';
+import useTween, { Bezier } from 'lesca-use-tween';
 import { IReactProps } from '@/settings/type';
 
 const Text = memo(
@@ -36,14 +36,47 @@ const Headline = memo(({ inView }: { inView: boolean }) => {
   );
 });
 
+const Car = memo(({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ opacity: 1, x: 200 });
+
+  useEffect(() => {
+    if (inView) setStyle({ opacity: 1, x: 0 }, { duration: 500, easing: Bezier.outBack });
+    else setStyle({ opacity: 1, x: 200 }, 100);
+  }, [inView]);
+
+  return (
+    <div className='car'>
+      <div className='png' style={style} />
+    </div>
+  );
+});
+
+const MG4 = memo(({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ opacity: 0, y: 200 });
+
+  useEffect(() => {
+    if (inView)
+      setStyle({ opacity: 1, y: 0 }, { duration: 700, delay: 100, easing: Bezier.inOutQuart });
+    else setStyle({ opacity: 0, y: 200 }, 100);
+  }, [inView]);
+
+  return (
+    <div className='mg4'>
+      <div style={style} className='svg' />
+    </div>
+  );
+});
+
 const Landing = memo(() => {
   const { ref, inView } = useInView({
-    threshold: 0.7,
+    threshold: 0,
   });
 
   return (
     <div ref={ref} className='Landing'>
       <div className='bg' />
+      <MG4 inView={inView} />
+      <Car inView={inView} />
       <div className='headline'>
         <Headline inView={inView} />
       </div>

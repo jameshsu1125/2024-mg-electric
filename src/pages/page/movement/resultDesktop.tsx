@@ -42,7 +42,7 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
             <div className='f'>元/日</div>
           </div>
           <div className='col'>
-            <div className='h'>電費成本</div>
+            <div className='h'>燃油成本</div>
             <span>
               <Counter init={0} to={data.fuelCost} max={9999} />
             </span>
