@@ -40,8 +40,9 @@ const Car = memo(({ inView }: { inView: boolean }) => {
   const [style, setStyle] = useTween({ opacity: 1, x: 200 });
 
   useEffect(() => {
-    if (inView) setStyle({ opacity: 1, x: 0 }, { duration: 500, easing: Bezier.outBack });
-    else setStyle({ opacity: 1, x: 200 }, 100);
+    if (inView) {
+      setStyle({ opacity: 1, x: 0 }, { duration: 500, easing: Bezier.outBack });
+    } else setStyle({ opacity: 1, x: 200 }, 100);
   }, [inView]);
 
   return (
