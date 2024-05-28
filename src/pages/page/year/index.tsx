@@ -1,5 +1,5 @@
 import Article from '@/components/article';
-import Char from '@/components/char';
+import { IReactProps } from '@/settings/type';
 import useTween from 'lesca-use-tween';
 import { memo, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -43,6 +43,18 @@ const H1 = ({ inView }: { inView: boolean }) => {
   );
 };
 
+const Paragraph = ({ children, inView }: IReactProps & { inView: boolean }) => {
+  const [style, setStyle] = useTween({ opacity: 0, y: 20 });
+
+  useEffect(() => {
+    if (inView) {
+      delay += 100;
+      setStyle({ opacity: 1, y: 0 }, { duration: 500, delay });
+    } else setStyle({ opacity: 0, y: 20 }, 100);
+  }, [inView]);
+  return <p style={style}>{children}</p>;
+};
+
 const Year = memo(() => {
   const [device, setDevice] = useState<'d' | 'm' | 'unset'>('unset');
 
@@ -66,47 +78,17 @@ const Year = memo(() => {
         <Image inView={inView} />
         <div className='content'>
           <H1 inView={inView} />
-          <p>
-            {device && device === 'd' ? (
-              <Char inView={inView} delay={delay}>
-                百年來 MG 以不斷突破框架的先鋒者精神，致力於移動未來的創新，在車壇締造無數佳績
-              </Char>
-            ) : (
-              <>
-                <Char delay={(delay += 100)} inView={inView}>
-                  百年來 MG 以不斷突破框架的先鋒者精神
-                </Char>
-                <br />
-                <Char delay={(delay += 100)} inView={inView}>
-                  致力於移動未來的創新，在車壇締造無數佳績
-                </Char>
-              </>
-            )}
-          </p>
-
-          <p>
-            {device && device === 'd' ? (
-              <Char delay={(delay += 100)} inView={inView}>
-                隨時代推進，MG
-                在前瞻科技及綠能永續仍不遺餘力，以完善技術、普及化理念，推出世人期待的電動車款
-              </Char>
-            ) : (
-              <>
-                <Char delay={(delay += 100)} inView={inView}>
-                  隨時代推進，MG 在前瞻科技及綠能永續仍不遺餘力
-                </Char>
-                <br />
-                <Char delay={(delay += 100)} inView={inView}>
-                  以完善技術、普及化理念，推出世人期待的電動車款
-                </Char>
-              </>
-            )}
-          </p>
-          <p>
-            <Char delay={(delay += 100)} inView={inView}>
-              在全新時代，實現世界對純電生活的嚮往
-            </Char>
-          </p>
+          <Paragraph inView={inView}>
+            百年來 MG 以不斷突破框架的先鋒者精神
+            {device === 'd' ? '，' : <br />}
+            致力於移動未來的創新，在車壇締造無數佳績
+          </Paragraph>
+          <Paragraph inView={inView}>
+            隨時代推進，MG 在前瞻科技及綠能永續仍不遺餘力
+            {device === 'd' ? '，' : <br />}
+            以完善技術、普及化理念，推出世人期待的電動車款
+          </Paragraph>
+          <Paragraph inView={inView}>在全新時代，實現世界對純電生活的嚮往</Paragraph>
         </div>
       </Article>
     </div>

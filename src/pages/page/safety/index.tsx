@@ -11,7 +11,7 @@ const H1 = ({ inView, device }: { inView: boolean; device: MediaType }) => {
   const [style, setStyle] = useTween({ letterSpacing: '2rem' });
 
   useEffect(() => {
-    if (inView) setStyle({ letterSpacing: '0.2rem' }, { duration: 5000 });
+    if (inView) setStyle({ letterSpacing: '0.2rem' }, { duration: 3000 });
     else setStyle({ letterSpacing: '2rem' }, 100);
   }, [inView]);
 

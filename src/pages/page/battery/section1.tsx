@@ -1,9 +1,9 @@
 import Article from '@/components/article';
-import { memo, useEffect } from 'react';
-import './section1.less';
-import { useInView } from 'react-intersection-observer';
-import useTween from 'lesca-use-tween';
 import { IReactProps } from '@/settings/type';
+import useTween, { Bezier } from 'lesca-use-tween';
+import { memo, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import './section1.less';
 
 const Dialog = ({ children, inView, index }: IReactProps & { inView: boolean; index: number }) => {
   const [style, setStyle] = useTween({ opacity: 0, y: 50 });
@@ -19,7 +19,7 @@ const H1 = ({ inView }: { inView: boolean }) => {
   const [style, setStyle] = useTween({ letterSpacing: '2rem' });
 
   useEffect(() => {
-    if (inView) setStyle({ letterSpacing: '0.2rem' }, { duration: 5000 });
+    if (inView) setStyle({ letterSpacing: '0.2rem' }, { duration: 3000 });
     else setStyle({ letterSpacing: '2rem' }, 100);
   }, [inView]);
 
@@ -27,6 +27,44 @@ const H1 = ({ inView }: { inView: boolean }) => {
     <h1 style={style}>
       <span>MG4</span>電池科技
     </h1>
+  );
+};
+
+const OpenImage = ({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ opacity: 1 });
+
+  useEffect(() => {
+    if (inView) setStyle({ opacity: 0 }, { duration: 300, delay: 1500 });
+    else setStyle({ opacity: 1 }, 100);
+  }, [inView]);
+
+  return <div className='img-off' style={style} />;
+};
+
+const CloseImage = ({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ opacity: 0 });
+
+  useEffect(() => {
+    if (inView) setStyle({ opacity: 1 }, { duration: 300, easing: Bezier.inQuart, delay: 1500 });
+    else setStyle({ opacity: 0 }, 100);
+  }, [inView]);
+
+  return <div className='img-on' style={style} />;
+};
+
+const Images = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  return (
+    <div ref={ref} className='product'>
+      <div>
+        <div className='img' />
+        <CloseImage inView={inView} />
+        <OpenImage inView={inView} />
+      </div>
+    </div>
   );
 };
 
@@ -62,11 +100,7 @@ const Section1 = memo(() => {
               <p>透過冷卻系統和陶瓷隔熱板進行熱能管理，提高電池安全性。</p>
             </Dialog>
           </div>
-          <div className='product'>
-            <div>
-              <div className='img' />
-            </div>
-          </div>
+          <Images />
         </div>
       </Article>
     </section>

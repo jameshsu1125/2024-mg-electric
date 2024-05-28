@@ -19,10 +19,10 @@ const Result = memo(() => {
   const [state] = useContext(MovementContext);
 
   const data = useMemo(() => {
-    const chargeDaily = Math.ceil(state.mile / 567);
-    const chargeMeekly = Math.ceil((state.mile * 7) / 567);
-    const electricityCost = Math.ceil(state.mile * 0.8);
-    const fuelCost = Math.ceil(state.mile * 2.5);
+    const chargeDaily = Math.round(state.mile / 567);
+    const chargeMeekly = Math.round((state.mile * 7) / 567);
+    const electricityCost = Math.round(state.mile * 0.8);
+    const fuelCost = Math.round(state.mile * 2.5);
     const savedCostYearly = (fuelCost - electricityCost) * 365 + (state.mile === 0 ? 0 : 17410);
     return {
       chargeDaily,

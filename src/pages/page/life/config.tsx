@@ -10,7 +10,7 @@ export const LifeCarousel = [
   {
     headline: '純電移動生活',
     subline: '在寧靜中 創造美好體驗',
-    body: ['全然靜謐的駕馭體驗，穿梭於自然卻不自造喧囂，', '沉浸與世界和諧共生的純電境界。'],
+    body: ['全然靜謐的駕馭體驗，穿梭於自然卻不製造喧囂，', '沉浸與世界和諧共生的純電境界。'],
     postscript: '',
   },
   {
@@ -21,7 +21,7 @@ export const LifeCarousel = [
       '不僅有專屬單踏板模式，不浪費一點動能，',
       '更能享受零百加速僅需 3.8 秒的貼背快感。',
     ],
-    postscript: '*0-100km 加速時間 3.8 秒僅限 MG4 XPOWER',
+    postscript: '*0-100km/h 加速時間 3.8 秒僅限 MG4 XPOWER',
   },
   {
     headline: '純電移動生活',
@@ -31,7 +31,7 @@ export const LifeCarousel = [
       '不論快充與慢充，皆可搭配My MG App遠端管理，',
       '輕鬆掌握車輛充電狀態。',
     ],
-    postscript: '*智慧車聯網系統與手機介面以MG Taiwan提供之MY MG App服務為準，並僅供MG4使用',
+    postscript: '*智慧車聯網系統與手機介面以MG Taiwan提供之My MG App服務為準，並僅供MG4使用',
   },
   {
     headline: '純電移動生活',

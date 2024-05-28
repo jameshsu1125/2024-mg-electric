@@ -41,14 +41,14 @@ const Button = memo(({ data, onClick, index, clickIndex, inView }: ButtonProps) 
       setAnimated(false);
       setStyle(
         { opacity: 1, scale: 1 },
-        { duration: 800, easing: Bezier.outBack, delay: 200 * index },
+        { duration: 400, easing: Bezier.outBack, delay: 50 * index },
       );
       setWidth(
         { width: window.innerWidth < 768 ? '12px' : '20px' },
         {
-          duration: 800,
+          duration: 400,
           easing: Bezier.outBack,
-          delay: 600 + 100 * index,
+          delay: 400 + 50 * index,
           onEnd: () => setAnimated(true),
         },
       );

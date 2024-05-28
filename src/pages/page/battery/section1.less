@@ -1,7 +1,7 @@
 @import url('../../../settings/config.less');
 
 .Section-1 {
-  @apply relative w-full bg-white py-20;
+  @apply relative w-full bg-white py-10;
 
   &::after {
     bottom: -26px;
@@ -68,16 +68,28 @@
       @apply flex w-full items-center justify-center;
 
       & > div {
-        max-width: 993px;
+        max-width: 500px;
         width: 100%;
+        @apply relative;
 
         .img {
           padding-bottom: 876 / 993 * 100%;
+        }
+
+        .img-off {
+          padding-bottom: 876 / 993 * 100%;
+          background-image: url(img/battery/battery-close.png);
+          background-size: 100% auto;
+
+          @apply absolute top-0 w-full bg-center bg-no-repeat;
+        }
+
+        .img-on {
+          padding-bottom: 876 / 993 * 100%;
           background-image: url(img/battery/battery-open.png);
+          background-size: 100% auto;
 
-          @apply w-full bg-contain bg-center bg-no-repeat;
-
-          // @scale: 0.8;
+          @apply absolute top-0 w-full bg-center bg-no-repeat;
         }
       }
     }

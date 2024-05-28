@@ -12,14 +12,7 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
     <div className='row'>
       <div className='col'>
         <div className='table'>
-          <h1>當日充電</h1>
-          <span>
-            <Counter init={0} to={data.chargeDaily} max={999} />
-          </span>
-          <h1>次</h1>
-        </div>
-        <div className='table'>
-          <h1>當週充電</h1>
+          <h1 className='whitespace-nowrap'>單週充滿電</h1>
           <span>
             <Counter init={0} to={data.chargeMeekly} max={999} />
           </span>
@@ -58,6 +51,8 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
         *以1度電4.8元，每度電行駛6公里計，成本約0.8元/km。
         <br />
         *以95無鉛汽油每公升30元，每公升行駛12公里計，成本約2.5元/km。
+        <br />
+        *以上數據僅供參考，將依個人使用狀況與環境有所差異
       </h6>
     </div>
   </div>

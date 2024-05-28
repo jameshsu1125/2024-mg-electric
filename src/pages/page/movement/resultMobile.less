@@ -21,7 +21,7 @@
   }
 
   .row {
-    @apply flex w-full flex-row items-center justify-center px-5;
+    @apply flex w-full flex-row items-center justify-center border-l border-r border-black px-5;
 
     @media only screen and (max-width: @SM) {
       & {
@@ -30,7 +30,7 @@
     }
 
     .col {
-      @apply flex flex-col border-l border-black px-5 py-1;
+      @apply flex flex-col border-black px-5 py-1;
 
       @media only screen and (max-width: @SM) {
         & {
@@ -75,7 +75,7 @@
     }
 
     & > div:last-child {
-      @apply border-r;
+      @apply border-l;
     }
   }
 

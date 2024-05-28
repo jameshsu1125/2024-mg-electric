@@ -5,17 +5,17 @@ import { memo, useContext, useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { MovementContext } from './config';
 import './cover.less';
-import Char from '@/components/char';
 import { twMerge } from 'tailwind-merge';
+import { IReactProps } from '@/settings/type';
 
 let delay = 0;
 
 const Image = ({ inView }: { inView: boolean }) => {
-  const [style, setStyle] = useTween({ scale: 0.6, x: -200 });
+  const [style, setStyle] = useTween({ scale: 0.6, x: -120 });
 
   useEffect(() => {
     if (inView) setStyle({ scale: 1, x: 0 }, { duration: 1500 });
-    else setStyle({ scale: 0.6, x: -200 }, 100);
+    else setStyle({ scale: 0.6, x: -120 }, 100);
   }, [inView]);
   return <div style={style} className='image' />;
 };
@@ -35,6 +35,18 @@ const H1 = ({ inView }: { inView: boolean }) => {
       規劃更多精彩可能
     </h1>
   );
+};
+
+const Paragraph = ({ children, inView }: IReactProps & { inView: boolean }) => {
+  const [style, setStyle] = useTween({ opacity: 0, y: 20 });
+
+  useEffect(() => {
+    if (inView) {
+      delay += 100;
+      setStyle({ opacity: 1, y: 0 }, { duration: 500, delay });
+    } else setStyle({ opacity: 0, y: 20 }, 100);
+  }, [inView]);
+  return <p style={style}>{children}</p>;
 };
 
 const Cover = memo(() => {
@@ -67,31 +79,21 @@ const Cover = memo(() => {
         <div className='content'>
           <div className='left'>
             <H1 inView={inView} />
-            <p>
-              <Char inView={inView} delay={(delay += 100)}>
-                不只改變能源驅動，更重新定義移動成本
-              </Char>
-              <br />
-              <Char inView={inView} delay={(delay += 100)}>
-                立即試算，當您擁有 MG4
-              </Char>
-              <br />
+            <div>
+              <Paragraph inView={inView}>不只改變能源驅動，更重新定義移動成本</Paragraph>
+              <Paragraph inView={inView}>立即試算，當您擁有 MG4</Paragraph>
+              <Paragraph inView={inView}></Paragraph>
               {device < MediaType.SM ? (
-                <Char inView={inView} delay={(delay += 100)}>
+                <Paragraph inView={inView}>
                   一樣的行駛距離，能夠為您省下多少，創造更精采多元的生活
-                </Char>
+                </Paragraph>
               ) : (
                 <>
-                  <Char inView={inView} delay={(delay += 100)}>
-                    一樣的行駛距離，能夠為您省下多少
-                  </Char>
-                  <br />
-                  <Char inView={inView} delay={(delay += 100)}>
-                    創造更精采多元的生活
-                  </Char>
+                  <Paragraph inView={inView}>一樣的行駛距離，能夠為您省下多少</Paragraph>
+                  <Paragraph inView={inView}>創造更精采多元的生活</Paragraph>
                 </>
               )}
-            </p>
+            </div>
             <div className='group'>
               <div className='row'>
                 <div className='ico' />

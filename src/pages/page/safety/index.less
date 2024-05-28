@@ -4,14 +4,16 @@
   @apply relative w-full overflow-hidden;
 
   .bg {
-    padding-bottom: 1423 / 1920 * 100%;
+    padding-bottom: 1198 / 1920 * 100%;
     background-image: url('img/safety/car.jpg');
 
     @apply relative w-full bg-cover bg-center bg-no-repeat;
 
     @media only screen and (max-width: @SM) {
       & {
-        @apply mt-8;
+        padding-bottom: 1423 / 1920 * 100%;
+        background-image: url('img/safety/car-m.jpg');
+        @apply mt-10;
       }
     }
 
@@ -127,6 +129,10 @@
   .headline {
     @apply absolute top-5 flex w-full flex-col items-center justify-center whitespace-nowrap pb-8 lg:top-12;
 
+    @media only screen and (max-width: @Mobile) {
+      @apply top-3;
+    }
+
     h1 {
       @apply text-center font-mxThin text-4xl;
 
@@ -135,7 +141,7 @@
       }
 
       @media only screen and (max-width: @Mobile) {
-        @apply t-4xl;
+        @apply t-3xl;
       }
     }
   }

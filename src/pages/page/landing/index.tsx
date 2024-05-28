@@ -9,7 +9,7 @@ const Text = memo(
     const [style, setStyle] = useTween({ opacity: 0, y: 50 });
 
     useEffect(() => {
-      if (inView) setStyle({ opacity: 1, y: 0 }, { duration: 500, delay: index * 100 });
+      if (inView) setStyle({ opacity: 1, y: 0 }, { duration: 500, delay: index * 20 });
       else setStyle({ opacity: 0, y: 50 }, { duration: 100 });
     }, [inView]);
     return <div style={style}>{children}</div>;

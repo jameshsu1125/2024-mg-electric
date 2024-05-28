@@ -67,6 +67,7 @@ const Modus = memo(() => {
                   <span>Yes!</span>來電…等
                 </p>
                 <p>多家國內主要充電營運商特約合作，涵蓋全台75%以上快慢充充電網絡資源。</p>
+                <p>*充電網絡資源數據，統計至2023年12月底。</p>
                 <div className='sponsor'>
                   <div className='image' />
                 </div>
