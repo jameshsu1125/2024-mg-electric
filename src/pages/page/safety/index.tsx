@@ -7,6 +7,8 @@ import { useInView } from 'react-intersection-observer';
 import useMedia, { MediaType } from '@/hooks/useMedia';
 import useTween from 'lesca-use-tween';
 
+const base = process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
+
 const H1 = ({ inView, device }: { inView: boolean; device: MediaType }) => {
   const [style, setStyle] = useTween({ letterSpacing: '2rem' });
 
@@ -30,28 +32,35 @@ const Safety = memo(() => {
     <div ref={ref} className='Safety'>
       <div className='bg'>
         <div>
-          <div className='h-full w-full'>
-            {SafetyConfig.map((data, index) => (
-              <Button
-                key={data.name}
-                data={data}
-                onClick={(i) => setClickIndex(i)}
-                index={index}
-                clickIndex={clickIndex}
-                inView={inView}
-              />
-            ))}
-          </div>
-          <div className='absolute left-0 top-0 h-full w-full'>
-            {SafetyConfig.map((data, index) => (
-              <Dialog
-                key={data.title}
-                data={data}
-                index={index}
-                clickIndex={clickIndex}
-                onClick={() => setClickIndex(undefined)}
-              />
-            ))}
+          <div className='car'>
+            <div className='img'>
+              <img src={`${base}img/safety/n-car.png`} />
+              <div className='absolute top-0 h-full w-full'>
+                <div className='relative top-5 h-full w-full md:top-0'>
+                  {SafetyConfig.map((data, index) => (
+                    <Button
+                      key={data.name}
+                      data={data}
+                      onClick={(i) => setClickIndex(i)}
+                      index={index}
+                      clickIndex={clickIndex}
+                      inView={inView}
+                    />
+                  ))}
+                </div>
+                <div className='absolute left-0 top-0 h-full w-full'>
+                  {SafetyConfig.map((data, index) => (
+                    <Dialog
+                      key={data.title}
+                      data={data}
+                      index={index}
+                      clickIndex={clickIndex}
+                      onClick={() => setClickIndex(undefined)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

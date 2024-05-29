@@ -34,11 +34,13 @@ const Life = memo(() => {
     const resize = () => {
       if (rootRef.current) {
         const [dom] = document.getElementsByTagName('video');
-        const btnHeight = window.innerWidth > 768 ? 20 : 12;
-        const root = rootRef.current;
-        const h = dom.clientHeight / 2;
-        const y = dom.getClientRects()[0].y - root.getClientRects()[0].y;
-        setTop(y + h - btnHeight);
+        if (dom) {
+          const btnHeight = window.innerWidth > 768 ? 20 : 12;
+          const root = rootRef.current;
+          const h = dom?.clientHeight / 2;
+          const y = dom.getClientRects()[0].y - root.getClientRects()[0].y;
+          setTop(y + h - btnHeight);
+        }
       }
     };
     resize();

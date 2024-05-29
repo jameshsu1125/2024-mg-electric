@@ -4,21 +4,54 @@
   @apply relative w-full overflow-hidden;
 
   .bg {
-    padding-bottom: 1198 / 1920 * 100%;
-    background-image: url('img/safety/car.jpg');
+    padding-bottom: 0;
+    height: 100vh;
+    background-image: url('img/safety/bg.jpg');
 
     @apply relative w-full bg-cover bg-center bg-no-repeat;
 
     @media only screen and (max-width: @SM) {
       & {
         padding-bottom: 1423 / 1920 * 100%;
-        background-image: url('img/safety/car-m.jpg');
+        height: initial;
+        background-image: url('img/safety/bg-m.jpg');
         @apply mt-10;
       }
     }
 
     & > div {
       @apply absolute bottom-0 left-0 right-0 top-0;
+
+      .car {
+        top: 20px;
+        height: calc(~'100% - 40px');
+        @apply absolute left-0 w-full text-center;
+
+        @media only screen and (max-width: @SM) {
+          & {
+            top: 0%;
+            height: 100%;
+          }
+        }
+
+        .img {
+          background-image: url('img/safety/n-car.png');
+          @apply relative inline-block h-full bg-cover bg-center bg-no-repeat;
+
+          @media only screen and (max-width: @SM) {
+            & {
+              background-image: url('img/safety/n-car-m.png');
+            }
+          }
+
+          & > img {
+            display: inline-block;
+            visibility: hidden;
+            width: auto;
+            height: 100%;
+          }
+        }
+      }
     }
 
     .dot {
@@ -84,7 +117,7 @@
     }
 
     .dialogContext {
-      @apply absolute z-10 -mt-10 flex w-80 flex-col items-start justify-start border p-2;
+      @apply absolute z-10 -mt-10 flex w-80 flex-col items-start justify-start border p-2 text-left;
 
       @media only screen and (max-width: @Mobile) {
         @apply w-72;

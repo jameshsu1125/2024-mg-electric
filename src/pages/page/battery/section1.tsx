@@ -52,7 +52,7 @@ const CloseImage = ({ inView }: { inView: boolean }) => {
   return <div className='img-on' style={style} />;
 };
 
-const Images = () => {
+const Images = memo(() => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -66,7 +66,7 @@ const Images = () => {
       </div>
     </div>
   );
-};
+});
 
 const Section1 = memo(() => {
   const { ref, inView } = useInView({
