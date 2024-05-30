@@ -1,42 +1,22 @@
-import LoadingProcess from '@/components/loadingProcess';
-import { Context, InitialState, Reducer } from '@/settings/constant';
 import '@/settings/global.less';
-import { ActionType, TContext } from '@/settings/type';
-import { useEffect, useMemo, useReducer, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import Page from './page';
+import App from './app';
+import View3DEvents from '@/common/event';
 
-const href = window.location.href;
+const view3DEvents = new View3DEvents();
 
-const App = () => {
-  const [state, setState] = useReducer(Reducer, InitialState);
-  const value: TContext = useMemo(() => [state, setState], [state]);
+declare global {
+  interface Window {
+    appFromReact: View3DEvents;
+  }
+}
 
-  const [url, setURL] = useState(href);
-
-  useEffect(() => {
-    window.addEventListener('popstate', () => {
-      setURL(window.location.href);
-    });
-  }, []);
-
-  return (
-    <div className='App'>
-      <Context.Provider {...{ value }}>
-        {href === url && <Page />}
-        {state[ActionType.LoadingProcess]?.enabled && <LoadingProcess />}
-      </Context.Provider>
-    </div>
-  );
-};
-
-const render = () => {
+view3DEvents.render = () => {
   const app = ReactDOM.createRoot(document.getElementById('not_aem_app')!);
   app.render(<App key={new Date().getTime()} />);
+  view3DEvents.setReactDom(app);
+  console.log('%creact dom rendered', 'background:red; color:white; font-size: 20px;');
 };
 
-render();
-window.addEventListener('popstate', () => {
-  render();
-  console.log('popstate', `register url is: ${href}`);
-});
+window.appFromReact = view3DEvents;
+view3DEvents.render();
