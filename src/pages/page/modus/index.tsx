@@ -63,11 +63,13 @@ const Modus = memo(() => {
               <div ref={ref2} className='body'>
                 <p>
                   <span>MG Taiwan</span>
-                  目前與<span>EVOASIS、U-POWER、iCHARGING、TAIL、EVALUE、NOODOE</span>及
-                  <span>Yes!</span>來電…等
+                  目前與<span> EVOASIS、U-POWER、iCHARGING、TAIL、EVALUE、NOODOE </span>及
+                  <span> Yes! </span>來電…等
                 </p>
                 <p>多家國內主要充電營運商特約合作，涵蓋全台75%以上快慢充充電網絡資源。</p>
-                <p>*充電網絡資源數據，統計至2023年12月底。</p>
+                <p className='ps'>
+                  *充電網絡資源數據，統計至<span> 2023 </span>年<span> 12 </span>月底。
+                </p>
                 <div className='sponsor'>
                   <div className='image' />
                 </div>
@@ -81,8 +83,8 @@ const Modus = memo(() => {
                 <div className='text'>
                   <h1>充電規格</h1>
                   <p>
-                    使用<span>CCS1 DC</span> 直流電與<span>SAE J1772 AC</span>
-                    交流電，兩種市面涵蓋率最高充電規格
+                    使用<span> CCS1 DC </span> 直流電與<span> SAE J1772 AC </span>
+                    交流電，兩種市面涵蓋率最高充電規格。
                   </p>
                 </div>
               </div>
@@ -92,7 +94,7 @@ const Modus = memo(() => {
                 </div>
                 <div className='text'>
                   <h1>展間快充</h1>
-                  <p>全台展間陸續建置專屬快速充電樁，提供最全面且便捷的充電體驗</p>
+                  <p>全台展間陸續建置專屬快速充電樁，提供最全面且便捷的充電體驗。</p>
                 </div>
               </div>
             </div>

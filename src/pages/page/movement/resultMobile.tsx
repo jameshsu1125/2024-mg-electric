@@ -48,9 +48,11 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
     </div>
     <div className='total'>
       <h6>
-        *以1度電4.8元，每度電行駛6公里計，成本約0.8元/km。
+        *以<span> 1 </span>度電<span> 4.8 </span>元，每度電行駛<span> 6 </span>
+        公里計，成本約<span> 0.8 </span>元<span>/km</span>。
         <br />
-        *以95無鉛汽油每公升30元，每公升行駛12公里計，成本約2.5元/km。
+        *以<span> 95 </span>無鉛汽油每公升<span> 30 </span>元，每公升行駛<span> 12 </span>
+        公里計，成本約<span> 2.5 </span>元<span>/km</span>。
         <br />
         *以上數據僅供參考，將依個人使用狀況與環境有所差異
       </h6>

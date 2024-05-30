@@ -95,8 +95,12 @@
       .body {
         @apply flex w-full flex-col;
 
-        p {
+        & > div:not(.ps) {
           @apply flex w-full flex-col text-justify font-mxLight text-sm font-light;
+
+          span {
+            @apply font-gillLight;
+          }
 
           @media only screen and (max-width: @MD) {
             & {
@@ -118,6 +122,10 @@
             & {
               @apply t-xxs;
             }
+          }
+
+          span {
+            @apply font-gillLight;
           }
         }
       }

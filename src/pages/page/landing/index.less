@@ -41,7 +41,9 @@
     @apply absolute w-full text-center;
 
     @media only screen and (max-width: @SM) {
-      font-size: 0.9 * @Ratio;
+      & {
+        font-size: 0.9 * @Ratio;
+      }
     }
 
     h1 {

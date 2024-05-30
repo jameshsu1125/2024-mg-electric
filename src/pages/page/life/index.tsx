@@ -59,7 +59,7 @@ const Life = memo(() => {
           onSlideChange={(e) => setState((S) => ({ ...S, index: e.realIndex }))}
         >
           {LifeCarousel.map((data, index) => (
-            <SwiperSlide key={`${data.body}${index}`}>
+            <SwiperSlide key={`${JSON.stringify(data)}${index}`}>
               <Slide index={index} data={data} />
             </SwiperSlide>
           ))}

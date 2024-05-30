@@ -33,11 +33,11 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
         return <p>{data.body.join('')}</p>;
       default:
         return (
-          <p>
+          <div>
             {data.body.map((text) => (
-              <span key={text}>{text}</span>
+              <p key={JSON.stringify(text)}>{text}</p>
             ))}
-          </p>
+          </div>
         );
     }
   }, [data.body, device]);
@@ -69,7 +69,7 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
               </div>
               <div className='body'>
                 {body}
-                {data.postscript !== '' && <div className='ps'>{data.postscript}</div>}
+                {data.postscript && <div className='ps'>{data.postscript}</div>}
               </div>
             </div>
           </div>

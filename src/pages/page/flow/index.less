@@ -28,7 +28,11 @@
       @apply flex flex-1 flex-col items-start justify-between space-y-1 md:pl-5 lg:space-y-3;
 
       & > p {
-        @apply text-justify text-lg leading-relaxed md:text-base;
+        @apply text-justify font-mxLight text-lg leading-relaxed md:text-base;
+
+        span {
+          @apply font-gillLight;
+        }
 
         @media only screen and (max-width: @Mobile) {
           @apply t-lg;

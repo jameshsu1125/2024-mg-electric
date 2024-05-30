@@ -67,6 +67,16 @@
             }
           }
 
+          .ps {
+            @apply w-full text-xs;
+
+            @media only screen and (max-width: @Mobile) {
+              & {
+                @apply t-xs;
+              }
+            }
+          }
+
           .sponsor {
             max-width: 600px;
             @apply w-full;

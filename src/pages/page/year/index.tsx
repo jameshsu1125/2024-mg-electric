@@ -91,12 +91,12 @@ const Year = memo(() => {
         <div className='content'>
           <H1 inView={inView} step={state.step} />
           <Paragraph inView={inView} step={state.step}>
-            百年來 MG 以不斷突破框架的先鋒者精神
+            百年來<span> MG </span>以不斷突破框架的先鋒者精神
             {device === 'd' ? '，' : <br />}
             致力於移動未來的創新，在車壇締造無數佳績
           </Paragraph>
           <Paragraph inView={inView} step={state.step}>
-            隨時代推進，MG 在前瞻科技及綠能永續仍不遺餘力
+            隨時代推進，<span> MG </span>在前瞻科技及綠能永續仍不遺餘力
             {device === 'd' ? '，' : <br />}
             以完善技術、普及化理念，推出世人期待的電動車款
           </Paragraph>
