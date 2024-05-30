@@ -3,8 +3,8 @@
 .Form {
   // background-image: url('img/movement/form.svg');
   // background-size: auto 70%;
-
-  @apply relative w-full p-10;
+  padding: min(5%, 40px) 0;
+  @apply relative w-full;
 
   @media only screen and (max-width: @Mobile) {
     & {
@@ -13,7 +13,7 @@
   }
 
   .image {
-    padding-bottom: 182.8 / 1034.9 * 100%;
+    padding-bottom: 344.9 / 1354.6 * 100%;
     width: 100%;
     background-image: url('img/movement/form.svg');
     background-size: 100%;
@@ -21,17 +21,9 @@
 
     @media only screen and (max-width: @SM) {
       & {
-        padding-bottom: 460.5 / 915 * 100%;
+        padding-bottom: 1053.4 / 915 * 100%;
         background-image: url('img/movement/form-m.svg');
       }
     }
   }
-
-  // @media only screen and (max-width: @Mobile) {
-  //   & {
-  //     height: 260px;
-  //     background-image: url('img/movement/form-m.svg');
-  //     background-size: auto 60%;
-  //   }
-  // }
 }

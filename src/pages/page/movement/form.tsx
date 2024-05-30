@@ -8,7 +8,7 @@ const Form = memo(() => {
     <div className='Form'>
       <Article expend>
         <div className='flex w-full justify-center'>
-          <div className='w-full max-w-[800px]'>
+          <div className='w-full max-w-[1100px]'>
             <div className='image' />
           </div>
         </div>
