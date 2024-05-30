@@ -95,6 +95,40 @@
       .body {
         @apply flex w-full flex-col;
 
+        .m {
+          @apply font-mxLight text-sm font-light;
+
+          span {
+            @apply font-gillLight;
+          }
+
+          @media only screen and (max-width: @MD) {
+            & {
+              @apply text-sm;
+            }
+          }
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply t-sm;
+            }
+          }
+        }
+
+        .ps {
+          @apply w-full pt-5 font-mxLight text-xs font-light;
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply t-xxs;
+            }
+          }
+
+          span {
+            @apply font-gillLight;
+          }
+        }
+
         & > div:not(.ps) {
           @apply flex w-full flex-col text-justify font-mxLight text-sm font-light;
 
@@ -112,20 +146,6 @@
             & {
               @apply t-base;
             }
-          }
-        }
-
-        .ps {
-          @apply w-full pt-5 font-mxLight text-xs font-light;
-
-          @media only screen and (max-width: @Mobile) {
-            & {
-              @apply t-xxs;
-            }
-          }
-
-          span {
-            @apply font-gillLight;
           }
         }
       }

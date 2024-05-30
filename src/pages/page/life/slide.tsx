@@ -30,7 +30,7 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
       case 'unset':
         return null;
       case 'm':
-        return <p>{data.body.join('')}</p>;
+        return <p className='m'>{data.body.map((node) => node)}</p>;
       default:
         return (
           <div>
