@@ -6,15 +6,15 @@
   @apply w-full overflow-hidden py-5;
 
   .content {
-    @apply flex w-full flex-row items-start justify-center space-x-5 sm:space-x-10;
+    @apply flex w-full flex-col items-start justify-center space-x-0 space-y-5 md:flex-row md:space-x-10 md:space-y-0;
 
     .image {
       background-image: url('img/application/image.jpg');
-      @apply h-52 w-52 bg-cover bg-center bg-no-repeat sm:h-64 sm:w-64 lg:w-96;
+      @apply h-72 w-full bg-cover bg-center bg-no-repeat md:h-64 md:w-64 lg:w-96;
 
       @media only screen and (max-width: @Mobile) {
         & {
-          @apply h-36 w-24;
+          @apply h-52;
         }
       }
     }
