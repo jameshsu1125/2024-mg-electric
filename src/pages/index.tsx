@@ -38,4 +38,5 @@ const render = () => {
 render();
 window.addEventListener('popstate', () => {
   render();
+  console.log('popstate', `register url is: ${href}`);
 });

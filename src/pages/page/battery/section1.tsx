@@ -42,14 +42,20 @@ const OpenImage = ({ inView }: { inView: boolean }) => {
 };
 
 const CloseImage = ({ inView }: { inView: boolean }) => {
-  const [style, setStyle] = useTween({ opacity: 0 });
+  const [style, setStyle] = useTween({ opacity: 0, width: 0 });
 
   useEffect(() => {
-    if (inView) setStyle({ opacity: 1 }, { duration: 300, easing: Bezier.inQuart, delay: 1500 });
-    else setStyle({ opacity: 0 }, 100);
+    if (inView)
+      setStyle({ opacity: 1, width: 1 }, { duration: 300, easing: Bezier.inQuart, delay: 1500 });
+    else setStyle({ opacity: 0, width: 0 }, 100);
   }, [inView]);
 
-  return <div className='img-on' style={style} />;
+  return (
+    <div
+      className='img-on'
+      style={{ opacity: style.opacity, transform: `scale(1, ${style.width})` }}
+    />
+  );
 };
 
 const Images = memo(() => {
