@@ -2,14 +2,14 @@
 
 .Cover {
   background-image: url('img/movement/bg.jpg');
-  background-position: center calc(~'50% + 80px');
+  background-position: center calc(~'50% + 128px');
   background-size: 100%;
 
   @apply w-full bg-no-repeat py-10;
 
   @media only screen and (max-width: @SM) {
     & {
-      background-position: center calc(~'50% - 200px');
+      background-position: center calc(~'50% - 287px');
     }
   }
 
@@ -28,15 +28,50 @@
       }
 
       & > div {
-        @apply my-5 text-center font-mxLight text-base;
+        @apply my-5 space-y-2 text-center font-mxLight text-base md:space-y-0;
+
+        span {
+          @apply font-gillLight;
+        }
 
         @media only screen and (max-width: @SM) {
-          font-size: 0.8 * @Ratio;
+          & {
+            font-size: 0.8 * @Ratio;
+          }
+        }
+
+        @media only screen and (max-width: @Mobile) {
+          & {
+            @apply space-y-0;
+          }
+        }
+      }
+
+      & > .form {
+        @apply mt-10 flex w-full justify-center;
+
+        & > div {
+          max-width: 280px;
+          @apply w-full;
+
+          @media only screen and (max-width: @SM) {
+            & {
+              max-width: 55vw;
+            }
+          }
+
+          .img {
+            padding-bottom: 162.2 / 355.3 * 100%;
+            background-image: url('img/movement/t-form.svg');
+            background-size: cover;
+
+            @apply w-full bg-cover bg-center bg-no-repeat;
+          }
         }
       }
 
       & > .group {
-        @apply mt-20 flex w-full flex-col items-center justify-center space-x-2 space-y-3 md:space-x-0 md:space-y-10;
+        @apply mt-10 flex w-full flex-col items-center justify-center space-x-2 space-y-3 md:space-x-0 md:space-y-10;
 
         .row {
           @apply flex h-full flex-row items-center justify-center md:w-full;
@@ -143,8 +178,14 @@
     }
 
     .right {
-      transform: translateY(13%) translateX(-14%);
+      transform: translateY(17.4%) translateX(-14%);
       @apply flex w-full items-center justify-center md:w-1/2;
+
+      @media only screen and (max-width: @MD) {
+        & {
+          transform: translateY(17.4%) translateX(-4%);
+        }
+      }
 
       @media only screen and (max-width: @SM) {
         & {

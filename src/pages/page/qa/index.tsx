@@ -1,11 +1,11 @@
 import Article from '@/components/article';
 import useTween from 'lesca-use-tween';
-import { memo, useContext, useEffect, useState } from 'react';
+import { ReactNode, memo, useContext, useEffect, useState } from 'react';
 import { QAContext, QAData, QAState } from './config';
 import './index.less';
 import { twMerge } from 'tailwind-merge';
 
-const Answer = memo(({ a }: { a: string[] }) => {
+const Answer = memo(({ a }: { a: ReactNode[] }) => {
   const [style, setStyle] = useTween({ opacity: 0, y: -100 });
 
   useEffect(() => {
@@ -15,15 +15,15 @@ const Answer = memo(({ a }: { a: string[] }) => {
   return (
     <div className='a' style={style}>
       <div>
-        {a.map((txt) => (
-          <div key={txt}>{txt}</div>
+        {a.map((txt, index) => (
+          <div key={`${JSON.stringify(txt)}${index}`}>{txt}</div>
         ))}
       </div>
     </div>
   );
 });
 
-const Item = memo(({ q, a, index }: { q: string; a: string[]; index: number }) => {
+const Item = memo(({ q, a, index }: { q: ReactNode; a: ReactNode[]; index: number }) => {
   const [state, setState] = useContext(QAContext);
 
   return (
@@ -62,7 +62,12 @@ const QA = memo(() => {
               </div>
               <div className='table-body'>
                 {QAData[state.tab].data.map((item, index) => (
-                  <Item key={`${item.q}${item.a}${index}`} q={item.q} a={item.a} index={index} />
+                  <Item
+                    key={`${JSON.stringify(item.q)}${JSON.stringify(item.a)}${index}`}
+                    q={item.q}
+                    a={item.a}
+                    index={index}
+                  />
                 ))}
               </div>
             </div>

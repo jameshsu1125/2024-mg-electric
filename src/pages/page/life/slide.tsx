@@ -1,5 +1,5 @@
 import Article from '@/components/article';
-import { memo, useContext, useEffect, useMemo, useState } from 'react';
+import { Fragment, memo, useContext, useEffect, useMemo, useState } from 'react';
 import { LifeCarousel, LifeContext } from './config';
 import './slide.less';
 
@@ -30,12 +30,18 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
       case 'unset':
         return null;
       case 'm':
-        return <p className='m'>{data.body.map((node) => node)}</p>;
+        return (
+          <p className='m'>
+            {data.body.map((node) => (
+              <Fragment key={`${JSON.stringify(node)}${index}`}>{node}</Fragment>
+            ))}
+          </p>
+        );
       default:
         return (
           <div>
-            {data.body.map((text) => (
-              <p key={JSON.stringify(text)}>{text}</p>
+            {data.body.map((text, index) => (
+              <p key={`${JSON.stringify(text)}${index}`}>{text}</p>
             ))}
           </div>
         );

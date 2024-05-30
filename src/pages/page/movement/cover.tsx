@@ -37,7 +37,7 @@ const H1 = ({ inView }: { inView: boolean }) => {
   );
 };
 
-const Paragraph = ({ children, inView }: IReactProps & { inView: boolean }) => {
+const Paragraph = memo(({ children, inView }: IReactProps & { inView: boolean }) => {
   const [style, setStyle] = useTween({ opacity: 0, y: 20 });
 
   useEffect(() => {
@@ -46,8 +46,22 @@ const Paragraph = ({ children, inView }: IReactProps & { inView: boolean }) => {
       setStyle({ opacity: 1, y: 0 }, { duration: 500, delay });
     } else setStyle({ opacity: 0, y: 20 }, 100);
   }, [inView]);
+
   return <p style={style}>{children}</p>;
-};
+});
+
+const Form = memo(({ inView }: { inView: boolean }) => {
+  const [style, setStyle] = useTween({ opacity: 0, y: 20 });
+
+  useEffect(() => {
+    if (inView) {
+      delay += 100;
+      setStyle({ opacity: 1, y: 0 }, { duration: 500, delay });
+    } else setStyle({ opacity: 0, y: 20 }, 100);
+  }, [inView]);
+
+  return <div className='img' style={style} />;
+});
 
 const Cover = memo(() => {
   const refInput = useRef<HTMLInputElement>(null);
@@ -81,7 +95,9 @@ const Cover = memo(() => {
             <H1 inView={inView} />
             <div>
               <Paragraph inView={inView}>不只改變能源驅動，更重新定義移動成本</Paragraph>
-              <Paragraph inView={inView}>立即試算，當您擁有 MG4</Paragraph>
+              <Paragraph inView={inView}>
+                立即試算，當您擁有<span> MG4</span>
+              </Paragraph>
               <Paragraph inView={inView}></Paragraph>
               {device < MediaType.SM ? (
                 <Paragraph inView={inView}>
@@ -93,6 +109,11 @@ const Cover = memo(() => {
                   <Paragraph inView={inView}>創造更精采多元的生活</Paragraph>
                 </>
               )}
+            </div>
+            <div className='form'>
+              <div>
+                <Form inView={inView} />
+              </div>
             </div>
             <div className='group'>
               <div className='row'>

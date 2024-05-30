@@ -13,8 +13,11 @@ const Application = memo(() => {
           <div className='text'>
             <h1>My MG App 無論車況或電量都能一手掌握</h1>
             <p>
-              不僅能夠一鍵解鎖車門、預先開啟空調系統，更能夠掌握愛車電量與續航里程，MG4
-              搭載智慧車聯網功能，讓您即時更新每一步。<span> My MG App </span>
+              不僅能夠一鍵解鎖車門、預先開啟空調系統，更能夠掌握愛車電量與續航里程，
+              <span>MG4 </span>
+              搭載智慧車聯網功能，讓您即時更新每一步。
+              <br />
+              <span> My MG App </span>
               更與國內主要的充電營運商合作，為您打造最便利的充電網絡資源。無論身處何地，只要開啟
               <span> My MG App</span>
               ，全台直流/交流充電(<span> DC/AC </span>
