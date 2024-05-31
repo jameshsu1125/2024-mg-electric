@@ -14,7 +14,7 @@ const Image = ({ inView }: { inView: boolean }) => {
   const [style, setStyle] = useTween({ scale: 0.6, x: -120 });
 
   useEffect(() => {
-    if (inView) setStyle({ scale: 1, x: 0 }, { duration: 1500 });
+    if (inView) setStyle({ scale: 1, x: 0 }, { duration: 700 });
     else setStyle({ scale: 0.6, x: -120 }, 100);
   }, [inView]);
   return <div style={style} className='image' />;

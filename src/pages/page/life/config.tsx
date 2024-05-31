@@ -1,10 +1,13 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-export type TLifeState = { index: number };
+export type TLifeState = { index: number; readIndex: number };
 export type TLifeContext = [TLifeState, Dispatch<SetStateAction<TLifeState>>];
 
-export const LifeState: TLifeState = { index: 0 };
+export const LifeState: TLifeState = { index: 0, readIndex: 0 };
 export const LifeContext = createContext<TLifeContext>([LifeState, () => {}]);
+
+export const base =
+  process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
 
 export const LifeCarousel = [
   {
@@ -12,6 +15,11 @@ export const LifeCarousel = [
     subline: '在寧靜中 創造美好體驗',
     body: [<>全然靜謐的駕馭體驗，穿梭於自然卻不製造喧囂，</>, <>沉浸與世界和諧共生的純電境界。</>],
     postscript: false,
+    video: (
+      <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%' }}>
+        <source src={`${base}video/0.mp4`} type='video/mp4' />
+      </video>
+    ),
   },
   {
     headline: '純電移動生活',
@@ -27,6 +35,18 @@ export const LifeCarousel = [
       <>
         *<span> 0-100 km/h </span>加速時間<span> 3.8 </span>秒僅限<span> MG4 XPOWER </span>
       </>
+    ),
+    video: (
+      <iframe
+        style={{ width: '100%', height: '100%' }}
+        width='560'
+        height='315'
+        src='https://www.youtube.com/embed/HIu-nDJyGpg?si=EiAw784sD09LM0_Z'
+        title='YouTube video player'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        referrerPolicy='strict-origin-when-cross-origin'
+        allowFullScreen
+      ></iframe>
     ),
   },
   {
@@ -45,6 +65,18 @@ export const LifeCarousel = [
         服務為準，並僅供<span> MG4 </span>使用。
       </>
     ),
+    video: (
+      <iframe
+        style={{ width: '100%', height: '100%' }}
+        width='560'
+        height='315'
+        src='https://www.youtube.com/embed/HIu-nDJyGpg?si=EiAw784sD09LM0_Z'
+        title='YouTube video player'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        referrerPolicy='strict-origin-when-cross-origin'
+        allowFullScreen
+      ></iframe>
+    ),
   },
   {
     headline: '純電移動生活',
@@ -59,6 +91,11 @@ export const LifeCarousel = [
       <>
         *如欲選購<span> V2L </span>外接供電轉接器，詳情請洽經銷商
       </>
+    ),
+    video: (
+      <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%' }}>
+        <source src={`${base}video/2.mp4`} type='video/mp4' />
+      </video>
     ),
   },
 ];

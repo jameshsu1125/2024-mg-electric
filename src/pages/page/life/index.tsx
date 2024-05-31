@@ -33,7 +33,9 @@ const Life = memo(() => {
   useEffect(() => {
     const resize = () => {
       if (rootRef.current) {
-        const [dom] = document.getElementsByTagName('video');
+        const dom =
+          document.getElementById('videoContainer') || document.getElementsByTagName('video')[0];
+
         if (dom) {
           const btnHeight = window.innerWidth > 768 ? 20 : 12;
           const root = rootRef.current;
@@ -57,6 +59,7 @@ const Life = memo(() => {
           speed={800}
           loop={true}
           onSlideChange={(e) => setState((S) => ({ ...S, index: e.realIndex }))}
+          onSlideChangeTransitionEnd={(e) => setState((S) => ({ ...S, readIndex: e.realIndex }))}
         >
           {LifeCarousel.map((data, index) => (
             <SwiperSlide key={`${JSON.stringify(data)}${index}`}>
