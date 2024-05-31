@@ -74,7 +74,7 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
       <div className='mt-5 w-full text-center font-mxThin text-xs [&>span]:font-gillLight'>
         *以<span> 1 </span>度電<span> 4.8 </span>
         元，每度電行駛<span> 6 </span>
-        公里計，成本約<span> 0.8元/km </span>
+        公里計，成本約<span> 0.8 元/km </span>
         。*以<span> 95 </span>
         無鉛汽油每公升<span> 30 </span>
         元，每公升行駛<span> 12 </span>

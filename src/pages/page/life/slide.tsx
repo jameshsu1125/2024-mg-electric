@@ -3,7 +3,7 @@ import { Fragment, memo, useContext, useEffect, useMemo, useState } from 'react'
 import { LifeCarousel, LifeContext } from './config';
 import './slide.less';
 
-const base = process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
+// const base = process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
 
 const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel)[number] }) => {
   const [device, setDevice] = useState<'m' | 'd' | 'unset'>('unset');
@@ -61,9 +61,19 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
               <div className='ctx'>
                 <div className={`video v${index}`}>
                   <div className='absolute bottom-0 left-0 right-0 top-0'>
-                    <video autoPlay loop muted playsInline>
+                    <iframe
+                      style={{ width: '100%', height: '100%' }}
+                      width='560'
+                      height='315'
+                      src='https://www.youtube.com/embed/HIu-nDJyGpg?si=EiAw784sD09LM0_Z'
+                      title='YouTube video player'
+                      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                      referrerPolicy='strict-origin-when-cross-origin'
+                      allowFullScreen
+                    ></iframe>
+                    {/* <video autoPlay loop muted playsInline>
                       <source src={`${base}video/${index}.mp4`} type='video/mp4' />
-                    </video>
+                    </video> */}
                   </div>
                 </div>
               </div>

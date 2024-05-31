@@ -41,7 +41,7 @@ export const QAData = [
         q: <>長期未使用車輛，是否會沒電？</>,
         a: [
           <>
-            若有預期將長期不使用車輛，建議您在最後一次使用車輛時將電量維持在<span> 30%</span>
+            若有預期將長期不使用車輛，建議您在最後一次使用車輛時將電量維持在<span> 30% </span>
             以上。即便一個月至半年內不使用車輛，電量基本上不會耗盡。
           </>,
         ],
@@ -116,7 +116,7 @@ export const QAData = [
         a: [
           <>
             <span>MG4 </span>支援<span> AC </span>交流電與<span> DC </span>
-            直流快速充電，並採用國內主流的<span> SAE J1772 </span>與<span> CCS 1 </span>充電規格。
+            直流快速充電，並採用國內主流的<span> SAE J1772 </span>與<span> CCS1 </span>充電規格。
           </>,
         ],
       },
@@ -140,8 +140,9 @@ export const QAData = [
             <span>MG Taiwan </span>
             目前與國內最大電動車充電服務營業整合商【裕電俥電】合作，提供您居家充電樁設置方案。【裕電俥電】特約合作的廠商皆提供實際到府場勘、評估施工安全性以及完整售後服務。讓您抵達住家後，僅需為愛車插上電源，透過
             <span> MG4 </span>車機或<span> My MG App </span>
-            設定預約充電，體驗安心便捷的純電生活。裕電充電樁預約網址 :
+            設定預約充電，體驗安心便捷的純電生活。裕電充電樁預約網址 :<br />
             <span>
+              {' '}
               <a target='_blank' href='https://www.yes-charging.com.tw/Cooperative-EV_Service'>
                 https://www.yes-charging.com.tw/Cooperative-EV_Service
               </a>
@@ -157,9 +158,10 @@ export const QAData = [
             <span> 24 </span>
             個月保固服務，如您的充電樁發生異常時，可直接撥打【裕電俥電】免費客服專線
             <span>
+              {' '}
               <a target='_blank' href='tel:0800-550-508'>
                 0800-550-508
-              </a>
+              </a>{' '}
             </span>
             ，由充電樁廠商提供您詳細的評估及進行後續的診斷維修。
           </>,
@@ -192,9 +194,10 @@ export const QAData = [
             <span> 24 </span>
             個月保固服務。如您的充電樁發生異常時，可直接撥打【裕電俥電】免費客服專線
             <span>
+              {' '}
               <a target='_blank' href='tel:0800-550-508'>
                 0800-550-508
-              </a>
+              </a>{' '}
             </span>
             ，提供您詳細的評估及進行後續的診斷維修。
           </>,
@@ -257,14 +260,14 @@ export const QAData = [
             整合全台特約合作充電營運商之充電資源站點，一鍵導航並進行付款或點數扣抵（限特約合作充電營運商）。
           </>,
           <>
-            -<span> My MG </span>線上付款功能僅適用部分特約合作廠商，如在使用上有任何虞慮時，請洽
+            -<span> My MG </span>線上付款功能僅適用部分特約合作廠商，如在使用上有任何疑慮時，請洽
             <span> MG Taiwan </span>
             免費客服專線
             <span>
+              {' '}
               <a target='_blank' href='tel:0800-039-580'>
-                {' '}
                 0800-039-580
-              </a>
+              </a>{' '}
             </span>
             ，將由專人為您解答。
           </>,
@@ -279,9 +282,10 @@ export const QAData = [
             <span> MG Taiwan </span>
             的免費客服專線
             <span>
+              {' '}
               <a target='_blank' href='tel:0800-039-580'>
                 0800-039-580
-              </a>
+              </a>{' '}
             </span>
             ，將由專人為您解答。
           </>,
@@ -331,7 +335,7 @@ export const QAData = [
         ),
         a: [
           <>
-            沒有。<span>MG4 </span>已適用貨物稅條例第<span> 12 </span>條之<span> 3</span>
+            沒有。<span>MG4 </span>已適用貨物稅條例第<span> 12 </span>條之<span> 3 </span>
             規定免徵該車種應徵之貨物稅，故無法再適用中古汽車汰舊換新退稅優惠。
           </>,
         ],
@@ -367,7 +371,7 @@ export const QAData = [
               {' '}
               <a href='tel:0800-039-580' target='_blank'>
                 0800-039-580
-              </a>
+              </a>{' '}
             </span>
             ，將由專人為您解答。
           </>,

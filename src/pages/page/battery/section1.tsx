@@ -93,7 +93,7 @@ const Section1 = memo(() => {
             </Dialog>
             <Dialog inView={inView} index={1}>
               <h2>
-                <span>110mm</span>超薄躺式設計
+                <span>110 mm</span>超薄躺式設計
               </h2>
               <p>
                 在減少電池體積下，同時增加了電池容量，有別於傳統立式電池，更能釋放車內空間，提供後座乘客舒適的乘坐感受。
@@ -101,7 +101,7 @@ const Section1 = memo(() => {
             </Dialog>
             <Dialog inView={inView} index={2}>
               <h2>
-                搭載<span>BMS</span>電池管理系統
+                搭載<span> BMS </span>電池管理系統
               </h2>
               <p>透過冷卻系統和陶瓷隔熱板進行熱能管理，提高電池安全性。</p>
             </Dialog>

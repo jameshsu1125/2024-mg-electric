@@ -27,7 +27,7 @@ export const ChargeConfig = [
       body: (
         <>
           無論到達觀光景點、購物中心或飯店，透過普及的<span> AC </span>交流慢充(
-          <span> SAEJ1772 </span>)以及DC 直流快充(<span> CCS1 </span>
+          <span> SAEJ1772 </span>)以及<span> DC </span>直流快充(<span> CCS1 </span>
           )，都能輕鬆為你的愛車充電，為接下來的旅程充好電。
         </>
       ),

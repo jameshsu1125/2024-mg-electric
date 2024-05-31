@@ -25,7 +25,7 @@ export const LifeCarousel = [
     ],
     postscript: (
       <>
-        *<span> 0-100km/h </span>加速時間<span> 3.8 </span>秒僅限<span> MG4 XPOWER </span>
+        *<span> 0-100 km/h </span>加速時間<span> 3.8 </span>秒僅限<span> MG4 XPOWER </span>
       </>
     ),
   },
