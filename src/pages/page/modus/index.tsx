@@ -62,7 +62,7 @@ const Modus = memo(() => {
               </div>
               <div ref={ref2} className='body'>
                 <p>
-                  <span>MG Taiwan</span>
+                  <span>MG Taiwan </span>
                   目前與<span> EVOASIS、U-POWER、iCHARGING、TAIL、EVALUE、NOODOE </span>及
                   <span> Yes! </span>來電…等
                 </p>

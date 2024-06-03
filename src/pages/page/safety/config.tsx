@@ -31,7 +31,7 @@ export const SafetyConfig = [
     name: '490mm 低重心',
     top: 70,
     left: 47.5,
-    title: '490mm低重心',
+    title: '490mm 低重心',
     body: '維持駕駛穩定性之外，可降低車身側傾感，創造如貼地飛行的操駕感受。',
   },
 ];
