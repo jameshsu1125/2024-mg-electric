@@ -98,7 +98,15 @@
             }
 
             input {
-              @apply h-full w-full border-none bg-transparent text-center text-sm outline-none;
+              @apply h-full w-full border-none bg-transparent text-center text-sm text-black outline-none;
+
+              &::placeholder {
+                color: #333;
+              }
+
+              &::-ms-input-placeholder {
+                color: #333;
+              }
 
               @media only screen and (max-width: @SM) {
                 & {

@@ -66,7 +66,7 @@ const Item = memo(({ item, index }: { item: (typeof ChargeConfig)[number]; index
       <div className='relative w-full'>
         <button onClick={() => setState((S) => ({ ...S, index }))}>
           READ MORE
-          <IoIosArrowDropdown className='ml-1' />
+          <IoIosArrowDropdown className={twMerge('ml-1', state.index === index ? 'on' : '')} />
         </button>
         {state.index === index && <Dialog device={device} item={item} setState={setState} />}
       </div>
