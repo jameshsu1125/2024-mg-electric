@@ -115,8 +115,8 @@ export const QAData = [
         ),
         a: [
           <>
-            <span>MG4 </span>支援<span> AC </span>交流電與<span> DC </span>
-            直流快速充電，並採用國內主流的<span> SAE J1772 </span>與<span> CCS1 </span>充電規格。
+            <span>MG4 </span>支援<span> DC </span>直流快速充電與<span> AC </span>交流電
+            ，並採用國內主流的<span> SAE J1772 </span>與<span> CCS 1 </span>充電規格。
           </>,
         ],
       },
@@ -134,7 +134,7 @@ export const QAData = [
     tab: '充電樁相關',
     data: [
       {
-        q: <>設置家用充電樁需向哪個單位聯繫？</>,
+        q: <>設置充電樁需向哪個單位聯繫？</>,
         a: [
           <>
             <span>MG Taiwan </span>
@@ -151,7 +151,7 @@ export const QAData = [
         ],
       },
       {
-        q: <>家用充電裝置保固多久？</>,
+        q: <>充電樁保固多久？</>,
         a: [
           <>
             <span>MG Taiwan </span>合作的充電樁廠商【裕電俥電】皆提供充電樁機器本身及工程安裝
@@ -163,7 +163,7 @@ export const QAData = [
                 0800-550-508
               </a>{' '}
             </span>
-            ，由充電樁廠商提供您詳細的評估及進行後續的診斷維修。
+            ，提供您詳細的評估及進行後續的診斷維修。
           </>,
         ],
       },
@@ -182,7 +182,7 @@ export const QAData = [
         a: [
           <>
             <span>MG Taiwan </span>
-            合作的廠商【裕電俥電】所提供的充電樁設備皆符合國家級產品認證與機殼防水防塵規範，適用於戶外場域，請您安心使用。
+            合作的充電樁廠商提供的充電樁設備皆符合國家級產品認證與機殼防水防塵規範，適用於戶外場域，請您安心使用。
           </>,
         ],
       },
@@ -202,7 +202,7 @@ export const QAData = [
         ],
       },
       {
-        q: <>可以在哪裡查詢到充電樁資訊 / 附近充電樁？</>,
+        q: <>可以在哪裡查詢到充電樁資源 / 附近充電樁？</>,
         a: [
           <>
             <span>MG Taiwan </span>整合全台特約合作充電營運商充電資源，您可以至

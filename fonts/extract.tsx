@@ -9,5 +9,10 @@ const char = `0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-~!
   <div className='arrow' />,
   <div>開始充電</div>,
   <div className='arrow' />,
-  <div>線上付款</div>,`;
+  <div>線上付款</div>,
+  電芯之間採用陶瓷隔熱板，有效防止熱能擴散到相鄰電池。
+透過冷卻系統提高散熱效率。
+洩壓閥可於必要時洩壓降溫，將熱失控的可能性降到最低。熱失控管理24 小時全時監控電池狀態，並發揮電池最大效能。
+無論到達觀光景點、購物中心或飯店，透過 DC 直流快充（ CCS1 ）以及普及的 AC 交流慢充（ SAE J1772 ），都能輕鬆為你的愛車充電，為接下來的旅程充好電。充電網絡資源數據，統計至 2023 年 12 月底。*App 付款功能詳洽 My MG App
+`;
 export const extractedCharacters = () => [...new Set(char)].join('');

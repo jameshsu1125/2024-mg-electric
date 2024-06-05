@@ -11,7 +11,7 @@ const Application = memo(() => {
         <div className='content'>
           <div className='image' />
           <div className='text'>
-            <h1>My MG App 無論車況或電量都能一手掌握</h1>
+            <h1>My MG App 即時掌握車況與充電網絡</h1>
             <p>
               不僅能夠一鍵解鎖車門、預先開啟空調系統，更能夠掌握愛車電量與續航里程，
               <span>MG4 </span>
@@ -23,7 +23,7 @@ const Application = memo(() => {
               ，全台直流/交流充電(<span> DC/AC </span>
               )站點，都能一鍵導航快速找到距離您最近的充電站，提供最完整且便捷的充電服務。
             </p>
-            <span>*限特約合作充電營運商</span>
+            <span id='ps'>*App 付款功能詳洽 My MG App</span>
             <div className='steps'>
               {ApplicationConfig.map((node, index) => (
                 <Fragment key={JSON.stringify(node) + 'd' + index}>{node}</Fragment>

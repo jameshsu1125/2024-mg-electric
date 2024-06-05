@@ -26,9 +26,9 @@ export const ChargeConfig = [
       headline: '在全台生活圈，便利尋找充電樁',
       body: (
         <>
-          無論到達觀光景點、購物中心或飯店，透過普及的<span> AC </span>交流慢充(
-          <span> SAEJ1772 </span>)以及<span> DC </span>直流快充(<span> CCS1 </span>
-          )，都能輕鬆為你的愛車充電，為接下來的旅程充好電。
+          無論到達觀光景點、購物中心或飯店，透過<span> DC </span>
+          直流快充（<span> CCS1 </span>）以及普及的<span> AC </span>交流慢充（
+          <span> SAE J1772 </span>），都能輕鬆為你的愛車充電，為接下來的旅程充好電。
         </>
       ),
     },

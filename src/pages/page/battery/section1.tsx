@@ -34,7 +34,7 @@ const OpenImage = ({ inView }: { inView: boolean }) => {
   const [style, setStyle] = useTween({ opacity: 1 });
 
   useEffect(() => {
-    if (inView) setStyle({ opacity: 0 }, { duration: 300, delay: 1500 });
+    if (inView) setStyle({ opacity: 0 }, { duration: 300, delay: 100 });
     else setStyle({ opacity: 1 }, 100);
   }, [inView]);
 
@@ -46,7 +46,7 @@ const CloseImage = ({ inView }: { inView: boolean }) => {
 
   useEffect(() => {
     if (inView)
-      setStyle({ opacity: 1, width: 1 }, { duration: 300, easing: Bezier.inQuart, delay: 1500 });
+      setStyle({ opacity: 1, width: 1 }, { duration: 300, easing: Bezier.inQuart, delay: 100 });
     else setStyle({ opacity: 0, width: 0 }, 100);
   }, [inView]);
 
@@ -103,7 +103,18 @@ const Section1 = memo(() => {
               <h2>
                 搭載<span> BMS </span>電池管理系統
               </h2>
-              <p>透過冷卻系統和陶瓷隔熱板進行熱能管理，提高電池安全性。</p>
+              <p>
+                <span>24 </span>小時全時監控電池狀態，並發揮電池最大效能。
+              </p>
+            </Dialog>
+            <Dialog inView={inView} index={3}>
+              <h2>熱失控管理</h2>
+
+              <ol className='list-outside list-decimal pl-5'>
+                <li>電芯之間採用陶瓷隔熱板，有效防止熱能擴散到相鄰電池。</li>
+                <li>透過冷卻系統提高散熱效率。</li>
+                <li>洩壓閥可於必要時洩壓降溫，將熱失控的可能性降到最低。</li>
+              </ol>
             </Dialog>
           </div>
           <Images />

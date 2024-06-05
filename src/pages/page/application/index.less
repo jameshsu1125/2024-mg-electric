@@ -107,6 +107,16 @@
     }
   }
 
+  #ps {
+    @apply w-full text-xs;
+
+    @media only screen and (max-width: @Mobile) {
+      & {
+        @apply t-xs;
+      }
+    }
+  }
+
   .steps-sm {
     @apply mt-5 flex w-full flex-row items-center justify-between space-x-3 sm:justify-start lg:hidden;
 
@@ -126,8 +136,8 @@
 
       @media only screen and (max-width: 590px) {
         & {
-          padding: 0.1 * @Ratio 0.4 * @Ratio;
-          font-size: 0.7 * @Ratio;
+          padding: 0.1 * @Ratio 0.1 * @Ratio;
+          font-size: 0.6 * @Ratio;
         }
       }
     }

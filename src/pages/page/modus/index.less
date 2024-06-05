@@ -54,7 +54,7 @@
           @apply flex w-auto flex-col items-start justify-start space-y-1;
 
           & > p {
-            @apply text-center font-mxLight text-base tracking-widest md:text-left;
+            @apply text-left font-mxLight text-base tracking-widest;
 
             span {
               @apply font-gillRegular;
@@ -67,16 +67,6 @@
             }
           }
 
-          .ps {
-            @apply w-full text-xs;
-
-            @media only screen and (max-width: @Mobile) {
-              & {
-                @apply t-xs;
-              }
-            }
-          }
-
           .sponsor {
             max-width: 600px;
             @apply w-full;
@@ -85,6 +75,16 @@
               padding-bottom: 124/1500 * 100%;
               background-image: url('img/modus/sponsor.jpg');
               @apply w-full bg-contain bg-center bg-no-repeat;
+            }
+          }
+        }
+
+        #ps {
+          @apply w-full text-xs;
+
+          @media only screen and (max-width: @Mobile) {
+            & {
+              @apply t-xs;
             }
           }
         }

@@ -59,6 +59,9 @@ const Modus = memo(() => {
                 <div>
                   涵蓋全台<span>75%</span>充電網絡
                 </div>
+                <p id='ps' className='hidden lg:block'>
+                  *充電網絡資源數據，統計至<span> 2023 </span>年<span> 12 </span>月底。
+                </p>
               </div>
               <div ref={ref2} className='body'>
                 <p>
@@ -69,7 +72,7 @@ const Modus = memo(() => {
                 <p>
                   多家國內主要充電營運商特約合作，涵蓋全台<span> 75% </span>以上快慢充充電網絡資源。
                 </p>
-                <p className='ps'>
+                <p id='ps' className='block lg:hidden'>
                   *充電網絡資源數據，統計至<span> 2023 </span>年<span> 12 </span>月底。
                 </p>
                 <div className='sponsor'>

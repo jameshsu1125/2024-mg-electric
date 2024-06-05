@@ -37,7 +37,7 @@ const Headline = memo(({ inView, step }: { inView: boolean; step: PageStepType }
   return (
     <h1>
       <span style={style}>MG</span>
-      {['純', '電', '生', '活', '指', '南', ''].map((txt, index) => (
+      {['純', '電', '指', '南'].map((txt, index) => (
         <Text inView={inView} key={txt} index={index} step={step}>
           {txt}
         </Text>
