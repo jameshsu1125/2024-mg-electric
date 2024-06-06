@@ -73,7 +73,7 @@ export const QAData = [
         ),
         a: [
           <>
-            建議<span> MG4 </span>在使用<span> DC </span>快充時，同步搭配<span> AC </span>
+            建議<span> MG4 </span>使用<span> DC </span>快充外，可搭配<span> AC </span>
             慢充達到高壓電池內均衡充電，可維持高壓電池效能並延長壽命。
           </>,
         ],
@@ -235,8 +235,7 @@ export const QAData = [
         q: <>充電及付款流程為何？</>,
         a: [
           <>
-            ① 使用<span> My MG App </span>尋找充電站 ② 插上充電槍 / 掃描<span> QR code </span>③
-            開始充電 ④ 結束充電 ⑤ 線上付款
+            ① 一鍵導航尋找充電站 ② 插上充電槍 / 掃描<span> QR code </span>③ 開始充電 ④ 線上付款
           </>,
           <>
             -<span> My MG App </span>

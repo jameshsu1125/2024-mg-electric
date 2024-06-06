@@ -12,14 +12,17 @@
       @apply flex w-full flex-row space-x-1 px-3;
 
       .tag {
-        writing-mode: vertical-lr;
-        @apply w-fit whitespace-normal rounded-t-xl bg-black px-5 py-5 font-mxBook text-base text-tertiary hover:bg-primary;
+        writing-mode: horizontal-tb;
+
+        @apply w-fit whitespace-normal rounded-t-xl bg-black p-3 font-mxBook text-base text-tertiary hover:bg-primary lg:p-5;
 
         @media only screen and (max-width: @SM) {
           & {
             padding: 1 * @Ratio 0.75 * @Ratio;
             font-size: 0.8 * @Ratio;
             line-height: 1.2;
+
+            writing-mode: vertical-lr;
           }
         }
 
@@ -28,6 +31,8 @@
             padding: 1 * @Ratio 0.75 * @Ratio;
             font-size: 0.8 * @Ratio;
             line-height: 1.2;
+
+            writing-mode: vertical-lr;
           }
         }
       }

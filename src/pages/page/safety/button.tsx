@@ -1,7 +1,8 @@
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SafetyConfig } from './config';
 import useTween, { Bezier } from 'lesca-use-tween';
+import useMedia, { MediaType } from '@/hooks/useMedia';
 
 type ButtonProps = {
   data: (typeof SafetyConfig)[number];
@@ -35,6 +36,7 @@ const Button = memo(({ data, onClick, index, clickIndex, inView }: ButtonProps) 
 
   const [style, setStyle] = useTween({ opacity: 0, scale: 0 });
   const [width, setWidth] = useTween({ width: '0px' });
+  const [device] = useMedia();
 
   useEffect(() => {
     if (inView) {
@@ -58,8 +60,13 @@ const Button = memo(({ data, onClick, index, clickIndex, inView }: ButtonProps) 
     }
   }, [inView]);
 
+  const position = useMemo(() => {
+    if (index === 0 && device >= MediaType.MD) return { top: 52.9, left: 51.3 };
+    return { top: data.top, left: data.left };
+  }, [data.top, data.left, device, index]);
+
   return (
-    <div style={{ ...style, top: `${data.top}%`, left: `${data.left}%` }} className='dot'>
+    <div style={{ ...style, top: `${position.top}%`, left: `${position.left}%` }} className='dot'>
       <div className='relative h-full w-full rounded-full bg-white'>
         <div className='absolute left-full top-1/2 h-[1px] bg-white' style={width}>
           {animated && index !== clickIndex && (
