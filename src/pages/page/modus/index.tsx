@@ -1,8 +1,8 @@
-import { memo, useEffect, useRef, useState } from 'react';
-import './index.less';
 import Article from '@/components/article';
 import useTween from 'lesca-use-tween';
+import { memo, useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import './index.less';
 
 const Image = ({ inView }: { inView: boolean }) => {
   const [style, setStyle] = useTween({ scale: 1.5, borderWidth: 50 });

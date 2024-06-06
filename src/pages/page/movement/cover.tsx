@@ -1,12 +1,12 @@
 import Article from '@/components/article';
 import useMedia, { MediaType } from '@/hooks/useMedia';
+import { IReactProps } from '@/settings/type';
 import useTween from 'lesca-use-tween';
 import { memo, useContext, useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { twMerge } from 'tailwind-merge';
 import { MovementContext } from './config';
 import './cover.less';
-import { twMerge } from 'tailwind-merge';
-import { IReactProps } from '@/settings/type';
 
 let delay = 0;
 

@@ -9,52 +9,48 @@ import './index.less';
 import useTween from 'lesca-use-tween';
 import { useInView } from 'react-intersection-observer';
 
-const Dialog = memo(
-  ({
-    device,
-    item,
-    setState,
-  }: {
-    device: MediaType;
-    item: (typeof ChargeConfig)[number];
-    setState: React.Dispatch<React.SetStateAction<TChargeState>>;
-  }) => {
-    const [style, setStyle] = useTween({ opacity: 0, y: device < MediaType.SM ? -50 : 50 });
+type TDialogProps = {
+  device: MediaType;
+  item: (typeof ChargeConfig)[number];
+  setState: React.Dispatch<React.SetStateAction<TChargeState>>;
+};
 
-    useEffect(() => {
-      setStyle({ opacity: 1, y: 0 }, 500);
-    }, []);
+const Dialog = memo(({ device, item, setState }: TDialogProps) => {
+  const [style, setStyle] = useTween({ opacity: 0, y: device < MediaType.SM ? -50 : 50 });
 
-    return (
-      <div className='dialog' style={style}>
-        {device < MediaType.SM && (
-          <div className={twMerge('flex w-full justify-center pt-1')}>
-            <button
-              className='text-[#cacaca] hover:text-primary'
-              onClick={() => setState((S) => ({ ...S, index: undefined }))}
-            >
-              <IoCloseCircle className='h-3 w-3 sm:h-6 sm:w-6' />
-            </button>
-          </div>
-        )}
-        <div className='w-full'>
-          <h3>{item.dialog.headline}</h3>
-          <p>{item.dialog.body}</p>
+  useEffect(() => {
+    setStyle({ opacity: 1, y: 0 }, 500);
+  }, []);
+
+  return (
+    <div className='dialog' style={style}>
+      {device < MediaType.SM && (
+        <div className={twMerge('flex w-full justify-center pt-1')}>
+          <button
+            className='text-[#cacaca] hover:text-primary'
+            onClick={() => setState((S) => ({ ...S, index: undefined }))}
+          >
+            <IoCloseCircle className='h-3 w-3 sm:h-6 sm:w-6' />
+          </button>
         </div>
-        {device >= MediaType.SM && (
-          <div className={twMerge('flex w-full justify-center pb-3')}>
-            <button
-              className='text-[#cacaca] hover:text-primary'
-              onClick={() => setState((S) => ({ ...S, index: undefined }))}
-            >
-              <IoCloseCircle />
-            </button>
-          </div>
-        )}
+      )}
+      <div className='w-full'>
+        <h3>{item.dialog.headline}</h3>
+        <p>{item.dialog.body}</p>
       </div>
-    );
-  },
-);
+      {device >= MediaType.SM && (
+        <div className={twMerge('flex w-full justify-center pb-3')}>
+          <button
+            className='text-[#cacaca] hover:text-primary'
+            onClick={() => setState((S) => ({ ...S, index: undefined }))}
+          >
+            <IoCloseCircle />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+});
 
 const Item = memo(({ item, index }: { item: (typeof ChargeConfig)[number]; index: number }) => {
   const [device] = useMedia();

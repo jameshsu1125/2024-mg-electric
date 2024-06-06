@@ -24,6 +24,7 @@ const Section2 = memo(() => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
+
   return (
     <section ref={ref} className='Section-2'>
       <Article expend>

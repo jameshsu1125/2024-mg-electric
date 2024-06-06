@@ -1,4 +1,5 @@
 import { Context } from '@/settings/constant';
+import { ActionType } from '@/settings/type';
 import OnloadProvider from 'lesca-react-onload';
 import { memo, useContext, useEffect, useState } from 'react';
 import Application from './application';
@@ -15,7 +16,6 @@ import QA from './qa';
 import Safety from './safety';
 import Service from './service';
 import Year from './year';
-import { ActionType } from '@/settings/type';
 
 const RestPage = () => {
   const [, setContext] = useContext(Context);

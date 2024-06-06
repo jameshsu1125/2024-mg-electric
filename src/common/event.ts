@@ -2,7 +2,6 @@ import EnterFrame from 'lesca-enterframe';
 import ReactDOM from 'react-dom/client';
 
 type TLocation = Readonly<string>;
-
 type TState = 'unset' | 'mounted' | 'unmounted';
 
 export default class View3DEvents {

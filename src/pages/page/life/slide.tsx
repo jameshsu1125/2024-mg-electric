@@ -18,12 +18,6 @@ const Slide = memo(({ index, data }: { index: number; data: (typeof LifeCarousel
     return () => window.removeEventListener('resize', resize);
   }, []);
 
-  useEffect(() => {
-    if (state.index === index) {
-      // console.log('current slide:', index);
-    }
-  }, [state, index]);
-
   const video = useMemo(() => {
     if (data.video.type === 'video') {
       return data.video;

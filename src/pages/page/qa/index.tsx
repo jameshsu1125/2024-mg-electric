@@ -1,9 +1,9 @@
 import Article from '@/components/article';
 import useTween from 'lesca-use-tween';
 import { ReactNode, memo, useContext, useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { QAContext, QAData, QAState } from './config';
 import './index.less';
-import { twMerge } from 'tailwind-merge';
 
 const Answer = memo(({ a }: { a: ReactNode[] }) => {
   const [style, setStyle] = useTween({ opacity: 0, y: -100 });

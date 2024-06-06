@@ -5,7 +5,10 @@ import { memo, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './section1.less';
 
-const Dialog = ({ children, inView, index }: IReactProps & { inView: boolean; index: number }) => {
+type TProps = { inView: boolean };
+type TDialogProps = IReactProps & TProps & { index: number };
+
+const Dialog = ({ children, inView, index }: TDialogProps) => {
   const [style, setStyle] = useTween({ opacity: 0, y: 50 });
 
   useEffect(() => {
@@ -15,7 +18,7 @@ const Dialog = ({ children, inView, index }: IReactProps & { inView: boolean; in
   return <div style={style}>{children}</div>;
 };
 
-const H1 = ({ inView }: { inView: boolean }) => {
+const H1 = ({ inView }: TProps) => {
   const [style, setStyle] = useTween({ letterSpacing: '2rem' });
 
   useEffect(() => {
@@ -30,7 +33,7 @@ const H1 = ({ inView }: { inView: boolean }) => {
   );
 };
 
-const OpenImage = ({ inView }: { inView: boolean }) => {
+const OpenImage = ({ inView }: TProps) => {
   const [style, setStyle] = useTween({ opacity: 1 });
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const OpenImage = ({ inView }: { inView: boolean }) => {
   return <div className='img-off' style={style} />;
 };
 
-const CloseImage = ({ inView }: { inView: boolean }) => {
+const CloseImage = ({ inView }: TProps) => {
   const [style, setStyle] = useTween({ opacity: 0, width: 0 });
 
   useEffect(() => {
@@ -109,7 +112,6 @@ const Section1 = memo(() => {
             </Dialog>
             <Dialog inView={inView} index={3}>
               <h2>熱失控管理</h2>
-
               <ol className='list-outside list-decimal pl-5'>
                 <li>電芯之間採用陶瓷隔熱板，有效防止熱能擴散到相鄰電池。</li>
                 <li>透過冷卻系統提高散熱效率。</li>

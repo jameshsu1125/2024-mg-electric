@@ -5,24 +5,23 @@ import { useInView } from 'react-intersection-observer';
 import { PageContext, PageStepType } from '../config';
 import './index.less';
 
-const Text = memo(
-  ({
-    children,
-    inView,
-    index,
-    step,
-  }: IReactProps & { inView: boolean; index: number; step: PageStepType }) => {
-    const [style, setStyle] = useTween({ opacity: 0, y: 50 });
+type TTextProps = IReactProps & {
+  inView: boolean;
+  index: number;
+  step: PageStepType;
+};
 
-    useEffect(() => {
-      if (step >= PageStepType.allLoaded) {
-        if (inView) setStyle({ opacity: 1, y: 0 }, { duration: 500, delay: index * 20 });
-        else setStyle({ opacity: 0, y: 50 }, { duration: 100 });
-      }
-    }, [inView, step]);
-    return <div style={style}>{children}</div>;
-  },
-);
+const Text = memo(({ children, inView, index, step }: TTextProps) => {
+  const [style, setStyle] = useTween({ opacity: 0, y: 50 });
+
+  useEffect(() => {
+    if (step >= PageStepType.allLoaded) {
+      if (inView) setStyle({ opacity: 1, y: 0 }, { duration: 500, delay: index * 20 });
+      else setStyle({ opacity: 0, y: 50 }, { duration: 100 });
+    }
+  }, [inView, step]);
+  return <div style={style}>{children}</div>;
+});
 
 const Headline = memo(({ inView, step }: { inView: boolean; step: PageStepType }) => {
   const [style, setStyle] = useTween({ opacity: 0, y: 50 });
