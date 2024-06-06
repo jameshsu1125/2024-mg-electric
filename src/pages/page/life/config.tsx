@@ -37,16 +37,9 @@ export const LifeCarousel = [
       </>
     ),
     video: (
-      <iframe
-        style={{ width: '100%', height: '100%' }}
-        width='560'
-        height='315'
-        src='https://www.youtube.com/embed/HIu-nDJyGpg?si=EiAw784sD09LM0_Z'
-        title='YouTube video player'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-        referrerPolicy='strict-origin-when-cross-origin'
-        allowFullScreen
-      ></iframe>
+      <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%' }}>
+        <source src={`${base}video/1.mp4`} type='video/mp4' />
+      </video>
     ),
   },
   {
@@ -66,16 +59,9 @@ export const LifeCarousel = [
       </>
     ),
     video: (
-      <iframe
-        style={{ width: '100%', height: '100%' }}
-        width='560'
-        height='315'
-        src='https://www.youtube.com/embed/HIu-nDJyGpg?si=EiAw784sD09LM0_Z'
-        title='YouTube video player'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-        referrerPolicy='strict-origin-when-cross-origin'
-        allowFullScreen
-      ></iframe>
+      <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%' }}>
+        <source src={`${base}video/2.mp4`} type='video/mp4' />
+      </video>
     ),
   },
   {
@@ -94,7 +80,7 @@ export const LifeCarousel = [
     ),
     video: (
       <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%' }}>
-        <source src={`${base}video/2.mp4`} type='video/mp4' />
+        <source src={`${base}video/3.mp4`} type='video/mp4' />
       </video>
     ),
   },

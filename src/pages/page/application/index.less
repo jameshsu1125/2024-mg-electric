@@ -2,7 +2,7 @@
 
 .Application {
   @time: 7s;
-  @delay: @time / 5;
+  @delay: @time / 4;
   @apply w-full overflow-hidden py-5;
 
   .content {
@@ -153,24 +153,20 @@
 
     & > div:nth-child(1) {
       animation: fade2 @time infinite ease-in-out;
+      animation-delay: 0s - @delay * 4;
     }
 
     & > div:nth-child(3) {
       animation: fade2 @time infinite ease-in-out;
-      animation-delay: 0s - @delay * 4;
+      animation-delay: 0s - @delay * 3;
     }
 
     & > div:nth-child(5) {
       animation: fade2 @time infinite ease-in-out;
-      animation-delay: 0s - @delay * 3;
-    }
-
-    & > div:nth-child(7) {
-      animation: fade2 @time infinite ease-in-out;
       animation-delay: 0s - @delay * 2;
     }
 
-    & > div:nth-child(9) {
+    & > div:nth-child(7) {
       animation: fade2 @time infinite ease-in-out;
       animation-delay: 0s - @delay * 1;
     }
