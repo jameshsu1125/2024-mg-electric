@@ -29,13 +29,13 @@ export default class View3DEvents {
       if (this.location !== window.location.href.split('?')[0]) {
         if (this.state === 'mounted') {
           this.app?.unmount();
-          console.log('%creact dom unmount', 'background:red; color:white; font-size: 20px;');
+          // console.log('%creact dom unmount', 'background:red; color:white; font-size: 20px;');
           this.state = 'unmounted';
         }
       } else {
         if (this.state === 'unmounted') {
           this.render();
-          console.log('%creact dom mounted', 'background:red; color:white; font-size: 20px;');
+          // console.log('%creact dom mounted', 'background:red; color:white; font-size: 20px;');
           this.state = 'mounted';
         }
       }

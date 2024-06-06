@@ -15,7 +15,7 @@ view3DEvents.render = () => {
   const app = ReactDOM.createRoot(document.getElementById('not_aem_app')!);
   app.render(<App key={new Date().getTime()} />);
   view3DEvents.setReactDom(app);
-  console.log('%creact dom rendered', 'background:red; color:white; font-size: 20px;');
+  // console.log('%creact dom rendered', 'background:red; color:white; font-size: 20px;');
 };
 
 window.appFromReact = view3DEvents;
