@@ -74,8 +74,10 @@ const Cover = memo(() => {
   });
 
   useEffect(() => {
-    if (inView) delay = 0;
-    else refInput.current?.blur();
+    if (inView) {
+      delay = 0;
+      refInput.current?.focus();
+    } else refInput.current?.blur();
   }, [inView]);
 
   useEffect(() => {

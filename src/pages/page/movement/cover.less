@@ -89,7 +89,8 @@
           }
 
           .input {
-            @apply flex h-8 w-6/12 border-b border-black;
+            height: 2.4rem;
+            @apply flex w-6/12 border-b border-black p-0;
 
             @media only screen and (max-width: @SM) {
               & {
@@ -98,10 +99,10 @@
             }
 
             input {
-              @apply h-full w-full border-none bg-transparent text-center text-sm text-black outline-none;
+              @apply h-full w-full border-none bg-transparent text-center font-mxLight text-sm text-secondary outline-none;
 
               &::placeholder {
-                color: #333;
+                color: #555;
               }
 
               &::-ms-input-placeholder {
