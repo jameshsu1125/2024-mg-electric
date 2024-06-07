@@ -6,23 +6,26 @@
   .table {
     max-width: 900px;
 
+    @media only screen and (max-width: @MD) {
+      & {
+        max-width: none;
+      }
+    }
+
     @apply w-full;
 
     .row {
       @apply flex w-full flex-row space-x-1 px-3;
 
       .tag {
-        writing-mode: horizontal-tb;
-
-        @apply w-fit whitespace-normal rounded-t-xl bg-black p-3 font-mxBook text-base text-tertiary hover:bg-primary lg:p-5;
+        @apply flex w-fit flex-row justify-center whitespace-normal rounded-t-xl bg-black p-3 font-mxBook text-base text-tertiary hover:bg-primary lg:p-5;
 
         @media only screen and (max-width: @SM) {
           & {
             padding: 1 * @Ratio 0.75 * @Ratio;
             font-size: 0.8 * @Ratio;
             line-height: 1.2;
-
-            writing-mode: vertical-lr;
+            @apply flex-col;
           }
         }
 
@@ -31,8 +34,6 @@
             padding: 1 * @Ratio 0.75 * @Ratio;
             font-size: 0.8 * @Ratio;
             line-height: 1.2;
-
-            writing-mode: vertical-lr;
           }
         }
       }

@@ -8,7 +8,7 @@ export const QAContext = createContext<TQAContext>([QAState, () => {}]);
 
 export const QAData = [
   {
-    tab: '電車使用相關',
+    tab: '電車使用',
     data: [
       {
         q: <>行駛積水路段會不會造成電池損壞？</>,

@@ -55,7 +55,9 @@ const QA = memo(() => {
                       className={twMerge('tag', state.tab === index ? 'on' : '')}
                       onClick={() => setState((S) => ({ ...S, tab: index, index: undefined }))}
                     >
-                      {item.tab}
+                      {item.tab.split('').map((txt, index) => (
+                        <div key={txt + index}>{txt}</div>
+                      ))}
                     </button>
                   );
                 })}
