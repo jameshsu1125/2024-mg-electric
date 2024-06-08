@@ -67,7 +67,7 @@ const Modus = memo(() => {
                 <p>
                   <span>MG Taiwan </span>
                   目前與<span> EVOASIS、U-POWER、iCHARGING、TAIL、EVALUE、NOODOE </span>及
-                  <span> Yes! </span>來電…等
+                  <span> YES! </span>來電…等
                 </p>
                 <p>
                   多家國內主要充電營運商特約合作，涵蓋全台<span> 75% </span>以上快慢充充電網絡資源。

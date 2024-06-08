@@ -39,7 +39,7 @@
 
         h2 {
           line-height: 1;
-          @apply relative border-l-2 border-primary pl-3 font-mxBook text-2xl leading-6 text-primary;
+          @apply relative pl-3 font-mxBook text-2xl leading-6 text-primary;
 
           @media only screen and (max-width: @Mobile) {
             & {
@@ -49,6 +49,11 @@
 
           span {
             @apply font-gillLight;
+          }
+
+          &::before {
+            width: 2px;
+            @apply absolute left-0 top-0 h-full bg-primary;
           }
         }
 
