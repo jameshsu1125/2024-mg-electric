@@ -76,7 +76,7 @@ const Cover = memo(() => {
   useEffect(() => {
     if (inView) {
       delay = 0;
-      refInput.current?.focus();
+      // refInput.current?.focus();
     } else refInput.current?.blur();
   }, [inView]);
 
@@ -121,21 +121,24 @@ const Cover = memo(() => {
             <div className='group'>
               <div className='row'>
                 <div className='ico' />
-                <div className='input'>
-                  <input
-                    ref={refInput}
-                    type='number'
-                    maxLength={3}
-                    max={999}
-                    min={1}
-                    placeholder='輸入每日行駛里程(km)'
-                    onChange={(e) => {
-                      e.target.value = Math.min(
-                        Number(e.target.value.replace(/\D/g, '')),
-                        999,
-                      ).toString();
-                    }}
-                  />
+                <div className='flex w-full min-w-0 flex-col whitespace-nowrap font-mxLight md:w-7/12 md:min-w-72 md:flex-row'>
+                  <div className='label'>輸入每日行駛里程(km)</div>
+                  <div className='input'>
+                    <input
+                      ref={refInput}
+                      type='number'
+                      maxLength={3}
+                      max={999}
+                      min={1}
+                      placeholder=''
+                      onChange={(e) => {
+                        e.target.value = Math.min(
+                          Number(e.target.value.replace(/\D/g, '')),
+                          999,
+                        ).toString();
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className='row'>

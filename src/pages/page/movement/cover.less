@@ -74,11 +74,11 @@
         @apply mt-10 flex w-full flex-col items-center justify-center space-x-2 space-y-3 md:space-x-0 md:space-y-10;
 
         .row {
-          @apply flex h-full flex-row items-center justify-center md:w-full;
+          @apply flex h-full flex-row items-center justify-center space-x-2 md:w-full md:space-x-0;
 
           .ico {
             background-image: url('img/movement/calc.svg');
-            @apply m-1 h-7 w-7 bg-contain bg-center bg-no-repeat;
+            @apply mt-6 h-7 w-7 bg-contain bg-center bg-no-repeat md:m-1 md:mt-1;
 
             @media only screen and (max-width: @SM) {
               & {
@@ -87,8 +87,24 @@
             }
           }
 
+          .label {
+            @apply flex h-7 items-center justify-center font-mxLight text-sm;
+
+            @media only screen and (max-width: @SM) {
+              & {
+                @apply t-xl;
+              }
+            }
+
+            @media only screen and (max-width: @Mobile) {
+              & {
+                @apply t-lg;
+              }
+            }
+          }
+
           .input {
-            @apply flex h-7 w-6/12 items-center border-b border-black p-0;
+            @apply flex h-7 w-full items-center border-b border-black p-0;
 
             @media only screen and (max-width: @SM) {
               & {
