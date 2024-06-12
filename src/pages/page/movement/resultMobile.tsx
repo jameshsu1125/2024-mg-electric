@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import Counter from './counter';
-import { Data } from './result';
+import { Data } from './config';
 import './resultMobile.less';
 
 const ResultMobile = memo(({ data }: { data: Data }) => (
@@ -44,7 +44,7 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
         </span>
         <div>元</div>
       </div>
-      <div className='f'>一年至少省下</div>
+      <div className='f'>一年省下燃油成本</div>
     </div>
     <div className='total'>
       <h6>
