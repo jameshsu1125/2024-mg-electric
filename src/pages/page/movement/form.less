@@ -1,8 +1,10 @@
 @import url('../../../settings/config.less');
 
+@R: 1024px;
+
 .Form {
   padding: min(5%, 40px) 0;
-  @apply relative w-full;
+  @apply relative w-full py-12 md:py-20;
 
   @media only screen and (max-width: @Mobile) {
     & {
@@ -11,16 +13,114 @@
   }
 
   .image {
-    padding-bottom: 344.9 / 1354.6 * 100%;
+    padding-bottom: 356.2 / 1450.1 * 100%;
     width: 100%;
     background-image: url('img/movement/form.svg');
     background-size: 100%;
-    @apply bg-center bg-no-repeat;
+    @apply relative bg-center bg-no-repeat;
 
     @media only screen and (max-width: @SM) {
       & {
-        padding-bottom: 1053.4 / 915 * 100%;
+        padding-bottom: 1081 / 889.4 * 100%;
         background-image: url('img/movement/form-m.svg');
+      }
+    }
+
+    & > div {
+      @apply absolute bottom-0 left-0 right-0 top-0;
+
+      .total {
+        top: -11%;
+        left: 54%;
+
+        @apply absolute w-auto text-left font-mxBook text-2xl text-secondary;
+
+        @media only screen and (max-width: @R) {
+          top: -8.7%;
+          font-size: 0.7 * @Ratio;
+        }
+
+        @media only screen and (max-width: @SM) {
+          & {
+            top: 6%;
+            right: 0;
+            left: inherit;
+            font-size: 1 * @Ratio;
+            @apply text-right;
+          }
+        }
+
+        span {
+          @apply font-mxBold text-7xl text-primary;
+
+          @media only screen and (max-width: @R) {
+            font-size: 1.56 * @Ratio;
+          }
+
+          @media only screen and (max-width: @SM) {
+            & {
+              font-size: 2.5 * @Ratio;
+            }
+          }
+        }
+      }
+
+      .fuel,
+      .tax,
+      .maintain {
+        @apply absolute w-full whitespace-nowrap text-center font-mxBook text-2xl text-secondary md:w-1/6;
+
+        span {
+          @apply font-mxBold text-4xl text-primary;
+
+          @media only screen and (max-width: @R) {
+            font-size: 0.95 * @Ratio;
+          }
+
+          @media only screen and (max-width: @SM) {
+            font-size: 2 * @Ratio;
+          }
+        }
+      }
+
+      .fuel {
+        top: 47.6%;
+        left: 5.3%;
+
+        @media only screen and (max-width: @R) {
+          top: 43.5%;
+        }
+
+        @media only screen and (max-width: @SM) {
+          top: 28.4%;
+          left: 0;
+        }
+      }
+
+      .tax {
+        top: 47.6%;
+        left: 41.4%;
+        @media only screen and (max-width: @R) {
+          top: 43.5%;
+        }
+
+        @media only screen and (max-width: @SM) {
+          top: 53.4%;
+          left: 0;
+        }
+      }
+
+      .maintain {
+        top: 47.6%;
+        left: 77.5%;
+        @media only screen and (max-width: @R) {
+          top: 43.5%;
+        }
+
+        @media only screen and (max-width: @SM) {
+          top: 78.4%;
+          left: 0;
+        }
       }
     }
   }
