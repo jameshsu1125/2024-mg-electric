@@ -1,8 +1,9 @@
 import { memo, useContext } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { Data, MovementContext } from './config';
-import Counter from './counter';
 import './resultDesktop.less';
+import { Data } from './result';
+import Counter from './counter';
+import { MovementContext } from './config';
+import { twMerge } from 'tailwind-merge';
 
 const ResultDesktop = memo(({ data }: { data: Data }) => {
   const [state, setState] = useContext(MovementContext);
@@ -54,7 +55,7 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
                     元
                   </div>
                   <div className='w-full bg-black px-8 py-1 text-sm tracking-[0.3rem] text-white'>
-                    一年省下燃油成本
+                    一年至少省下
                   </div>
                 </div>
               </div>
