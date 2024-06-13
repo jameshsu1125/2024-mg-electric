@@ -6,7 +6,7 @@ import Counter from './counter';
 
 const Form = memo(({ data, mile }: { data: Data; mile: number }) => {
   const maintainCost = useMemo(() => {
-    return MAINTAIN_COST_BY_MILE(mile);
+    return MAINTAIN_COST_BY_MILE(mile * 365);
   }, [mile]);
 
   const taxCost = useMemo(() => {
