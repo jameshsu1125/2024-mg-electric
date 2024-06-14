@@ -1,7 +1,8 @@
+import View3DEvents from '@/common/event';
 import '@/settings/global.less';
+import Gtag from 'lesca-gtag';
 import ReactDOM from 'react-dom/client';
 import App from './app';
-import View3DEvents from '@/common/event';
 
 const view3DEvents = new View3DEvents();
 
@@ -10,6 +11,8 @@ declare global {
     appFromReact: View3DEvents;
   }
 }
+
+Gtag.insert('G-8KV646EZ1N');
 
 view3DEvents.render = () => {
   const app = ReactDOM.createRoot(document.getElementById('not_aem_app')!);
