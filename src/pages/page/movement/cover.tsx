@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import { twMerge } from 'tailwind-merge';
 import { MovementContext } from './config';
 import './cover.less';
+import Gtag from 'lesca-gtag';
 
 let delay = 0;
 
@@ -147,6 +148,11 @@ const Cover = memo(() => {
                   onClick={() => {
                     if (refInput.current) {
                       setState((S) => ({ ...S, mile: parseInt(refInput.current?.value || '0') }));
+                      try {
+                        Gtag.event('MG純電指南', '馬上試算');
+                      } catch (e) {
+                        console.log(e);
+                      }
                     }
                   }}
                 >
