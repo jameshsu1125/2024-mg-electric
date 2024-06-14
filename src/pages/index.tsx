@@ -1,7 +1,10 @@
+import View3DEvents from '@/common/event';
 import '@/settings/global.less';
+import Gtag from 'lesca-gtag';
 import ReactDOM from 'react-dom/client';
 import App from './app';
-import View3DEvents from '@/common/event';
+
+Gtag.insert('G-8KV646EZ1N');
 
 const view3DEvents = new View3DEvents();
 
