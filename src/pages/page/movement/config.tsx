@@ -24,6 +24,6 @@ export const MAINTAIN_COST_BY_MILE = (mile: number) => {
   else if (mile < 70000) return 28070;
   else if (mile < 80000) return 32469;
   else if (mile < 90000) return 37358;
-  else if (mile < 100000) return 44314;
+  else if (mile < 100000) return 41325;
   return 44314;
 };
