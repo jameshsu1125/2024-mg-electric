@@ -40,7 +40,7 @@ const Safety = memo(() => {
           <div className='car'>
             <div className='img'>
               <img src={`${base}img/safety/n-car.png`} />
-              <div className='absolute top-0 h-full w-full'>
+              <div className='absolute top-0 z-[2] h-full w-full'>
                 <div className='relative top-5 h-full w-full md:top-0'>
                   {SafetyConfig.map((data, index) => (
                     <Button
@@ -53,7 +53,7 @@ const Safety = memo(() => {
                     />
                   ))}
                 </div>
-                <div className='absolute left-0 top-0 h-full w-full'>
+                <div className='absolute left-0 top-0 z-[2] h-full w-full'>
                   <div
                     className='absolute left-0 top-0 h-full w-full bg-transparent'
                     onClick={() => setClickIndex(undefined)}
