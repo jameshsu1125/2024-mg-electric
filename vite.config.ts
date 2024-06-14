@@ -10,7 +10,8 @@ export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, './src/pages');
   const { key, cert } = await certificateFor('localhost');
 
-  const base = process.env.NODE_ENV === 'development' ? './' : 'https://jameshsu1125.github.io/2024-mg-electric/';
+  // const base = process.env.NODE_ENV === 'development' ? './' : 'https://jameshsu1125.github.io/2024-mg-electric/';
+  const base = process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
 
   return {
     base: './',

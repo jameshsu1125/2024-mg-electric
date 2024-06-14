@@ -6,8 +6,13 @@ export type TLifeContext = [TLifeState, Dispatch<SetStateAction<TLifeState>>];
 export const LifeState: TLifeState = { index: 0, readIndex: 0 };
 export const LifeContext = createContext<TLifeContext>([LifeState, () => {}]);
 
+// export const base =
+//   process.env.NODE_ENV === 'development'
+//     ? './'
+//     : 'https://jameshsu1125.github.io/2024-mg-electric/';
+
 export const base =
-  process.env.NODE_ENV === 'development' ? './' : 'https://jameshsu1125.github.io/2024-mg-electric/';
+  process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
 
 export const LifeCarousel = [
   {

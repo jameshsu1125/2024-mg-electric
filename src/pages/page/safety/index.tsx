@@ -7,10 +7,12 @@ import { useInView } from 'react-intersection-observer';
 import useMedia, { MediaType } from '@/hooks/useMedia';
 import useTween from 'lesca-use-tween';
 
-const base =
+/* const base =
   process.env.NODE_ENV === 'development'
     ? './'
-    : 'https://jameshsu1125.github.io/2024-mg-electric/';
+    : 'https://jameshsu1125.github.io/2024-mg-electric/'; */
+
+const base = process.env.NODE_ENV === 'development' ? './' : 'https://mg4electric.netlify.app/';
 
 const H1 = ({ inView, device }: { inView: boolean; device: MediaType }) => {
   const [style, setStyle] = useTween({ letterSpacing: '2rem' });
