@@ -20,7 +20,7 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
           <div className='col'>
             <div className='h'>單週充滿電</div>
             <span>
-              <Counter init={0} to={data.chargeMeekly} max={999} />
+              <Counter init={0} to={data.chargeMeekly} max={999} dollar />
             </span>
             <div className='f'>次</div>
           </div>
@@ -29,14 +29,14 @@ const ResultDesktop = memo(({ data }: { data: Data }) => {
           <div className='col'>
             <div className='h'>電費成本</div>
             <span>
-              <Counter init={0} to={data.electricityCost} max={9999} />
+              <Counter init={0} to={data.electricityCost} max={9999} dollar />
             </span>
             <div className='f'>元/日</div>
           </div>
           <div className='col'>
             <div className='h'>燃油成本</div>
             <span>
-              <Counter init={0} to={data.fuelCost} max={9999} />
+              <Counter init={0} to={data.fuelCost} max={9999} dollar />
             </span>
             <div className='f'>元/日</div>
           </div>

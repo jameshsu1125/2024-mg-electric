@@ -14,7 +14,7 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
         <div className='table'>
           <h1 className='whitespace-nowrap'>單週充滿電</h1>
           <span>
-            <Counter init={0} to={data.chargeMeekly} max={999} />
+            <Counter init={0} to={data.chargeMeekly} max={999} dollar />
           </span>
           <h1>次</h1>
         </div>
@@ -23,14 +23,14 @@ const ResultMobile = memo(({ data }: { data: Data }) => (
         <div className='table'>
           <h1>電費成本</h1>
           <span>
-            <Counter init={0} to={data.electricityCost} max={99999} />
+            <Counter init={0} to={data.electricityCost} max={99999} dollar />
           </span>
           <h1>元/日</h1>
         </div>
         <div className='table'>
           <h1>燃油成本</h1>
           <span>
-            <Counter init={0} to={data.fuelCost} max={99999} />
+            <Counter init={0} to={data.fuelCost} max={99999} dollar />
           </span>
           <h1>元/日</h1>
         </div>
