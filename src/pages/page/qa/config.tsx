@@ -141,15 +141,28 @@ export const QAData = [
         a: [
           <>
             <span>MG Taiwan </span>
-            目前與國內最大電動車充電服務營業整合商【裕電俥電】合作，提供您居家充電樁設置方案，並提供實際到府場勘、評估施工安全性以及完整售後服務。讓您抵達住家後，僅需為愛車插上電源，透過
-            <span> MG4 </span>車機或<span> My MG App </span>
-            設定預約充電，體驗安心便捷的純電生活。裕電充電樁預約網址 :<br />
-            <span>
-              {' '}
-              <a target='_blank' href='https://www.yes-charging.com.tw/Cooperative-EV_Service'>
-                https://www.yes-charging.com.tw/Cooperative-EV_Service
-              </a>
-            </span>
+            目前與國內知名電動車充電服務營業整合商合作，提供您居家充電樁設置方案，並提供實際到府場勘、評估施工安全性以及完整售後服務。讓您抵達住家後，僅需為愛車插上電源，透過
+            <span> MG4 </span>車機或<span> My MG App </span>設定預約充電，體驗安心便捷的純電生活。
+            <ol>
+              <li>
+                裕電充電樁預約網址 :
+                <span>
+                  {' '}
+                  <a target='_blank' href='https://www.yes-charging.com.tw/Cooperative-EV_Service'>
+                    https://www.yes-charging.com.tw/station_service
+                  </a>
+                </span>
+              </li>
+              <li>
+                華城充電樁預約網址 :
+                <span>
+                  {' '}
+                  <a target='_blank' href='https://reservation.evalue.com.tw/auth/login'>
+                    https://reservation.evalue.com.tw/auth/login
+                  </a>
+                </span>
+              </li>
+            </ol>
           </>,
         ],
       },
@@ -157,16 +170,28 @@ export const QAData = [
         q: <>充電樁保固多久？</>,
         a: [
           <>
-            <span>MG Taiwan </span>合作的充電樁廠商【裕電俥電】皆提供充電樁機器本身及工程安裝
-            <span> 24 </span>
-            個月保固服務，如您的充電樁發生異常時，可直接撥打【裕電俥電】免費客服專線
-            <span>
-              {' '}
-              <a target='_blank' href='tel:0800-550-508'>
-                0800-550-508
-              </a>{' '}
-            </span>
-            ，提供您詳細的評估及進行後續的診斷維修。
+            <span>MG Taiwan </span>合作的充電樁廠商皆提供充電樁機器本身及工程安裝<span> 24 </span>
+            個月保固服務，如您的充電樁發生異常時，可直接撥打合作廠商的免付費客服專線，提供您詳細的評估及進行後續的診斷維修。
+            <ol>
+              <li>
+                裕電免付費客服專線 :
+                <span>
+                  {' '}
+                  <a target='_blank' href='tel:0800-550-508'>
+                    0800-550-508
+                  </a>
+                </span>
+              </li>
+              <li>
+                華城免付費客服專線 :
+                <span>
+                  {' '}
+                  <a target='_blank' href='tel:0800-885-150'>
+                    0800-885-150
+                  </a>
+                </span>
+              </li>
+            </ol>
           </>,
         ],
       },
