@@ -148,7 +148,7 @@ export const QAData = [
                 裕電充電樁預約網址 :
                 <span>
                   {' '}
-                  <a target='_blank' href='https://www.yes-charging.com.tw/Cooperative-EV_Service'>
+                  <a target='_blank' href='https://www.yes-charging.com.tw/station_service'>
                     https://www.yes-charging.com.tw/station_service
                   </a>
                 </span>
